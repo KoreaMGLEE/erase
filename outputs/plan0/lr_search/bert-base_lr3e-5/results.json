@@ -1,0 +1,10 @@
+{
+  "model": "bert-base",
+  "split": "split1",
+  "lr": 3e-05,
+  "seed": 1,
+  "mode": "lr_search",
+  "val_acc": 0.7466123280692817,
+  "avg_loss": 0.7619365295569102,
+  "training_time_sec": 74.54250454902649
+}

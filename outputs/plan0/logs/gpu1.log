@@ -1,0 +1,1487 @@
+============================================
+GPU 1: Starting models: bert-mini bert-medium pythia-1.4b bert-large pythia-6.9b
+Start time: Thu Mar 19 16:44:25 UTC 2026
+============================================
+
+============================================
+[bert-mini] Starting on GPU 1 (Thu Mar 19 16:44:25 UTC 2026)
+============================================
+--- Phase 1: LR Search ---
+  bert-mini lr=3e-5
+Model: bert-mini, Split: split1, LR: 3e-05, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model bert-mini...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 35258.77it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.0809
+  Step 400, loss=0.9442
+  Step 600, loss=0.9383
+  Step 800, loss=1.0019
+  Step 1000, loss=0.9511
+  Step 1200, loss=1.1610
+  Step 1400, loss=0.7252
+  Step 1600, loss=0.9980
+  Step 1800, loss=0.9006
+Epoch 1 avg loss: 0.9735
+Epoch 1 val accuracy: 0.5863
+
+Training time: 31.8s (0.5min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-mini_lr3e-5/results.json
+Done!
+  bert-mini lr=5e-5
+Model: bert-mini, Split: split1, LR: 5e-05, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-mini...
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 35055.40it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.9760
+  Step 400, loss=0.9053
+  Step 600, loss=0.9444
+  Step 800, loss=0.9539
+  Step 1000, loss=0.9107
+  Step 1200, loss=1.1753
+  Step 1400, loss=0.7671
+  Step 1600, loss=0.8904
+  Step 1800, loss=0.8545
+Epoch 1 avg loss: 0.9541
+Epoch 1 val accuracy: 0.6035
+
+Training time: 29.8s (0.5min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-mini_lr5e-5/results.json
+Done!
+  bert-mini lr=1e-4
+Model: bert-mini, Split: split1, LR: 0.0001, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-mini...
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 36061.47it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.0573
+  Step 400, loss=0.9631
+  Step 600, loss=0.8922
+  Step 800, loss=1.0025
+  Step 1000, loss=0.9941
+  Step 1200, loss=1.1407
+  Step 1400, loss=0.7913
+  Step 1600, loss=0.8516
+  Step 1800, loss=1.0152
+Epoch 1 avg loss: 0.9500
+Epoch 1 val accuracy: 0.6122
+
+Training time: 30.7s (0.5min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-mini_lr1e-4/results.json
+Done!
+  bert-mini lr=3e-4
+Model: bert-mini, Split: split1, LR: 0.0003, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model bert-mini...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 34903.37it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.weight                | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.9881
+  Step 400, loss=0.9411
+  Step 600, loss=1.1573
+  Step 800, loss=1.0550
+  Step 1000, loss=1.0689
+  Step 1200, loss=1.3361
+  Step 1400, loss=0.9656
+  Step 1600, loss=0.9605
+  Step 1800, loss=0.9334
+Epoch 1 avg loss: 1.0426
+Epoch 1 val accuracy: 0.4998
+
+Training time: 30.1s (0.5min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-mini_lr3e-4/results.json
+Done!
+  bert-mini lr=1e-3
+Model: bert-mini, Split: split1, LR: 0.001, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model bert-mini...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 35460.30it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.8819
+  Step 400, loss=1.0795
+  Step 600, loss=1.1194
+  Step 800, loss=1.0523
+  Step 1000, loss=1.1040
+  Step 1200, loss=1.1235
+  Step 1400, loss=1.0644
+  Step 1600, loss=1.0986
+  Step 1800, loss=1.1268
+Epoch 1 avg loss: 1.1090
+Epoch 1 val accuracy: 0.3182
+
+Training time: 30.4s (0.5min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-mini_lr1e-3/results.json
+Done!
+  bert-mini lr=3e-5 val_acc=0.58634742740703
+  bert-mini lr=5e-5 val_acc=0.6034640855832909
+  bert-mini lr=1e-4 val_acc=0.6122261844116149
+  bert-mini lr=3e-4 val_acc=0.4998471726948548
+  bert-mini lr=1e-3 val_acc=0.31818644931227713
+>>> Best bert-mini LR: 1e-4 (val_acc=0.6122261844116149)
+--- Phase 2: Confidence (best_lr=1e-4) ---
+  bert-mini split1
+Model: bert-mini, Split: split1, LR: 0.0001, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model bert-mini...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 22278.42it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.0573
+  Step 400, loss=0.9631
+  Step 600, loss=0.8922
+  Measuring confidence at step 625...
+  Step 800, loss=1.0025
+  Step 1000, loss=0.9941
+  Step 1200, loss=1.1407
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.7913
+  Step 1600, loss=0.8516
+  Step 1800, loss=1.0152
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.9500
+Epoch 1 val accuracy: 0.6122
+
+Training time: 47.7s (0.8min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split1/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split1/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split1/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split1/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/bert-mini_split1/results.json
+Done!
+  bert-mini split2
+Model: bert-mini, Split: split2, LR: 0.0001, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split2: 30000 examples
+Loading model bert-mini...
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 35392.87it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.0383
+  Step 400, loss=0.8406
+  Step 600, loss=0.7855
+  Measuring confidence at step 625...
+  Step 800, loss=0.9112
+  Step 1000, loss=0.7403
+  Step 1200, loss=1.0800
+  Measuring confidence at step 1250...
+  Step 1400, loss=1.0102
+  Step 1600, loss=0.7534
+  Step 1800, loss=0.8708
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.9442
+Epoch 1 val accuracy: 0.6257
+
+Training time: 47.3s (0.8min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split2/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split2/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split2/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split2/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/bert-mini_split2/results.json
+Done!
+  bert-mini split3
+Model: bert-mini, Split: split3, LR: 0.0001, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split3: 30000 examples
+Loading model bert-mini...
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 35117.40it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.1516
+  Step 400, loss=1.0798
+  Step 600, loss=0.9278
+  Measuring confidence at step 625...
+  Step 800, loss=1.1457
+  Step 1000, loss=1.1311
+  Step 1200, loss=0.9795
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.5838
+  Step 1600, loss=0.8639
+  Step 1800, loss=0.8634
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.9765
+Epoch 1 val accuracy: 0.6128
+
+Training time: 47.3s (0.8min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split3/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split3/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split3/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/bert-mini_split3/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/bert-mini_split3/results.json
+Done!
+bert-mini 90K: mean=0.4981, std=0.2082, >0.95=0.0%, <0.40=34.9%
+[bert-mini] DONE (Thu Mar 19 16:50:57 UTC 2026)
+
+
+============================================
+[bert-medium] Starting on GPU 1 (Thu Mar 19 16:50:57 UTC 2026)
+============================================
+--- Phase 1: LR Search ---
+  bert-medium lr=3e-5
+Model: bert-medium, Split: split1, LR: 3e-05, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model bert-medium...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 36808.88it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.3136
+  Step 400, loss=1.0400
+  Step 600, loss=0.8650
+  Step 800, loss=0.8411
+  Step 1000, loss=1.0790
+  Step 1200, loss=0.9188
+  Step 1400, loss=0.7912
+  Step 1600, loss=0.4404
+  Step 1800, loss=0.8491
+Epoch 1 avg loss: 0.8304
+Epoch 1 val accuracy: 0.6895
+
+Training time: 50.1s (0.8min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-medium_lr3e-5/results.json
+Done!
+  bert-medium lr=5e-5
+Model: bert-medium, Split: split1, LR: 5e-05, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model bert-medium...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 42442.92it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.4566
+  Step 400, loss=1.0683
+  Step 600, loss=0.9528
+  Step 800, loss=0.8105
+  Step 1000, loss=1.0415
+  Step 1200, loss=0.8124
+  Step 1400, loss=0.7931
+  Step 1600, loss=0.3775
+  Step 1800, loss=0.8672
+Epoch 1 avg loss: 0.8214
+Epoch 1 val accuracy: 0.6977
+
+Training time: 50.6s (0.8min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-medium_lr5e-5/results.json
+Done!
+  bert-medium lr=1e-4
+Model: bert-medium, Split: split1, LR: 0.0001, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-medium...
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 38743.14it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.3673
+  Step 400, loss=1.1786
+  Step 600, loss=0.9339
+  Step 800, loss=0.7911
+  Step 1000, loss=0.8382
+  Step 1200, loss=0.9423
+  Step 1400, loss=0.7769
+  Step 1600, loss=0.3515
+  Step 1800, loss=0.7595
+Epoch 1 avg loss: 0.8457
+Epoch 1 val accuracy: 0.6809
+
+Training time: 51.9s (0.9min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-medium_lr1e-4/results.json
+Done!
+  bert-medium lr=3e-4
+Model: bert-medium, Split: split1, LR: 0.0003, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-medium...
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 36465.16it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.2113
+  Step 400, loss=1.2339
+  Step 600, loss=1.0959
+  Step 800, loss=1.0702
+  Step 1000, loss=1.2444
+  Step 1200, loss=1.1632
+  Step 1400, loss=1.0945
+  Step 1600, loss=1.1310
+  Step 1800, loss=1.0998
+Epoch 1 avg loss: 1.1126
+Epoch 1 val accuracy: 0.3545
+
+Training time: 52.7s (0.9min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-medium_lr3e-4/results.json
+Done!
+  bert-medium lr=1e-3
+Model: bert-medium, Split: split1, LR: 0.001, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-medium...
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 36732.47it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.4006
+  Step 400, loss=1.1134
+  Step 600, loss=1.1108
+  Step 800, loss=1.1655
+  Step 1000, loss=1.2867
+  Step 1200, loss=1.0557
+  Step 1400, loss=1.0966
+  Step 1600, loss=1.1192
+  Step 1800, loss=1.0649
+Epoch 1 avg loss: 1.1261
+Epoch 1 val accuracy: 0.3274
+
+Training time: 51.5s (0.9min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-medium_lr1e-3/results.json
+Done!
+  bert-medium lr=3e-5 val_acc=0.6894549159449822
+  bert-medium lr=5e-5 val_acc=0.6977075904228223
+  bert-medium lr=1e-4 val_acc=0.6808965868568517
+  bert-medium lr=3e-4 val_acc=0.3544574630667346
+  bert-medium lr=1e-3 val_acc=0.3273560876209883
+>>> Best bert-medium LR: 5e-5 (val_acc=0.6977075904228223)
+--- Phase 2: Confidence (best_lr=5e-5) ---
+  bert-medium split1
+Model: bert-medium, Split: split1, LR: 5e-05, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-medium...
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 37176.22it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.4566
+  Step 400, loss=1.0683
+  Step 600, loss=0.9528
+  Measuring confidence at step 625...
+  Step 800, loss=0.8105
+  Step 1000, loss=1.0415
+  Step 1200, loss=0.8124
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.7931
+  Step 1600, loss=0.3775
+  Step 1800, loss=0.8672
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.8214
+Epoch 1 val accuracy: 0.6977
+
+Training time: 71.7s (1.2min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split1/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split1/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split1/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split1/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/bert-medium_split1/results.json
+Done!
+  bert-medium split2
+Model: bert-medium, Split: split2, LR: 5e-05, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split2: 30000 examples
+Loading model bert-medium...
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 41373.01it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.0965
+  Step 400, loss=0.9756
+  Step 600, loss=1.0426
+  Measuring confidence at step 625...
+  Step 800, loss=0.6677
+  Step 1000, loss=0.7942
+  Step 1200, loss=0.5582
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.5356
+  Step 1600, loss=0.7815
+  Step 1800, loss=0.9483
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.8238
+Epoch 1 val accuracy: 0.6987
+
+Training time: 76.3s (1.3min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split2/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split2/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split2/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split2/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/bert-medium_split2/results.json
+Done!
+  bert-medium split3
+Model: bert-medium, Split: split3, LR: 5e-05, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Split split3: 30000 examples
+Loading model bert-medium...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 34602.24it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.9221
+  Step 400, loss=0.6861
+  Step 600, loss=0.8289
+  Measuring confidence at step 625...
+  Step 800, loss=0.7491
+  Step 1000, loss=0.6727
+  Step 1200, loss=0.6677
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.7151
+  Step 1600, loss=0.7031
+  Step 1800, loss=0.5529
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.8178
+Epoch 1 val accuracy: 0.7051
+
+Training time: 74.7s (1.2min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split3/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split3/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split3/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/bert-medium_split3/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/bert-medium_split3/results.json
+Done!
+bert-medium 90K: mean=0.6148, std=0.2526, >0.95=0.8%, <0.40=23.1%
+[bert-medium] DONE (Thu Mar 19 17:01:11 UTC 2026)
+
+
+============================================
+[pythia-1.4b] Starting on GPU 1 (Thu Mar 19 17:01:11 UTC 2026)
+============================================
+--- Phase 1: LR Search ---
+  pythia-1.4b lr=5e-5
+Model: pythia-1.4b, Split: split1, LR: 5e-05, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  23%|██▎       | 66/292 [00:00<00:00, 659.78it/s]Loading weights:  54%|█████▍    | 158/292 [00:00<00:00, 772.16it/s]Loading weights:  86%|████████▋ | 252/292 [00:00<00:00, 724.34it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 787.80it/s]
+LoRA applied: 6.3M trainable / 1420.9M total (0.4%)
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.4402
+  Step 400, loss=0.3105
+  Step 600, loss=0.2256
+  Step 800, loss=0.2871
+  Step 1000, loss=0.5124
+  Step 1200, loss=0.5577
+  Step 1400, loss=0.2631
+  Step 1600, loss=0.4797
+  Step 1800, loss=0.3756
+Epoch 1 avg loss: 0.6532
+Epoch 1 val accuracy: 0.8029
+
+Training time: 359.1s (6.0min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/pythia-1.4b_lr5e-5/results.json
+Done!
+  pythia-1.4b lr=1e-4
+Model: pythia-1.4b, Split: split1, LR: 0.0001, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  26%|██▌       | 76/292 [00:00<00:00, 751.89it/s]Loading weights:  58%|█████▊    | 168/292 [00:00<00:00, 843.61it/s]Loading weights:  87%|████████▋ | 253/292 [00:00<00:00, 832.19it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 797.03it/s]
+LoRA applied: 6.3M trainable / 1420.9M total (0.4%)
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.2974
+  Step 400, loss=0.2496
+  Step 600, loss=0.2389
+  Step 800, loss=0.2574
+  Step 1000, loss=0.6047
+  Step 1200, loss=0.5276
+  Step 1400, loss=0.2805
+  Step 1600, loss=0.4736
+  Step 1800, loss=0.3514
+Epoch 1 avg loss: 0.5870
+Epoch 1 val accuracy: 0.8155
+
+Training time: 359.3s (6.0min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/pythia-1.4b_lr1e-4/results.json
+Done!
+  pythia-1.4b lr=3e-4
+Model: pythia-1.4b, Split: split1, LR: 0.0003, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 80/292 [00:00<00:00, 644.64it/s]Loading weights:  60%|█████▉    | 174/292 [00:00<00:00, 799.16it/s]Loading weights:  88%|████████▊ | 256/292 [00:00<00:00, 786.80it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 821.16it/s]
+LoRA applied: 6.3M trainable / 1420.9M total (0.4%)
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.2875
+  Step 400, loss=0.2477
+  Step 600, loss=0.3186
+  Step 800, loss=0.2924
+  Step 1000, loss=0.6393
+  Step 1200, loss=0.4729
+  Step 1400, loss=0.2078
+  Step 1600, loss=0.5748
+  Step 1800, loss=0.3209
+Epoch 1 avg loss: 0.5271
+Epoch 1 val accuracy: 0.8293
+
+Training time: 359.0s (6.0min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/pythia-1.4b_lr3e-4/results.json
+Done!
+  pythia-1.4b lr=1e-3
+Model: pythia-1.4b, Split: split1, LR: 0.001, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 56/292 [00:00<00:00, 543.02it/s]Loading weights:  49%|████▉     | 144/292 [00:00<00:00, 728.80it/s]Loading weights:  78%|███████▊  | 228/292 [00:00<00:00, 774.58it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 832.95it/s]
+LoRA applied: 6.3M trainable / 1420.9M total (0.4%)
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.5280
+  Step 400, loss=0.6521
+  Step 600, loss=0.8397
+  Step 800, loss=0.6798
+  Step 1000, loss=0.7902
+  Step 1200, loss=0.8115
+  Step 1400, loss=0.7123
+  Step 1600, loss=0.8261
+  Step 1800, loss=0.9606
+Epoch 1 avg loss: 0.9528
+Epoch 1 val accuracy: 0.3323
+
+Training time: 359.0s (6.0min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/pythia-1.4b_lr1e-3/results.json
+Done!
+  pythia-1.4b lr=3e-3
+Model: pythia-1.4b, Split: split1, LR: 0.003, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  25%|██▍       | 72/292 [00:00<00:00, 696.13it/s]Loading weights:  53%|█████▎    | 156/292 [00:00<00:00, 771.48it/s]Loading weights:  86%|████████▋ | 252/292 [00:00<00:00, 837.47it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 808.07it/s]
+LoRA applied: 6.3M trainable / 1420.9M total (0.4%)
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.0412
+  Step 400, loss=0.6881
+  Step 600, loss=1.1476
+  Step 800, loss=1.1109
+  Step 1000, loss=1.0105
+  Step 1200, loss=1.0090
+  Step 1400, loss=0.8715
+  Step 1600, loss=0.8460
+  Step 1800, loss=1.0171
+Epoch 1 avg loss: 1.1417
+Epoch 1 val accuracy: 0.3319
+
+Training time: 358.7s (6.0min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/pythia-1.4b_lr3e-3/results.json
+Done!
+  pythia-1.4b lr=5e-5 val_acc=0.8028527763627101
+  pythia-1.4b lr=1e-4 val_acc=0.8154865002547121
+  pythia-1.4b lr=3e-4 val_acc=0.8293428425878757
+  pythia-1.4b lr=1e-3 val_acc=0.332348446255731
+  pythia-1.4b lr=3e-3 val_acc=0.3319409067753439
+>>> Best pythia-1.4b LR: 3e-4 (val_acc=0.8293428425878757)
+--- Phase 2: Confidence (best_lr=3e-4) ---
+  pythia-1.4b split1
+Model: pythia-1.4b, Split: split1, LR: 0.0003, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  15%|█▌        | 44/292 [00:00<00:00, 412.88it/s]Loading weights:  46%|████▌     | 134/292 [00:00<00:00, 691.68it/s]Loading weights:  75%|███████▌  | 219/292 [00:00<00:00, 758.83it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 732.30it/s]
+LoRA applied: 6.3M trainable / 1420.9M total (0.4%)
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.2875
+  Step 400, loss=0.2477
+  Step 600, loss=0.3186
+  Measuring confidence at step 625...
+  Step 800, loss=0.2924
+  Step 1000, loss=0.6393
+  Step 1200, loss=0.4729
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.2078
+  Step 1600, loss=0.5748
+  Step 1800, loss=0.3209
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.5271
+Epoch 1 val accuracy: 0.8293
+
+Training time: 895.6s (14.9min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split1/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split1/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split1/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split1/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split1/results.json
+Done!
+  pythia-1.4b split2
+Model: pythia-1.4b, Split: split2, LR: 0.0003, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split2: 30000 examples
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 56/292 [00:00<00:00, 511.44it/s]Loading weights:  48%|████▊     | 140/292 [00:00<00:00, 689.07it/s]Loading weights:  77%|███████▋  | 224/292 [00:00<00:00, 746.61it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 804.11it/s]
+LoRA applied: 6.3M trainable / 1420.9M total (0.4%)
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.7577
+  Step 400, loss=0.6271
+  Step 600, loss=0.2438
+  Measuring confidence at step 625...
+  Step 800, loss=0.3869
+  Step 1000, loss=0.1946
+  Step 1200, loss=0.4835
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.2935
+  Step 1600, loss=0.4669
+  Step 1800, loss=0.2549
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.5231
+Epoch 1 val accuracy: 0.8329
+
+Training time: 892.9s (14.9min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split2/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split2/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split2/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split2/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split2/results.json
+Done!
+  pythia-1.4b split3
+Model: pythia-1.4b, Split: split3, LR: 0.0003, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split3: 30000 examples
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  15%|█▌        | 44/292 [00:00<00:00, 438.35it/s]Loading weights:  44%|████▍     | 128/292 [00:00<00:00, 666.53it/s]Loading weights:  78%|███████▊  | 228/292 [00:00<00:00, 784.15it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 821.80it/s]
+LoRA applied: 6.3M trainable / 1420.9M total (0.4%)
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.3385
+  Step 400, loss=0.6102
+  Step 600, loss=0.3427
+  Measuring confidence at step 625...
+  Step 800, loss=0.1236
+  Step 1000, loss=0.5351
+  Step 1200, loss=0.4920
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.0832
+  Step 1600, loss=0.1586
+  Step 1800, loss=0.3086
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.5297
+Epoch 1 val accuracy: 0.8270
+
+Training time: 898.8s (15.0min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split3/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split3/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split3/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split3/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/pythia-1.4b_split3/results.json
+Done!
+pythia-1.4b 90K: mean=0.7737, std=0.2416, >0.95=27.0%, <0.40=10.5%
+[pythia-1.4b] DONE (Thu Mar 19 18:19:17 UTC 2026)
+
+
+============================================
+[bert-large] Starting on GPU 1 (Thu Mar 19 18:19:17 UTC 2026)
+============================================
+--- Phase 1: LR Search ---
+  bert-large lr=1e-5
+Model: bert-large, Split: split1, LR: 1e-05, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-large...
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 5863.81it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: bert-large-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.9753
+  Step 400, loss=1.1478
+  Step 600, loss=0.8606
+  Step 800, loss=0.6611
+  Step 1000, loss=0.6450
+  Step 1200, loss=0.5555
+  Step 1400, loss=0.7910
+  Step 1600, loss=0.5971
+  Step 1800, loss=0.6839
+Epoch 1 avg loss: 0.7412
+Epoch 1 val accuracy: 0.7691
+
+Training time: 165.6s (2.8min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-large_lr1e-5/results.json
+Done!
+  bert-large lr=2e-5
+Model: bert-large, Split: split1, LR: 2e-05, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-large...
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 6613.06it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: bert-large-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.7833
+  Step 400, loss=0.9076
+  Step 600, loss=0.7273
+  Step 800, loss=0.6148
+  Step 1000, loss=0.8421
+  Step 1200, loss=0.4966
+  Step 1400, loss=0.7519
+  Step 1600, loss=0.5658
+  Step 1800, loss=0.6260
+Epoch 1 avg loss: 0.6835
+Epoch 1 val accuracy: 0.7936
+
+Training time: 165.1s (2.8min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-large_lr2e-5/results.json
+Done!
+  bert-large lr=3e-5
+Model: bert-large, Split: split1, LR: 3e-05, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model bert-large...
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 5652.86it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: bert-large-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.8612
+  Step 400, loss=1.1301
+  Step 600, loss=0.5987
+  Step 800, loss=0.4660
+  Step 1000, loss=1.0031
+  Step 1200, loss=0.4797
+  Step 1400, loss=0.7728
+  Step 1600, loss=0.4173
+  Step 1800, loss=0.3390
+Epoch 1 avg loss: 0.6812
+Epoch 1 val accuracy: 0.7946
+
+Training time: 165.4s (2.8min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-large_lr3e-5/results.json
+Done!
+  bert-large lr=5e-5
+Model: bert-large, Split: split1, LR: 5e-05, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-large...
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 6030.33it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: bert-large-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.7446
+  Step 400, loss=0.8452
+  Step 600, loss=0.7021
+  Step 800, loss=0.6631
+  Step 1000, loss=0.7492
+  Step 1200, loss=0.8414
+  Step 1400, loss=0.6516
+  Step 1600, loss=0.2521
+  Step 1800, loss=0.4031
+Epoch 1 avg loss: 0.7129
+Epoch 1 val accuracy: 0.7933
+
+Training time: 165.4s (2.8min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-large_lr5e-5/results.json
+Done!
+  bert-large lr=1e-4
+Model: bert-large, Split: split1, LR: 0.0001, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model bert-large...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 6188.37it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: bert-large-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.1168
+  Step 400, loss=1.1095
+  Step 600, loss=1.2083
+  Step 800, loss=1.1625
+  Step 1000, loss=1.1108
+  Step 1200, loss=1.1018
+  Step 1400, loss=1.0590
+  Step 1600, loss=1.1309
+  Step 1800, loss=1.0931
+Epoch 1 avg loss: 1.1170
+Epoch 1 val accuracy: 0.3545
+
+Training time: 165.3s (2.8min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-large_lr1e-4/results.json
+Done!
+  bert-large lr=1e-5 val_acc=0.7691288843606724
+  bert-large lr=2e-5 val_acc=0.7935812531839022
+  bert-large lr=3e-5 val_acc=0.7946001018848701
+  bert-large lr=5e-5 val_acc=0.7932755985736119
+  bert-large lr=1e-4 val_acc=0.3544574630667346
+>>> Best bert-large LR: 3e-5 (val_acc=0.7946001018848701)
+--- Phase 2: Confidence (best_lr=3e-5) ---
+  bert-large split1
+Model: bert-large, Split: split1, LR: 3e-05, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-large...
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 6141.42it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: bert-large-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.8612
+  Step 400, loss=1.1301
+  Step 600, loss=0.5987
+  Measuring confidence at step 625...
+  Step 800, loss=0.4660
+  Step 1000, loss=1.0031
+  Step 1200, loss=0.4797
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.7728
+  Step 1600, loss=0.4173
+  Step 1800, loss=0.3390
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.6812
+Epoch 1 val accuracy: 0.7946
+
+Training time: 298.0s (5.0min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split1/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split1/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split1/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split1/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/bert-large_split1/results.json
+Done!
+  bert-large split2
+Model: bert-large, Split: split2, LR: 3e-05, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split2: 30000 examples
+Loading model bert-large...
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 6729.09it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: bert-large-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.5925
+  Step 400, loss=0.5646
+  Step 600, loss=0.8247
+  Measuring confidence at step 625...
+  Step 800, loss=0.4941
+  Step 1000, loss=0.5368
+  Step 1200, loss=0.5732
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.6747
+  Step 1600, loss=0.2283
+  Step 1800, loss=0.5103
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.6588
+Epoch 1 val accuracy: 0.7989
+
+Training time: 301.6s (5.0min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split2/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split2/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split2/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split2/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/bert-large_split2/results.json
+Done!
+  bert-large split3
+Model: bert-large, Split: split3, LR: 3e-05, Device: cuda:1, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split3: 30000 examples
+Loading model bert-large...
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 5409.10it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: bert-large-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.7866
+  Step 400, loss=1.1502
+  Step 600, loss=1.0134
+  Measuring confidence at step 625...
+  Step 800, loss=1.2260
+  Step 1000, loss=1.1196
+  Step 1200, loss=1.0583
+  Measuring confidence at step 1250...
+  Step 1400, loss=1.0971
+  Step 1600, loss=1.0901
+  Step 1800, loss=1.1190
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 1.0963
+Epoch 1 val accuracy: 0.3274
+
+Training time: 299.9s (5.0min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split3/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split3/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split3/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/bert-large_split3/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/bert-large_split3/results.json
+Done!
+bert-large 90K: mean=0.6154, std=0.2818, >0.95=12.1%, <0.40=41.2%
+[bert-large] DONE (Thu Mar 19 18:50:46 UTC 2026)
+
+
+============================================
+[pythia-6.9b] Starting on GPU 1 (Thu Mar 19 18:50:46 UTC 2026)
+============================================
+--- Phase 1: LR Search ---
+  pythia-6.9b lr=5e-5
+Model: pythia-6.9b, Split: split1, LR: 5e-05, Device: cuda:1, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model pythia-6.9b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [02:46<02:46, 166.71s/it]Fetching 2 files: 100%|██████████| 2/2 [02:46<00:00, 83.36s/it] 
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:   0%|          | 1/388 [00:00<00:39,  9.75it/s]Loading weights:   8%|▊         | 32/388 [00:00<00:02, 133.03it/s]Loading weights:  14%|█▍        | 56/388 [00:00<00:01, 166.39it/s]Loading weights:  19%|█▉        | 74/388 [00:00<00:01, 169.20it/s]Loading weights:  25%|██▍       | 96/388 [00:00<00:01, 176.68it/s]Loading weights:  31%|███       | 120/388 [00:00<00:01, 195.93it/s]Loading weights:  36%|███▌      | 140/388 [00:00<00:01, 196.60it/s]Loading weights:  42%|████▏     | 164/388 [00:00<00:01, 202.19it/s]Loading weights:  48%|████▊     | 185/388 [00:01<00:01, 176.96it/s]Loading weights:  53%|█████▎    | 206/388 [00:01<00:01, 181.33it/s]Loading weights:  59%|█████▉    | 228/388 [00:01<00:00, 191.74it/s]Loading weights:  65%|██████▍   | 252/388 [00:01<00:00, 199.72it/s]Loading weights:  70%|███████   | 273/388 [00:01<00:00, 198.39it/s]Loading weights:  76%|███████▌  | 294/388 [00:01<00:00, 197.34it/s]Loading weights:  82%|████████▏ | 320/388 [00:01<00:00, 210.69it/s]Loading weights:  88%|████████▊ | 342/388 [00:01<00:00, 210.96it/s]Loading weights:  94%|█████████▍| 364/388 [00:01<00:00, 183.17it/s]Loading weights: 100%|██████████| 388/388 [00:02<00:00, 187.75it/s]
+LoRA applied: 16.8M trainable / 6874.1M total (0.2%)
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+
+=== Epoch 1/1 ===
+Traceback (most recent call last):
+  File "/workspace/erase/scripts/train_mnli_proxy.py", line 487, in <module>
+    main()
+  File "/workspace/erase/scripts/train_mnli_proxy.py", line 420, in main
+    avg_loss, ckpt_confs = train_one_epoch(
+                           ^^^^^^^^^^^^^^^^
+  File "/workspace/erase/scripts/train_mnli_proxy.py", line 308, in train_one_epoch
+    outputs = model(input_ids=full_input, attention_mask=full_mask, labels=target)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/peft/peft_model.py", line 1923, in forward
+    return self.base_model(
+           ^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 311, in forward
+    return self.model.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/transformers/utils/generic.py", line 843, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/transformers/models/gpt_neox/modeling_gpt_neox.py", line 474, in forward
+    outputs: BaseModelOutputWithPast = self.gpt_neox(
+                                       ^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/transformers/utils/generic.py", line 917, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/transformers/utils/output_capturing.py", line 253, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/transformers/models/gpt_neox/modeling_gpt_neox.py", line 386, in forward
+    hidden_states = layer(
+                    ^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/transformers/modeling_layers.py", line 93, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/transformers/models/gpt_neox/modeling_gpt_neox.py", line 276, in forward
+    attn_output, _ = self.attention(
+                     ^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/transformers/models/gpt_neox/modeling_gpt_neox.py", line 215, in forward
+    qkv = self.query_key_value(hidden_states).view(hidden_shape).transpose(1, 2)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/peft/tuners/lora/layer.py", line 807, in forward
+    result = result + lora_B(lora_A(dropout(x))) * scaling
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/.local/lib/python3.12/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 54.00 MiB. GPU 1 has a total capacity of 31.37 GiB of which 25.25 MiB is free. Including non-PyTorch memory, this process has 31.33 GiB memory in use. Of the allocated memory 30.72 GiB is allocated by PyTorch, and 27.41 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

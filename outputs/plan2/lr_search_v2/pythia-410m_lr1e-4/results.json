@@ -1,0 +1,72 @@
+{
+  "model": "pythia-410m",
+  "lr": 0.0001,
+  "seed": 1,
+  "epochs": 10,
+  "best_epoch": 8,
+  "best_challenge_acc": 0.2842809364548495,
+  "best_overall_acc": 0.28768699654775604,
+  "training_time_sec": 351.0205731391907,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "avg_loss": 1.5599185527783435,
+      "overall_acc": 0.23130034522439585,
+      "challenge_acc": 0.27759197324414714
+    },
+    {
+      "epoch": 2,
+      "avg_loss": 1.480256055627389,
+      "overall_acc": 0.25891829689298046,
+      "challenge_acc": 0.24414715719063546
+    },
+    {
+      "epoch": 3,
+      "avg_loss": 1.5486392003100065,
+      "overall_acc": 0.24971231300345226,
+      "challenge_acc": 0.2508361204013378
+    },
+    {
+      "epoch": 4,
+      "avg_loss": 1.429930000508566,
+      "overall_acc": 0.2336018411967779,
+      "challenge_acc": 0.27759197324414714
+    },
+    {
+      "epoch": 5,
+      "avg_loss": 1.3644448633160071,
+      "overall_acc": 0.2508630609896433,
+      "challenge_acc": 0.20066889632107024
+    },
+    {
+      "epoch": 6,
+      "avg_loss": 1.1933884418688678,
+      "overall_acc": 0.2681242807825086,
+      "challenge_acc": 0.26421404682274247
+    },
+    {
+      "epoch": 7,
+      "avg_loss": 0.8498622651136882,
+      "overall_acc": 0.2600690448791715,
+      "challenge_acc": 0.2608695652173913
+    },
+    {
+      "epoch": 8,
+      "avg_loss": 0.4967920474702011,
+      "overall_acc": 0.28768699654775604,
+      "challenge_acc": 0.2842809364548495
+    },
+    {
+      "epoch": 9,
+      "avg_loss": 0.26922321205767374,
+      "overall_acc": 0.2646720368239356,
+      "challenge_acc": 0.2809364548494983
+    },
+    {
+      "epoch": 10,
+      "avg_loss": 0.10949117001013825,
+      "overall_acc": 0.2807825086306099,
+      "challenge_acc": 0.2809364548494983
+    }
+  ]
+}

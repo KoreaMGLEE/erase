@@ -1,0 +1,450 @@
+
+============================================
+[ARC] [pythia-1.4b] Starting on GPU 1 (Fri Mar 20 09:06:11 UTC 2026)
+============================================
+--- Phase 1: LR Search ---
+  pythia-1.4b lr=5e-5
+Model: pythia-1.4b, LR: 5e-05, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  23%|██▎       | 66/292 [00:00<00:00, 659.88it/s]Loading weights:  49%|████▉     | 144/292 [00:00<00:00, 701.55it/s]Loading weights:  78%|███████▊  | 228/292 [00:00<00:00, 760.03it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 744.35it/s]
+LoRA: 6.3M trainable / 1420.9M total (0.4%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4102, overall_acc=0.2647, challenge_acc=0.2308
+Epoch 2/10: loss=1.3547, overall_acc=0.4407, challenge_acc=0.3211
+Epoch 3/10: loss=1.1161, overall_acc=0.5109, challenge_acc=0.3645
+Epoch 4/10: loss=0.8626, overall_acc=0.5109, challenge_acc=0.3612
+Epoch 5/10: loss=0.6317, overall_acc=0.5167, challenge_acc=0.3645
+Epoch 6/10: loss=0.4355, overall_acc=0.5017, challenge_acc=0.3445
+Epoch 7/10: loss=0.2808, overall_acc=0.5040, challenge_acc=0.3344
+Epoch 8/10: loss=0.1734, overall_acc=0.5063, challenge_acc=0.3478
+Epoch 9/10: loss=0.0957, overall_acc=0.5063, challenge_acc=0.3545
+Epoch 10/10: loss=0.0482, overall_acc=0.5063, challenge_acc=0.3645
+
+Training time: 540.1s (9.0min)
+Best overall_acc: 0.5167, challenge_acc: 0.3645 (epoch 5)
+Confidence: mean=0.7696, std=0.2890, >0.95=42.8%, <0.25=9.9%
+Results saved to /workspace/erase/outputs/plan2/lr_search_v2/pythia-1.4b_lr5e-5/results.json
+Done!
+  pythia-1.4b lr=1e-4
+Model: pythia-1.4b, LR: 0.0001, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-1.4b...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 38/292 [00:00<00:00, 363.35it/s]Loading weights:  44%|████▍     | 128/292 [00:00<00:00, 671.51it/s]Loading weights:  71%|███████   | 206/292 [00:00<00:00, 720.30it/s]Loading weights:  97%|█████████▋| 284/292 [00:00<00:00, 741.34it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 718.44it/s]
+LoRA: 6.3M trainable / 1420.9M total (0.4%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4164, overall_acc=0.2819, challenge_acc=0.2508
+Epoch 2/10: loss=1.2957, overall_acc=0.4891, challenge_acc=0.3244
+Epoch 3/10: loss=0.9776, overall_acc=0.5132, challenge_acc=0.3445
+Epoch 4/10: loss=0.6221, overall_acc=0.5063, challenge_acc=0.3244
+Epoch 5/10: loss=0.3546, overall_acc=0.5155, challenge_acc=0.3545
+Epoch 6/10: loss=0.1865, overall_acc=0.5201, challenge_acc=0.3712
+Epoch 7/10: loss=0.0648, overall_acc=0.5040, challenge_acc=0.3378
+Epoch 8/10: loss=0.0250, overall_acc=0.5063, challenge_acc=0.3612
+Epoch 9/10: loss=0.0015, overall_acc=0.5063, challenge_acc=0.3679
+Epoch 10/10: loss=0.0001, overall_acc=0.5040, challenge_acc=0.3579
+
+Training time: 562.7s (9.4min)
+Best overall_acc: 0.5201, challenge_acc: 0.3712 (epoch 6)
+Confidence: mean=0.9790, std=0.1146, >0.95=95.3%, <0.25=1.2%
+Results saved to /workspace/erase/outputs/plan2/lr_search_v2/pythia-1.4b_lr1e-4/results.json
+Done!
+  pythia-1.4b lr=3e-4
+Model: pythia-1.4b, LR: 0.0003, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  25%|██▍       | 72/292 [00:00<00:00, 696.96it/s]Loading weights:  52%|█████▏    | 152/292 [00:00<00:00, 620.43it/s]Loading weights:  82%|████████▏ | 240/292 [00:00<00:00, 716.78it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 762.31it/s]
+LoRA: 6.3M trainable / 1420.9M total (0.4%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4292, overall_acc=0.2693, challenge_acc=0.2676
+Epoch 2/10: loss=1.4221, overall_acc=0.2301, challenge_acc=0.2776
+Epoch 3/10: loss=1.4051, overall_acc=0.2543, challenge_acc=0.2040
+Epoch 4/10: loss=1.3989, overall_acc=0.2589, challenge_acc=0.2441
+Epoch 5/10: loss=1.3976, overall_acc=0.2762, challenge_acc=0.2441
+Epoch 6/10: loss=1.3933, overall_acc=0.2589, challenge_acc=0.2441
+Epoch 7/10: loss=1.4036, overall_acc=0.2509, challenge_acc=0.2107
+Epoch 8/10: loss=1.3939, overall_acc=0.2532, challenge_acc=0.2642
+Epoch 9/10: loss=1.3862, overall_acc=0.2394, challenge_acc=0.2241
+Epoch 10/10: loss=1.3720, overall_acc=0.2555, challenge_acc=0.2776
+
+Training time: 498.5s (8.3min)
+Best overall_acc: 0.2762, challenge_acc: 0.2441 (epoch 5)
+Confidence: mean=0.2501, std=0.0147, >0.95=0.0%, <0.25=37.0%
+Results saved to /workspace/erase/outputs/plan2/lr_search_v2/pythia-1.4b_lr3e-4/results.json
+Done!
+  pythia-1.4b lr=1e-3
+Model: pythia-1.4b, LR: 0.001, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  21%|██        | 62/292 [00:00<00:00, 590.40it/s]Loading weights:  56%|█████▌    | 164/292 [00:00<00:00, 730.72it/s]Loading weights:  89%|████████▉ | 260/292 [00:00<00:00, 802.56it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 817.87it/s]
+LoRA: 6.3M trainable / 1420.9M total (0.4%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.5608, overall_acc=0.2589, challenge_acc=0.2441
+Epoch 2/10: loss=1.4425, overall_acc=0.2313, challenge_acc=0.2776
+Epoch 3/10: loss=1.4176, overall_acc=0.2532, challenge_acc=0.2609
+Epoch 4/10: loss=1.4024, overall_acc=0.2589, challenge_acc=0.2441
+Epoch 5/10: loss=1.4059, overall_acc=0.2532, challenge_acc=0.2609
+Epoch 6/10: loss=1.3951, overall_acc=0.2589, challenge_acc=0.2441
+Epoch 7/10: loss=1.3965, overall_acc=0.2313, challenge_acc=0.2776
+Epoch 8/10: loss=1.3961, overall_acc=0.2532, challenge_acc=0.2609
+Epoch 9/10: loss=1.3922, overall_acc=0.2589, challenge_acc=0.2441
+Epoch 10/10: loss=1.3904, overall_acc=0.2313, challenge_acc=0.2776
+
+Training time: 474.1s (7.9min)
+Best overall_acc: 0.2589, challenge_acc: 0.2441 (epoch 1)
+Confidence: mean=0.2501, std=0.0732, >0.95=0.0%, <0.25=25.6%
+Results saved to /workspace/erase/outputs/plan2/lr_search_v2/pythia-1.4b_lr1e-3/results.json
+Done!
+  pythia-1.4b lr=3e-3
+Model: pythia-1.4b, LR: 0.003, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 56/292 [00:00<00:00, 552.02it/s]Loading weights:  50%|█████     | 146/292 [00:00<00:00, 752.45it/s]Loading weights:  83%|████████▎ | 242/292 [00:00<00:00, 827.24it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 789.70it/s]
+LoRA: 6.3M trainable / 1420.9M total (0.4%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.8744, overall_acc=0.2486, challenge_acc=0.2609
+Epoch 2/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 3/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 4/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 5/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 6/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 7/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 8/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 9/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 10/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+
+Training time: 486.3s (8.1min)
+Best overall_acc: 0.2555, challenge_acc: 0.2140 (epoch 2)
+Confidence: mean=nan, std=nan, >0.95=0.0%, <0.25=0.0%
+Results saved to /workspace/erase/outputs/plan2/lr_search_v2/pythia-1.4b_lr3e-3/results.json
+Done!
+  pythia-1.4b lr=5e-5 overall=0.5166858457997698 challenge=0.36454849498327757
+  pythia-1.4b lr=1e-4 overall=0.520138089758343 challenge=0.3712374581939799
+  pythia-1.4b lr=3e-4 overall=0.2761795166858458 challenge=0.24414715719063546
+  pythia-1.4b lr=1e-3 overall=0.25891829689298046 challenge=0.24414715719063546
+  pythia-1.4b lr=3e-3 overall=0.2554660529344074 challenge=0.2140468227424749
+>>> Best pythia-1.4b LR: 1e-4 (overall_acc=0.520138089758343)
+--- Phase 2: Confidence (best_lr=1e-4, seeds=1,2,3) ---
+  pythia-1.4b seed=1
+Model: pythia-1.4b, LR: 0.0001, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  12%|█▏        | 36/292 [00:00<00:00, 324.92it/s]Loading weights:  41%|████      | 120/292 [00:00<00:00, 614.28it/s]Loading weights:  70%|██████▉   | 204/292 [00:00<00:00, 689.26it/s]Loading weights:  99%|█████████▊| 288/292 [00:00<00:00, 742.65it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 693.33it/s]
+LoRA: 6.3M trainable / 1420.9M total (0.4%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4164, overall_acc=0.2819, challenge_acc=0.2508
+Epoch 2/10: loss=1.2957, overall_acc=0.4891, challenge_acc=0.3244
+Epoch 3/10: loss=0.9776, overall_acc=0.5132, challenge_acc=0.3445
+Epoch 4/10: loss=0.6221, overall_acc=0.5063, challenge_acc=0.3244
+Epoch 5/10: loss=0.3546, overall_acc=0.5155, challenge_acc=0.3545
+Epoch 6/10: loss=0.1865, overall_acc=0.5201, challenge_acc=0.3712
+Epoch 7/10: loss=0.0648, overall_acc=0.5040, challenge_acc=0.3378
+Epoch 8/10: loss=0.0250, overall_acc=0.5063, challenge_acc=0.3612
+Epoch 9/10: loss=0.0015, overall_acc=0.5063, challenge_acc=0.3679
+Epoch 10/10: loss=0.0001, overall_acc=0.5040, challenge_acc=0.3579
+
+Training time: 562.3s (9.4min)
+Best overall_acc: 0.5201, challenge_acc: 0.3712 (epoch 6)
+Confidence: mean=0.9790, std=0.1146, >0.95=95.3%, <0.25=1.2%
+Results saved to /workspace/erase/outputs/plan2/confidence/pythia-1.4b_seed1/results.json
+Done!
+  pythia-1.4b seed=2
+Model: pythia-1.4b, LR: 0.0001, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  23%|██▎       | 68/292 [00:00<00:00, 674.28it/s]Loading weights:  50%|█████     | 146/292 [00:00<00:00, 730.87it/s]Loading weights:  77%|███████▋  | 224/292 [00:00<00:00, 750.61it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 751.59it/s]
+LoRA: 6.3M trainable / 1420.9M total (0.4%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4232, overall_acc=0.2589, challenge_acc=0.2441
+Epoch 2/10: loss=1.4162, overall_acc=0.2221, challenge_acc=0.2609
+Epoch 3/10: loss=1.4010, overall_acc=0.2578, challenge_acc=0.2676
+Epoch 4/10: loss=1.3898, overall_acc=0.2313, challenge_acc=0.2609
+Epoch 5/10: loss=1.3731, overall_acc=0.2325, challenge_acc=0.2508
+Epoch 6/10: loss=1.2950, overall_acc=0.2773, challenge_acc=0.2575
+Epoch 7/10: loss=1.0488, overall_acc=0.2750, challenge_acc=0.2709
+Epoch 8/10: loss=0.6317, overall_acc=0.2716, challenge_acc=0.2776
+Epoch 9/10: loss=0.2888, overall_acc=0.2670, challenge_acc=0.2709
+Epoch 10/10: loss=0.1171, overall_acc=0.2762, challenge_acc=0.2843
+
+Training time: 500.2s (8.3min)
+Best overall_acc: 0.2773, challenge_acc: 0.2575 (epoch 6)
+Confidence: mean=0.3581, std=0.1533, >0.95=0.3%, <0.25=26.5%
+Results saved to /workspace/erase/outputs/plan2/confidence/pythia-1.4b_seed2/results.json
+Done!
+  pythia-1.4b seed=3
+Model: pythia-1.4b, LR: 0.0001, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-1.4b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  25%|██▍       | 72/292 [00:00<00:00, 700.58it/s]Loading weights:  58%|█████▊    | 168/292 [00:00<00:00, 840.07it/s]Loading weights:  87%|████████▋ | 253/292 [00:00<00:00, 839.41it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 803.50it/s]
+LoRA: 6.3M trainable / 1420.9M total (0.4%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4103, overall_acc=0.2520, challenge_acc=0.2475
+Epoch 2/10: loss=1.2651, overall_acc=0.5362, challenge_acc=0.3545
+Epoch 3/10: loss=0.9273, overall_acc=0.5374, challenge_acc=0.3679
+Epoch 4/10: loss=0.6088, overall_acc=0.5535, challenge_acc=0.3846
+Epoch 5/10: loss=0.3589, overall_acc=0.5386, challenge_acc=0.3645
+Epoch 6/10: loss=0.2343, overall_acc=0.5351, challenge_acc=0.3880
+Epoch 7/10: loss=0.1239, overall_acc=0.5201, challenge_acc=0.3746
+Epoch 8/10: loss=0.0428, overall_acc=0.5224, challenge_acc=0.3344
+Epoch 9/10: loss=0.0123, overall_acc=0.5247, challenge_acc=0.3679
+Epoch 10/10: loss=0.0013, overall_acc=0.5224, challenge_acc=0.3545
+
+Training time: 541.5s (9.0min)
+Best overall_acc: 0.5535, challenge_acc: 0.3846 (epoch 4)
+Confidence: mean=0.8053, std=0.2580, >0.95=42.3%, <0.25=7.8%
+Results saved to /workspace/erase/outputs/plan2/confidence/pythia-1.4b_seed3/results.json
+Done!
+  seed=1: overall=0.5201, challenge=0.3712, best_epoch=6
+  seed=2: overall=0.2773, challenge=0.2575, best_epoch=6
+  seed=3: overall=0.5535, challenge=0.3846, best_epoch=4
+pythia-1.4b avg: overall=0.4503±0.1231, challenge=0.3378±0.0570
+[ARC] [pythia-1.4b] DONE (Fri Mar 20 10:20:01 UTC 2026)
+
+============================================
+[ARC] [pythia-6.9b] Starting on GPU 1 (Fri Mar 20 10:20:01 UTC 2026)
+============================================
+--- Phase 1: LR Search ---
+  pythia-6.9b lr=5e-5
+Model: pythia-6.9b, LR: 5e-05, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-6.9b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:   7%|▋         | 26/388 [00:00<00:01, 236.48it/s]Loading weights:  19%|█▊        | 72/388 [00:00<00:00, 361.97it/s]Loading weights:  28%|██▊       | 109/388 [00:00<00:00, 359.00it/s]Loading weights:  40%|████      | 156/388 [00:00<00:00, 326.52it/s]Loading weights:  52%|█████▏    | 200/388 [00:00<00:00, 349.77it/s]Loading weights:  62%|██████▏   | 242/388 [00:00<00:00, 354.73it/s]Loading weights:  73%|███████▎  | 284/388 [00:00<00:00, 372.68it/s]Loading weights:  84%|████████▎ | 324/388 [00:00<00:00, 380.51it/s]Loading weights:  94%|█████████▎| 363/388 [00:01<00:00, 373.09it/s]Loading weights: 100%|██████████| 388/388 [00:01<00:00, 357.76it/s]
+LoRA: 16.8M trainable / 6874.1M total (0.2%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4132, overall_acc=0.2716, challenge_acc=0.2809
+Epoch 2/10: loss=1.2480, overall_acc=0.5627, challenge_acc=0.3746
+Epoch 3/10: loss=0.9289, overall_acc=0.5961, challenge_acc=0.4314
+Epoch 4/10: loss=0.6457, overall_acc=0.5961, challenge_acc=0.4348
+Epoch 5/10: loss=0.4183, overall_acc=0.5972, challenge_acc=0.4816
+Epoch 6/10: loss=0.2584, overall_acc=0.5949, challenge_acc=0.4582
+Epoch 7/10: loss=0.1269, overall_acc=0.6018, challenge_acc=0.4582
+Epoch 8/10: loss=0.0646, overall_acc=0.6030, challenge_acc=0.4649
+Epoch 9/10: loss=0.0245, overall_acc=0.5972, challenge_acc=0.4816
+Epoch 10/10: loss=0.0125, overall_acc=0.6007, challenge_acc=0.4749
+
+Training time: 977.6s (16.3min)
+Best overall_acc: 0.6030, challenge_acc: 0.4649 (epoch 8)
+Confidence: mean=0.9946, std=0.0687, >0.95=99.3%, <0.25=0.4%
+Results saved to /workspace/erase/outputs/plan2/lr_search_v2/pythia-6.9b_lr5e-5/results.json
+Done!
+  pythia-6.9b lr=1e-4
+Model: pythia-6.9b, LR: 0.0001, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-6.9b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:   5%|▌         | 20/388 [00:00<00:02, 156.88it/s]Loading weights:  14%|█▍        | 56/388 [00:00<00:01, 260.10it/s]Loading weights:  24%|██▎       | 92/388 [00:00<00:00, 298.52it/s]Loading weights:  33%|███▎      | 129/388 [00:00<00:00, 325.19it/s]Loading weights:  43%|████▎     | 168/388 [00:00<00:00, 343.97it/s]Loading weights:  53%|█████▎    | 204/388 [00:00<00:00, 343.69it/s]Loading weights:  62%|██████▏   | 240/388 [00:00<00:00, 342.07it/s]Loading weights:  72%|███████▏  | 278/388 [00:00<00:00, 342.90it/s]Loading weights:  81%|████████  | 314/388 [00:00<00:00, 342.51it/s]Loading weights:  90%|█████████ | 350/388 [00:01<00:00, 347.64it/s]Loading weights: 100%|██████████| 388/388 [00:01<00:00, 334.44it/s]
+LoRA: 16.8M trainable / 6874.1M total (0.2%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4379, overall_acc=0.2543, challenge_acc=0.2508
+Epoch 2/10: loss=1.4201, overall_acc=0.2532, challenge_acc=0.2609
+Epoch 3/10: loss=1.3989, overall_acc=0.2578, challenge_acc=0.2441
+Epoch 4/10: loss=1.3942, overall_acc=0.2578, challenge_acc=0.2441
+Epoch 5/10: loss=1.3581, overall_acc=0.2762, challenge_acc=0.2575
+Epoch 6/10: loss=1.2389, overall_acc=0.2612, challenge_acc=0.2910
+Epoch 7/10: loss=1.0697, overall_acc=0.2808, challenge_acc=0.2876
+Epoch 8/10: loss=0.8548, overall_acc=0.2520, challenge_acc=0.2542
+Epoch 9/10: loss=0.6661, overall_acc=0.2509, challenge_acc=0.2508
+Epoch 10/10: loss=0.5146, overall_acc=0.2578, challenge_acc=0.2676
+
+Training time: 908.3s (15.1min)
+Best overall_acc: 0.2808, challenge_acc: 0.2876 (epoch 7)
+Confidence: mean=0.5146, std=0.2642, >0.95=3.9%, <0.25=20.6%
+Results saved to /workspace/erase/outputs/plan2/lr_search_v2/pythia-6.9b_lr1e-4/results.json
+Done!
+  pythia-6.9b lr=3e-4
+Model: pythia-6.9b, LR: 0.0003, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-6.9b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:   4%|▎         | 14/388 [00:00<00:02, 126.32it/s]Loading weights:  14%|█▍        | 56/388 [00:00<00:01, 280.80it/s]Loading weights:  24%|██▎       | 92/388 [00:00<00:00, 310.40it/s]Loading weights:  34%|███▍      | 132/388 [00:00<00:00, 334.73it/s]Loading weights:  43%|████▎     | 166/388 [00:00<00:00, 334.72it/s]Loading weights:  52%|█████▏    | 200/388 [00:00<00:00, 335.83it/s]Loading weights:  61%|██████    | 236/388 [00:00<00:00, 338.75it/s]Loading weights:  71%|███████   | 276/388 [00:00<00:00, 354.86it/s]Loading weights:  81%|████████  | 314/388 [00:00<00:00, 361.34it/s]Loading weights:  90%|█████████ | 351/388 [00:01<00:00, 355.85it/s]Loading weights: 100%|██████████| 388/388 [00:01<00:00, 341.53it/s]
+LoRA: 16.8M trainable / 6874.1M total (0.2%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4971, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 2/10: loss=1.5281, overall_acc=0.2532, challenge_acc=0.2609
+Epoch 3/10: loss=1.4279, overall_acc=0.2313, challenge_acc=0.2776
+Epoch 4/10: loss=1.4161, overall_acc=0.2532, challenge_acc=0.2609
+Epoch 5/10: loss=1.4110, overall_acc=0.2440, challenge_acc=0.2375
+Epoch 6/10: loss=1.4034, overall_acc=0.2486, challenge_acc=0.2475
+Epoch 7/10: loss=1.3997, overall_acc=0.2589, challenge_acc=0.2475
+Epoch 8/10: loss=1.3980, overall_acc=0.2532, challenge_acc=0.2609
+Epoch 9/10: loss=1.3939, overall_acc=0.2670, challenge_acc=0.2475
+Epoch 10/10: loss=1.3917, overall_acc=0.2589, challenge_acc=0.2441
+
+Training time: 909.3s (15.2min)
+Best overall_acc: 0.2670, challenge_acc: 0.2475 (epoch 9)
+Confidence: mean=0.2496, std=0.0198, >0.95=0.0%, <0.25=39.4%
+Results saved to /workspace/erase/outputs/plan2/lr_search_v2/pythia-6.9b_lr3e-4/results.json
+Done!
+  pythia-6.9b lr=1e-3
+Model: pythia-6.9b, LR: 0.001, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-6.9b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:   8%|▊         | 32/388 [00:00<00:01, 280.56it/s]Loading weights:  19%|█▊        | 72/388 [00:00<00:00, 344.70it/s]Loading weights:  28%|██▊       | 108/388 [00:00<00:00, 350.60it/s]Loading weights:  39%|███▊      | 150/388 [00:00<00:00, 375.82it/s]Loading weights:  48%|████▊     | 188/388 [00:00<00:00, 367.64it/s]Loading weights:  59%|█████▉    | 230/388 [00:00<00:00, 380.16it/s]Loading weights:  71%|███████   | 276/388 [00:00<00:00, 397.25it/s]Loading weights:  81%|████████▏ | 316/388 [00:00<00:00, 387.37it/s]Loading weights:  91%|█████████▏| 355/388 [00:00<00:00, 379.34it/s]Loading weights: 100%|██████████| 388/388 [00:01<00:00, 378.16it/s]
+LoRA: 16.8M trainable / 6874.1M total (0.2%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.6649, overall_acc=0.2543, challenge_acc=0.2007
+Epoch 2/10: loss=1.4579, overall_acc=0.2589, challenge_acc=0.2441
+Epoch 3/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 4/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 5/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 6/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 7/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 8/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 9/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 10/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+
+Training time: 878.8s (14.6min)
+Best overall_acc: 0.2589, challenge_acc: 0.2441 (epoch 2)
+Confidence: mean=0.2510, std=0.0474, >0.95=0.0%, <0.25=61.4%
+Results saved to /workspace/erase/outputs/plan2/lr_search_v2/pythia-6.9b_lr1e-3/results.json
+Done!
+  pythia-6.9b lr=3e-3
+Model: pythia-6.9b, LR: 0.003, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-6.9b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:   9%|▉         | 36/388 [00:00<00:01, 339.21it/s]Loading weights:  19%|█▊        | 72/388 [00:00<00:01, 281.52it/s]Loading weights:  31%|███       | 120/388 [00:00<00:00, 347.69it/s]Loading weights:  40%|████      | 156/388 [00:00<00:00, 343.43it/s]Loading weights:  53%|█████▎    | 204/388 [00:00<00:00, 370.39it/s]Loading weights:  65%|██████▍   | 252/388 [00:00<00:00, 396.08it/s]Loading weights:  75%|███████▌  | 292/388 [00:00<00:00, 378.89it/s]Loading weights:  87%|████████▋ | 338/388 [00:00<00:00, 394.05it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 388.35it/s]
+LoRA: 16.8M trainable / 6874.1M total (0.2%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 2/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 3/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 4/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 5/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 6/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 7/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 8/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 9/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+Epoch 10/10: loss=nan, overall_acc=0.2555, challenge_acc=0.2140
+
+Training time: 846.6s (14.1min)
+Best overall_acc: 0.2555, challenge_acc: 0.2140 (epoch 1)
+Confidence: mean=nan, std=nan, >0.95=0.0%, <0.25=0.0%
+Results saved to /workspace/erase/outputs/plan2/lr_search_v2/pythia-6.9b_lr3e-3/results.json
+Done!
+  pythia-6.9b lr=5e-5 overall=0.6029919447640967 challenge=0.46488294314381273
+  pythia-6.9b lr=1e-4 overall=0.2807825086306099 challenge=0.28762541806020064
+  pythia-6.9b lr=3e-4 overall=0.2669735327963176 challenge=0.24749163879598662
+  pythia-6.9b lr=1e-3 overall=0.25891829689298046 challenge=0.24414715719063546
+  pythia-6.9b lr=3e-3 overall=0.2554660529344074 challenge=0.2140468227424749
+>>> Best pythia-6.9b LR: 5e-5 (overall_acc=0.6029919447640967)
+--- Phase 2: Confidence (best_lr=5e-5, seeds=1,2,3) ---
+  pythia-6.9b seed=1
+Model: pythia-6.9b, LR: 5e-05, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-6.9b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:   9%|▉         | 36/388 [00:00<00:01, 303.17it/s]Loading weights:  19%|█▉        | 74/388 [00:00<00:00, 344.43it/s]Loading weights:  31%|███       | 120/388 [00:00<00:00, 392.19it/s]Loading weights:  41%|████      | 160/388 [00:00<00:00, 388.07it/s]Loading weights:  52%|█████▏    | 200/388 [00:00<00:00, 384.00it/s]Loading weights:  62%|██████▏   | 239/388 [00:00<00:00, 378.90it/s]Loading weights:  71%|███████▏  | 277/388 [00:00<00:00, 378.98it/s]Loading weights:  83%|████████▎ | 321/388 [00:00<00:00, 397.41it/s]Loading weights:  93%|█████████▎| 361/388 [00:00<00:00, 390.74it/s]Loading weights: 100%|██████████| 388/388 [00:01<00:00, 379.28it/s]
+LoRA: 16.8M trainable / 6874.1M total (0.2%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4132, overall_acc=0.2716, challenge_acc=0.2809
+Epoch 2/10: loss=1.2480, overall_acc=0.5627, challenge_acc=0.3746
+Epoch 3/10: loss=0.9289, overall_acc=0.5961, challenge_acc=0.4314
+Epoch 4/10: loss=0.6457, overall_acc=0.5961, challenge_acc=0.4348
+Epoch 5/10: loss=0.4183, overall_acc=0.5972, challenge_acc=0.4816
+Epoch 6/10: loss=0.2584, overall_acc=0.5949, challenge_acc=0.4582
+Epoch 7/10: loss=0.1269, overall_acc=0.6018, challenge_acc=0.4582
+Epoch 8/10: loss=0.0646, overall_acc=0.6030, challenge_acc=0.4649
+Epoch 9/10: loss=0.0245, overall_acc=0.5972, challenge_acc=0.4816
+Epoch 10/10: loss=0.0125, overall_acc=0.6007, challenge_acc=0.4749
+
+Training time: 1007.1s (16.8min)
+Best overall_acc: 0.6030, challenge_acc: 0.4649 (epoch 8)
+Confidence: mean=0.9946, std=0.0687, >0.95=99.3%, <0.25=0.4%
+Results saved to /workspace/erase/outputs/plan2/confidence/pythia-6.9b_seed1/results.json
+Done!
+  pythia-6.9b seed=2
+Model: pythia-6.9b, LR: 5e-05, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-6.9b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:   5%|▌         | 21/388 [00:00<00:01, 208.14it/s]Loading weights:  19%|█▊        | 72/388 [00:00<00:00, 376.04it/s]Loading weights:  30%|██▉       | 116/388 [00:00<00:00, 392.47it/s]Loading weights:  40%|████      | 156/388 [00:00<00:00, 336.23it/s]Loading weights:  49%|████▉     | 192/388 [00:00<00:00, 342.84it/s]Loading weights:  59%|█████▉    | 230/388 [00:00<00:00, 350.58it/s]Loading weights:  70%|███████   | 272/388 [00:00<00:00, 367.80it/s]Loading weights:  81%|████████  | 314/388 [00:00<00:00, 381.29it/s]Loading weights:  92%|█████████▏| 356/388 [00:00<00:00, 382.96it/s]Loading weights: 100%|██████████| 388/388 [00:01<00:00, 382.55it/s]
+LoRA: 16.8M trainable / 6874.1M total (0.2%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4178, overall_acc=0.2681, challenge_acc=0.2475
+Epoch 2/10: loss=1.4433, overall_acc=0.2532, challenge_acc=0.2609
+Epoch 3/10: loss=1.3991, overall_acc=0.2578, challenge_acc=0.2441
+Epoch 4/10: loss=1.3976, overall_acc=0.2532, challenge_acc=0.2609
+Epoch 5/10: loss=1.3926, overall_acc=0.2301, challenge_acc=0.2441
+Epoch 6/10: loss=1.3894, overall_acc=0.2520, challenge_acc=0.2508
+Epoch 7/10: loss=1.3788, overall_acc=0.2589, challenge_acc=0.2542
+Epoch 8/10: loss=1.3556, overall_acc=0.2831, challenge_acc=0.2943
+Epoch 9/10: loss=1.3146, overall_acc=0.2451, challenge_acc=0.2475
+Epoch 10/10: loss=1.2643, overall_acc=0.2681, challenge_acc=0.2910
+
+Training time: 889.8s (14.8min)
+Best overall_acc: 0.2831, challenge_acc: 0.2943 (epoch 8)
+Confidence: mean=0.2767, std=0.0649, >0.95=0.0%, <0.25=33.9%
+Results saved to /workspace/erase/outputs/plan2/confidence/pythia-6.9b_seed2/results.json
+Done!
+  pythia-6.9b seed=3
+Model: pythia-6.9b, LR: 5e-05, Epochs: 10, Device: cuda:1
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-6.9b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:   6%|▌         | 24/388 [00:00<00:01, 216.06it/s]Loading weights:  19%|█▊        | 72/388 [00:00<00:00, 352.54it/s]Loading weights:  31%|███       | 120/388 [00:00<00:00, 333.90it/s]Loading weights:  40%|████      | 156/388 [00:00<00:00, 342.39it/s]Loading weights:  52%|█████▏    | 200/388 [00:00<00:00, 371.41it/s]Loading weights:  62%|██████▏   | 242/388 [00:00<00:00, 386.31it/s]Loading weights:  73%|███████▎  | 284/388 [00:00<00:00, 394.11it/s]Loading weights:  84%|████████▎ | 324/388 [00:00<00:00, 389.79it/s]Loading weights:  94%|█████████▍| 364/388 [00:00<00:00, 391.43it/s]Loading weights: 100%|██████████| 388/388 [00:01<00:00, 383.53it/s]
+LoRA: 16.8M trainable / 6874.1M total (0.2%)
+ARC label tokens: {'A': 329, 'B': 378, 'C': 330, 'D': 399, 'E': 444}
+Epoch 1/10: loss=1.4148, overall_acc=0.2497, challenge_acc=0.2642
+Epoch 2/10: loss=1.3678, overall_acc=0.4304, challenge_acc=0.3144
+Epoch 3/10: loss=1.1235, overall_acc=0.5777, challenge_acc=0.4348
+Epoch 4/10: loss=0.8438, overall_acc=0.6133, challenge_acc=0.4448
+Epoch 5/10: loss=0.6832, overall_acc=0.5892, challenge_acc=0.4181
+Epoch 6/10: loss=0.5121, overall_acc=0.5938, challenge_acc=0.4281
+Epoch 7/10: loss=0.3382, overall_acc=0.5903, challenge_acc=0.4348
+Epoch 8/10: loss=0.2090, overall_acc=0.5880, challenge_acc=0.4348
+Epoch 9/10: loss=0.1390, overall_acc=0.5800, challenge_acc=0.4281
+Epoch 10/10: loss=0.0935, overall_acc=0.5742, challenge_acc=0.4181
+
+Training time: 945.3s (15.8min)
+Best overall_acc: 0.6133, challenge_acc: 0.4448 (epoch 4)
+Confidence: mean=0.7284, std=0.3141, >0.95=31.9%, <0.25=15.1%
+Results saved to /workspace/erase/outputs/plan2/confidence/pythia-6.9b_seed3/results.json
+Done!
+  seed=1: overall=0.6030, challenge=0.4649, best_epoch=8
+  seed=2: overall=0.2831, challenge=0.2943, best_epoch=8
+  seed=3: overall=0.6133, challenge=0.4448, best_epoch=4
+pythia-6.9b avg: overall=0.4998±0.1533, challenge=0.4013±0.0761
+[ARC] [pythia-6.9b] DONE (Fri Mar 20 12:27:51 UTC 2026)
+GPU 1: ARC Pythia ALL DONE (Fri Mar 20 12:27:51 UTC 2026)

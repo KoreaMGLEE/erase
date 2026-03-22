@@ -1,0 +1,16 @@
+{
+  "model": "bert-mini",
+  "split": "split3",
+  "lr": 0.0001,
+  "seed": 1,
+  "mode": "confidence",
+  "val_acc": 0.6128374936321956,
+  "avg_loss": 0.976526862970988,
+  "training_time_sec": 47.315377950668335,
+  "confidence_stats": {
+    "mean": 0.4797074496746063,
+    "std": 0.19552135467529297,
+    "gt_095_ratio": 0.0,
+    "lt_04_ratio": 0.3757666666666667
+  }
+}

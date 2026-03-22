@@ -1,0 +1,149 @@
+#!/bin/bash
+# ARC Plan 2 - Full pipeline: LR search + Confidence for each model
+# Usage: bash run_arc_full.sh <gpu_id>
+# GPU 0: bert-mini, bert-small, bert-medium, pythia-2.8b
+# GPU 1: bert-base(conf only), bert-large(conf only), pythia-1b(conf only), pythia-1.4b, pythia-6.9b
+
+set -e
+export HF_HOME=~/hf_home
+
+GPU=$1
+BASE=/workspace/erase
+SCRIPT=$BASE/scripts/train_arc_proxy.py
+OUT=$BASE/outputs/plan2
+
+if [ -z "$GPU" ]; then
+    echo "Usage: bash run_arc_full.sh <gpu_id>"
+    exit 1
+fi
+
+declare -A LR_CANDIDATES
+# Small BERT
+LR_CANDIDATES[bert-mini]="3e-5 5e-5 1e-4 3e-4 1e-3"
+LR_CANDIDATES[bert-small]="3e-5 5e-5 1e-4 3e-4 1e-3"
+LR_CANDIDATES[bert-medium]="3e-5 5e-5 1e-4 3e-4 1e-3"
+# LoRA Pythia
+LR_CANDIDATES[pythia-1.4b]="5e-5 1e-4 3e-4 1e-3 3e-3"
+LR_CANDIDATES[pythia-2.8b]="5e-5 1e-4 3e-4 1e-3 3e-3"
+LR_CANDIDATES[pythia-6.9b]="5e-5 1e-4 3e-4 1e-3 3e-3"
+
+# Already known best LRs from feasibility
+declare -A KNOWN_BEST_LR
+KNOWN_BEST_LR[bert-base]="3e-5"
+KNOWN_BEST_LR[bert-large]="1e-5"
+KNOWN_BEST_LR[pythia-1b]="5e-5"
+
+needs_bf16() {
+    case $1 in
+        pythia-2.8b|pythia-6.9b) echo "--bf16" ;;
+        *) echo "" ;;
+    esac
+}
+
+get_batch_size() {
+    case $1 in
+        pythia-6.9b) echo "4" ;;
+        *) echo "8" ;;
+    esac
+}
+
+# GPU assignments
+if [ "$GPU" = "0" ]; then
+    MODELS="bert-mini bert-small bert-medium pythia-2.8b"
+elif [ "$GPU" = "1" ]; then
+    MODELS="bert-base bert-large pythia-1b pythia-1.4b pythia-6.9b"
+else
+    echo "GPU must be 0 or 1"; exit 1
+fi
+
+run_model() {
+    local model=$1
+    local BF16=$(needs_bf16 $model)
+    local BS=$(get_batch_size $model)
+
+    echo ""
+    echo "============================================"
+    echo "[ARC] [$model] Starting on GPU $GPU ($(date))"
+    echo "============================================"
+
+    # Phase 1: LR Search (skip if already known)
+    BEST_LR=${KNOWN_BEST_LR[$model]:-""}
+    if [ -n "$BEST_LR" ]; then
+        echo "--- Phase 1: SKIP (known best_lr=$BEST_LR) ---"
+    else
+        echo "--- Phase 1: LR Search ---"
+        for lr in ${LR_CANDIDATES[$model]}; do
+            echo "  $model lr=$lr"
+            python3 $SCRIPT \
+                --model $model --lr $lr \
+                --epochs 10 --batch_size $BS --seed 1 --gpu $GPU \
+                $BF16 \
+                --output_dir $OUT/lr_search/${model}_lr${lr}
+        done
+
+        # Find best LR by overall_acc
+        BEST_LR=""
+        BEST_ACC=0
+        for lr in ${LR_CANDIDATES[$model]}; do
+            acc=$(python3 -c "import json; d=json.load(open('$OUT/lr_search/${model}_lr${lr}/results.json')); print(d['best_overall_acc'])")
+            challenge=$(python3 -c "import json; d=json.load(open('$OUT/lr_search/${model}_lr${lr}/results.json')); print(d['best_challenge_acc'])")
+            echo "  $model lr=$lr overall=$acc challenge=$challenge"
+            better=$(python3 -c "print(1 if $acc > $BEST_ACC else 0)")
+            if [ "$better" = "1" ]; then
+                BEST_ACC=$acc
+                BEST_LR=$lr
+            fi
+        done
+        echo ">>> Best $model LR: $BEST_LR (overall_acc=$BEST_ACC)"
+    fi
+
+    # Phase 2: Confidence (3 seeds)
+    echo "--- Phase 2: Confidence (best_lr=$BEST_LR, seeds=1,2,3) ---"
+    for seed in 1 2 3; do
+        echo "  $model seed=$seed"
+        python3 $SCRIPT \
+            --model $model --lr $BEST_LR \
+            --epochs 10 --batch_size $BS --seed $seed --gpu $GPU \
+            $BF16 \
+            --output_dir $OUT/confidence/${model}_seed${seed}
+    done
+
+    # Aggregate confidence across seeds
+    python3 -c "
+import json, numpy as np, os
+
+model = '$model'
+OUT = '$OUT'
+seed_results = []
+for seed in [1, 2, 3]:
+    path = f'{OUT}/confidence/{model}_seed{seed}/results.json'
+    with open(path) as f:
+        d = json.load(f)
+    seed_results.append(d)
+    best_ep = d['best_epoch']
+    print(f'  seed={seed}: overall={d[\"best_overall_acc\"]:.4f}, challenge={d[\"best_challenge_acc\"]:.4f}, best_epoch={best_ep}')
+
+# Average best accuracies across seeds
+avg_overall = np.mean([d['best_overall_acc'] for d in seed_results])
+avg_challenge = np.mean([d['best_challenge_acc'] for d in seed_results])
+std_overall = np.std([d['best_overall_acc'] for d in seed_results])
+std_challenge = np.std([d['best_challenge_acc'] for d in seed_results])
+print(f'{model} avg: overall={avg_overall:.4f}±{std_overall:.4f}, challenge={avg_challenge:.4f}±{std_challenge:.4f}')
+"
+
+    echo "[ARC] [$model] DONE ($(date))"
+}
+
+echo "============================================"
+echo "GPU $GPU: ARC Full Pipeline"
+echo "Models: $MODELS"
+echo "Start: $(date)"
+echo "============================================"
+
+for model in $MODELS; do
+    run_model $model
+done
+
+echo "============================================"
+echo "GPU $GPU: ARC ALL DONE ($(date))"
+echo "============================================"

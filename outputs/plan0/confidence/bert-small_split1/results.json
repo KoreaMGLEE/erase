@@ -1,0 +1,16 @@
+{
+  "model": "bert-small",
+  "split": "split1",
+  "lr": 0.0001,
+  "seed": 1,
+  "mode": "confidence",
+  "val_acc": 0.6569536423841059,
+  "avg_loss": 0.894871491018931,
+  "training_time_sec": 50.052741050720215,
+  "confidence_stats": {
+    "mean": 0.5719221234321594,
+    "std": 0.24284422397613525,
+    "gt_095_ratio": 0.0,
+    "lt_04_ratio": 0.2723333333333333
+  }
+}

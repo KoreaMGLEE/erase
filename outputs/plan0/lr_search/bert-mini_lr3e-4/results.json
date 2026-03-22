@@ -1,0 +1,10 @@
+{
+  "model": "bert-mini",
+  "split": "split1",
+  "lr": 0.0003,
+  "seed": 1,
+  "mode": "lr_search",
+  "val_acc": 0.4998471726948548,
+  "avg_loss": 1.0426288572629292,
+  "training_time_sec": 30.09683632850647
+}

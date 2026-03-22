@@ -1,0 +1,16 @@
+{
+  "model": "bert-large",
+  "split": "split2",
+  "lr": 3e-05,
+  "seed": 1,
+  "mode": "confidence",
+  "val_acc": 0.7988792664289353,
+  "avg_loss": 0.658757087624073,
+  "training_time_sec": 301.5892651081085,
+  "confidence_stats": {
+    "mean": 0.7685078382492065,
+    "std": 0.24350903928279877,
+    "gt_095_ratio": 0.24376666666666666,
+    "lt_04_ratio": 0.1117
+  }
+}

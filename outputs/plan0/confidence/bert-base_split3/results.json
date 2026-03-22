@@ -1,0 +1,16 @@
+{
+  "model": "bert-base",
+  "split": "split3",
+  "lr": 5e-05,
+  "seed": 1,
+  "mode": "confidence",
+  "val_acc": 0.7583290881304127,
+  "avg_loss": 0.7394874058326085,
+  "training_time_sec": 127.79546809196472,
+  "confidence_stats": {
+    "mean": 0.696636974811554,
+    "std": 0.25063371658325195,
+    "gt_095_ratio": 0.0988,
+    "lt_04_ratio": 0.15566666666666668
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "model": "pythia-2.8b",
+  "split": "split3",
+  "lr": 0.0003,
+  "seed": 1,
+  "mode": "confidence",
+  "val_acc": 0.8436067244014264,
+  "avg_loss": 0.5668466004388096,
+  "training_time_sec": 1404.5001139640808,
+  "confidence_stats": {
+    "mean": 0.8037033677101135,
+    "std": 0.2540595531463623,
+    "gt_095_ratio": 0.431,
+    "lt_04_ratio": 0.1042
+  }
+}

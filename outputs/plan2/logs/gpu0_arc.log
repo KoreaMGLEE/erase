@@ -1,0 +1,337 @@
+
+============================================
+[ARC] [bert-base] Starting on GPU 0 (Fri Mar 20 00:42:50 UTC 2026)
+============================================
+  bert-base lr=1e-5
+Model: bert-base, LR: 1e-05, Epochs: 10, Device: cuda:0
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating train split:   0%|          | 0/2251 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 2251/2251 [00:00<00:00, 295079.96 examples/s]
+Generating test split:   0%|          | 0/2376 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 2376/2376 [00:00<00:00, 549526.68 examples/s]
+Generating validation split:   0%|          | 0/570 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 570/570 [00:00<00:00, 243383.21 examples/s]
+Generating train split:   0%|          | 0/1119 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 1119/1119 [00:00<00:00, 233573.51 examples/s]
+Generating test split:   0%|          | 0/1172 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1172/1172 [00:00<00:00, 238026.55 examples/s]
+Generating validation split:   0%|          | 0/299 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 299/299 [00:00<00:00, 122626.08 examples/s]
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model bert-base...
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5187.39it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Epoch 1/10: loss=1.4567, overall_acc=0.4327, challenge_acc=0.3211
+Epoch 2/10: loss=1.2269, overall_acc=0.4430, challenge_acc=0.3110
+Epoch 3/10: loss=1.0082, overall_acc=0.4684, challenge_acc=0.3813
+Epoch 4/10: loss=0.7768, overall_acc=0.4649, challenge_acc=0.3612
+Epoch 5/10: loss=0.6115, overall_acc=0.4580, challenge_acc=0.3746
+Epoch 6/10: loss=0.4660, overall_acc=0.4591, challenge_acc=0.3679
+Epoch 7/10: loss=0.3764, overall_acc=0.4568, challenge_acc=0.3813
+Epoch 8/10: loss=0.3061, overall_acc=0.4684, challenge_acc=0.3779
+Epoch 9/10: loss=0.2732, overall_acc=0.4591, challenge_acc=0.3813
+Epoch 10/10: loss=0.2469, overall_acc=0.4603, challenge_acc=0.3846
+
+Training time: 346.2s (5.8min)
+Best challenge_acc: 0.3846 (epoch 10)
+Results saved to /workspace/erase/outputs/plan2/lr_search/bert-base_lr1e-5/results.json
+Done!
+  bert-base lr=2e-5
+Model: bert-base, LR: 2e-05, Epochs: 10, Device: cuda:0
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model bert-base...
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6749.20it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Epoch 1/10: loss=1.4277, overall_acc=0.4281, challenge_acc=0.2977
+Epoch 2/10: loss=1.1438, overall_acc=0.4753, challenge_acc=0.3512
+Epoch 3/10: loss=0.7709, overall_acc=0.4603, challenge_acc=0.3512
+Epoch 4/10: loss=0.4779, overall_acc=0.4568, challenge_acc=0.3478
+Epoch 5/10: loss=0.2892, overall_acc=0.4568, challenge_acc=0.3612
+Epoch 6/10: loss=0.1858, overall_acc=0.4603, challenge_acc=0.3579
+Epoch 7/10: loss=0.1157, overall_acc=0.4787, challenge_acc=0.3612
+Epoch 8/10: loss=0.0913, overall_acc=0.4891, challenge_acc=0.3746
+Epoch 9/10: loss=0.0720, overall_acc=0.4741, challenge_acc=0.3679
+Epoch 10/10: loss=0.0659, overall_acc=0.4810, challenge_acc=0.3746
+
+Training time: 579.1s (9.7min)
+Best challenge_acc: 0.3746 (epoch 8)
+Results saved to /workspace/erase/outputs/plan2/lr_search/bert-base_lr2e-5/results.json
+Done!
+  bert-base lr=3e-5
+Model: bert-base, LR: 3e-05, Epochs: 10, Device: cuda:0
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model bert-base...
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7646.13it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Epoch 1/10: loss=1.4104, overall_acc=0.4384, challenge_acc=0.3478
+Epoch 2/10: loss=1.0707, overall_acc=0.4684, challenge_acc=0.3478
+Epoch 3/10: loss=0.6059, overall_acc=0.4603, challenge_acc=0.3411
+Epoch 4/10: loss=0.2872, overall_acc=0.4891, challenge_acc=0.3712
+Epoch 5/10: loss=0.1570, overall_acc=0.4787, challenge_acc=0.3813
+Epoch 6/10: loss=0.1025, overall_acc=0.4822, challenge_acc=0.3779
+Epoch 7/10: loss=0.0514, overall_acc=0.4822, challenge_acc=0.4013
+Epoch 8/10: loss=0.0442, overall_acc=0.4776, challenge_acc=0.4013
+Epoch 9/10: loss=0.0234, overall_acc=0.4799, challenge_acc=0.3946
+Epoch 10/10: loss=0.0266, overall_acc=0.4741, challenge_acc=0.3779
+
+Training time: 631.0s (10.5min)
+Best challenge_acc: 0.4013 (epoch 7)
+Results saved to /workspace/erase/outputs/plan2/lr_search/bert-base_lr3e-5/results.json
+Done!
+  bert-base lr=5e-5
+Model: bert-base, LR: 5e-05, Epochs: 10, Device: cuda:0
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model bert-base...
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6141.95it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Epoch 1/10: loss=1.4047, overall_acc=0.4557, challenge_acc=0.3311
+Epoch 2/10: loss=1.0620, overall_acc=0.4925, challenge_acc=0.3880
+Epoch 3/10: loss=0.5379, overall_acc=0.4948, challenge_acc=0.3445
+Epoch 4/10: loss=0.2641, overall_acc=0.5017, challenge_acc=0.3746
+Epoch 5/10: loss=0.1595, overall_acc=0.4914, challenge_acc=0.3679
+Epoch 6/10: loss=0.0762, overall_acc=0.4879, challenge_acc=0.3645
+Epoch 7/10: loss=0.0434, overall_acc=0.4937, challenge_acc=0.3512
+Epoch 8/10: loss=0.0244, overall_acc=0.4937, challenge_acc=0.3612
+Epoch 9/10: loss=0.0091, overall_acc=0.4902, challenge_acc=0.3411
+Epoch 10/10: loss=0.0066, overall_acc=0.4925, challenge_acc=0.3411
+
+Training time: 559.1s (9.3min)
+Best challenge_acc: 0.3880 (epoch 2)
+Results saved to /workspace/erase/outputs/plan2/lr_search/bert-base_lr5e-5/results.json
+Done!
+  bert-base lr=1e-4
+Model: bert-base, LR: 0.0001, Epochs: 10, Device: cuda:0
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model bert-base...
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6822.01it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+Epoch 1/10: loss=1.4270, overall_acc=0.3211, challenge_acc=0.3211
+Epoch 2/10: loss=1.2744, overall_acc=0.3993, challenge_acc=0.2977
+Epoch 3/10: loss=0.7671, overall_acc=0.4338, challenge_acc=0.3177
+Epoch 4/10: loss=0.3241, overall_acc=0.4407, challenge_acc=0.3077
+Epoch 5/10: loss=0.1712, overall_acc=0.4522, challenge_acc=0.3244
+Epoch 6/10: loss=0.1011, overall_acc=0.4430, challenge_acc=0.3177
+Epoch 7/10: loss=0.0475, overall_acc=0.4373, challenge_acc=0.3177
+Epoch 8/10: loss=0.0301, overall_acc=0.4545, challenge_acc=0.3110
+Epoch 9/10: loss=0.0184, overall_acc=0.4499, challenge_acc=0.3077
+Epoch 10/10: loss=0.0132, overall_acc=0.4522, challenge_acc=0.3177
+
+Training time: 629.5s (10.5min)
+Best challenge_acc: 0.3244 (epoch 5)
+Results saved to /workspace/erase/outputs/plan2/lr_search/bert-base_lr1e-4/results.json
+Done!
+  bert-base lr=1e-5 challenge_acc=0.38461538461538464 overall_acc=0.46029919447640966 (best_epoch=10)
+  bert-base lr=2e-5 challenge_acc=0.3745819397993311 overall_acc=0.4890678941311853 (best_epoch=8)
+  bert-base lr=3e-5 challenge_acc=0.4013377926421405 overall_acc=0.48216340621403914 (best_epoch=7)
+  bert-base lr=5e-5 challenge_acc=0.3879598662207358 overall_acc=0.49252013808975836 (best_epoch=2)
+  bert-base lr=1e-4 challenge_acc=0.32441471571906355 overall_acc=0.4522439585730725 (best_epoch=5)
+>>> Best bert-base LR: 3e-5 (challenge_acc=0.4013377926421405)
+[ARC] [bert-base] DONE (Fri Mar 20 01:29:58 UTC 2026)
+
+============================================
+[ARC] [pythia-410m] Starting on GPU 0 (Fri Mar 20 01:29:58 UTC 2026)
+============================================
+  pythia-410m lr=1e-5
+Model: pythia-410m, LR: 1e-05, Epochs: 10, Device: cuda:0
+Loading ARC dataset...
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-410m...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  75%|███████▍  | 218/292 [00:00<00:00, 2178.21it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 2384.11it/s]
+Epoch 1/10: loss=3.1567, overall_acc=0.3682, challenge_acc=0.2609
+Epoch 2/10: loss=1.8123, overall_acc=0.3728, challenge_acc=0.2709
+Epoch 3/10: loss=0.7477, overall_acc=0.3625, challenge_acc=0.2575
+Epoch 4/10: loss=0.2764, overall_acc=0.3809, challenge_acc=0.2943
+Epoch 5/10: loss=0.0998, overall_acc=0.3544, challenge_acc=0.2809
+Epoch 6/10: loss=0.0491, overall_acc=0.3636, challenge_acc=0.2709
+Epoch 7/10: loss=0.0252, overall_acc=0.3544, challenge_acc=0.2676
+Epoch 8/10: loss=0.0141, overall_acc=0.3625, challenge_acc=0.2742
+Epoch 9/10: loss=0.0078, overall_acc=0.3567, challenge_acc=0.2676
+Epoch 10/10: loss=0.0042, overall_acc=0.3533, challenge_acc=0.2676
+
+Training time: 2728.5s (45.5min)
+Best challenge_acc: 0.2943 (epoch 4)
+Results saved to /workspace/erase/outputs/plan2/lr_search/pythia-410m_lr1e-5/results.json
+Done!
+  pythia-410m lr=2e-5
+Model: pythia-410m, LR: 2e-05, Epochs: 10, Device: cuda:0
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-410m...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  85%|████████▍ | 247/292 [00:00<00:00, 2462.36it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 2548.25it/s]
+Epoch 1/10: loss=3.3270, overall_acc=0.3337, challenge_acc=0.2207
+Epoch 2/10: loss=1.8986, overall_acc=0.3475, challenge_acc=0.2809
+Epoch 3/10: loss=0.7803, overall_acc=0.3590, challenge_acc=0.2609
+Epoch 4/10: loss=0.3292, overall_acc=0.3418, challenge_acc=0.2508
+Epoch 5/10: loss=0.1488, overall_acc=0.3521, challenge_acc=0.2709
+Epoch 6/10: loss=0.0744, overall_acc=0.3533, challenge_acc=0.2609
+Epoch 7/10: loss=0.0380, overall_acc=0.3590, challenge_acc=0.2709
+Epoch 8/10: loss=0.0187, overall_acc=0.3636, challenge_acc=0.2709
+Epoch 9/10: loss=0.0084, overall_acc=0.3556, challenge_acc=0.2676
+Epoch 10/10: loss=0.0044, overall_acc=0.3556, challenge_acc=0.2742
+
+Training time: 2711.0s (45.2min)
+Best challenge_acc: 0.2809 (epoch 2)
+Results saved to /workspace/erase/outputs/plan2/lr_search/pythia-410m_lr2e-5/results.json
+Done!
+  pythia-410m lr=3e-5
+Model: pythia-410m, LR: 3e-05, Epochs: 10, Device: cuda:0
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-410m...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  73%|███████▎  | 212/292 [00:00<00:00, 2112.32it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 2385.01it/s]
+Epoch 1/10: loss=3.5190, overall_acc=0.3257, challenge_acc=0.2475
+Epoch 2/10: loss=2.1442, overall_acc=0.3268, challenge_acc=0.2676
+Epoch 3/10: loss=0.9288, overall_acc=0.3326, challenge_acc=0.2475
+Epoch 4/10: loss=0.4118, overall_acc=0.3452, challenge_acc=0.2642
+Epoch 5/10: loss=0.1999, overall_acc=0.3337, challenge_acc=0.2475
+Epoch 6/10: loss=0.1132, overall_acc=0.3326, challenge_acc=0.2575
+Epoch 7/10: loss=0.0555, overall_acc=0.3303, challenge_acc=0.2542
+Epoch 8/10: loss=0.0281, overall_acc=0.3199, challenge_acc=0.2408
+Epoch 9/10: loss=0.0110, overall_acc=0.3234, challenge_acc=0.2542
+Epoch 10/10: loss=0.0049, overall_acc=0.3245, challenge_acc=0.2475
+
+Training time: 2798.8s (46.6min)
+Best challenge_acc: 0.2676 (epoch 2)
+Results saved to /workspace/erase/outputs/plan2/lr_search/pythia-410m_lr3e-5/results.json
+Done!
+  pythia-410m lr=5e-5
+Model: pythia-410m, LR: 5e-05, Epochs: 10, Device: cuda:0
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-410m...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  95%|█████████▍| 276/292 [00:00<00:00, 2714.87it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 2798.10it/s]
+Epoch 1/10: loss=3.8207, overall_acc=0.3314, challenge_acc=0.2676
+Epoch 2/10: loss=2.5187, overall_acc=0.3383, challenge_acc=0.2676
+Epoch 3/10: loss=1.2493, overall_acc=0.3498, challenge_acc=0.2977
+Epoch 4/10: loss=0.6228, overall_acc=0.3291, challenge_acc=0.2375
+Epoch 5/10: loss=0.3137, overall_acc=0.3211, challenge_acc=0.2375
+Epoch 6/10: loss=0.1801, overall_acc=0.3418, challenge_acc=0.2676
+Epoch 7/10: loss=0.0969, overall_acc=0.3314, challenge_acc=0.2542
+Epoch 8/10: loss=0.0523, overall_acc=0.3211, challenge_acc=0.2375
+Epoch 9/10: loss=0.0230, overall_acc=0.3199, challenge_acc=0.2441
+Epoch 10/10: loss=0.0062, overall_acc=0.3222, challenge_acc=0.2508
+
+Training time: 2832.2s (47.2min)
+Best challenge_acc: 0.2977 (epoch 3)
+Results saved to /workspace/erase/outputs/plan2/lr_search/pythia-410m_lr5e-5/results.json
+Done!
+  pythia-410m lr=1e-4
+Model: pythia-410m, LR: 0.0001, Epochs: 10, Device: cuda:0
+Loading ARC dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading model pythia-410m...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  70%|██████▉   | 204/292 [00:00<00:00, 2034.33it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 2231.29it/s]
+Epoch 1/10: loss=4.5168, overall_acc=0.3061, challenge_acc=0.2709
+Epoch 2/10: loss=3.4094, overall_acc=0.3084, challenge_acc=0.2542
+Epoch 3/10: loss=1.8933, overall_acc=0.3234, challenge_acc=0.2542
+Epoch 4/10: loss=1.1378, overall_acc=0.3096, challenge_acc=0.2341
+Epoch 5/10: loss=0.7276, overall_acc=0.3119, challenge_acc=0.2676
+Epoch 6/10: loss=0.4095, overall_acc=0.3188, challenge_acc=0.2375
+Epoch 7/10: loss=0.2277, overall_acc=0.3245, challenge_acc=0.2609
+Epoch 8/10: loss=0.1151, overall_acc=0.3234, challenge_acc=0.2542
+Epoch 9/10: loss=0.0557, overall_acc=0.3257, challenge_acc=0.2642
+Epoch 10/10: loss=0.0156, overall_acc=0.3199, challenge_acc=0.2508
+
+Training time: 2647.1s (44.1min)
+Best challenge_acc: 0.2709 (epoch 1)
+Results saved to /workspace/erase/outputs/plan2/lr_search/pythia-410m_lr1e-4/results.json
+Done!
+  pythia-410m lr=1e-5 challenge_acc=0.29431438127090304 overall_acc=0.380897583429229 (best_epoch=4)
+  pythia-410m lr=2e-5 challenge_acc=0.2809364548494983 overall_acc=0.3475258918296893 (best_epoch=2)
+  pythia-410m lr=3e-5 challenge_acc=0.26755852842809363 overall_acc=0.32681242807825084 (best_epoch=2)
+  pythia-410m lr=5e-5 challenge_acc=0.2976588628762542 overall_acc=0.34982738780207134 (best_epoch=3)
+  pythia-410m lr=1e-4 challenge_acc=0.2709030100334448 overall_acc=0.30609896432681244 (best_epoch=1)
+>>> Best pythia-410m LR: 5e-5 (challenge_acc=0.2976588628762542)
+[ARC] [pythia-410m] DONE (Fri Mar 20 05:19:36 UTC 2026)
+
+============================================
+GPU 0: ARC ALL DONE (Fri Mar 20 05:19:36 UTC 2026)
+============================================

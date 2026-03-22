@@ -1,0 +1,10 @@
+{
+  "model": "pythia-6.9b",
+  "split": "split1",
+  "lr": 5e-05,
+  "seed": 1,
+  "mode": "lr_search",
+  "val_acc": 0.8462557310239429,
+  "avg_loss": 0.5354578618040463,
+  "training_time_sec": 1428.1726577281952
+}

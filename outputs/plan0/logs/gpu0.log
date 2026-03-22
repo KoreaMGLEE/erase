@@ -1,0 +1,328 @@
+============================================
+GPU 0: Starting models: pythia-70m bert-small pythia-1b pythia-410m pythia-2.8b
+Start time: Thu Mar 19 16:40:05 UTC 2026
+============================================
+
+============================================
+[pythia-70m] Starting on GPU 0 (Thu Mar 19 16:40:05 UTC 2026)
+============================================
+--- Phase 1: LR Search ---
+  pythia-70m lr=3e-5
+Model: pythia-70m, Split: split1, LR: 3e-05, Device: cuda:0, Mode: lr_search
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model pythia-70m...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 1882.65it/s]
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.7919
+  Step 400, loss=0.7579
+  Step 600, loss=0.8752
+  Step 800, loss=0.8676
+  Step 1000, loss=0.5532
+  Step 1200, loss=0.4271
+  Step 1400, loss=0.7776
+  Step 1600, loss=0.5568
+  Step 1800, loss=0.5036
+Epoch 1 avg loss: 0.8099
+Epoch 1 val accuracy: 0.6412
+
+Training time: 55.4s (0.9min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/pythia-70m_lr3e-5/results.json
+Done!
+  pythia-70m lr=5e-5
+Model: pythia-70m, Split: split1, LR: 5e-05, Device: cuda:0, Mode: lr_search
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model pythia-70m...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 1687.45it/s]
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.9351
+  Step 400, loss=0.8449
+  Step 600, loss=0.7619
+  Step 800, loss=0.9928
+  Step 1000, loss=0.5496
+  Step 1200, loss=0.4340
+  Step 1400, loss=0.7810
+  Step 1600, loss=0.4126
+  Step 1800, loss=0.4822
+Epoch 1 avg loss: 0.8202
+Epoch 1 val accuracy: 0.6283
+
+Training time: 56.5s (0.9min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/pythia-70m_lr5e-5/results.json
+Done!
+  pythia-70m lr=1e-4
+Model: pythia-70m, Split: split1, LR: 0.0001, Device: cuda:0, Mode: lr_search
+Loading MNLI dataset...
+Split split1: 30000 examples
+Loading model pythia-70m...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 1757.00it/s]
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.8422
+  Step 400, loss=0.9556
+  Step 600, loss=0.8357
+  Step 800, loss=0.8462
+  Step 1000, loss=0.8648
+  Step 1200, loss=0.5853
+  Step 1400, loss=0.9167
+  Step 1600, loss=0.5636
+  Step 1800, loss=0.6444
+Epoch 1 avg loss: 0.8576
+Epoch 1 val accuracy: 0.6184
+
+Training time: 54.4s (0.9min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/pythia-70m_lr1e-4/results.json
+Done!
+  pythia-70m lr=3e-4
+Model: pythia-70m, Split: split1, LR: 0.0003, Device: cuda:0, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model pythia-70m...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 1628.96it/s]
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.0380
+  Step 400, loss=0.8003
+  Step 600, loss=0.8778
+  Step 800, loss=1.0574
+  Step 1000, loss=0.7696
+  Step 1200, loss=0.9751
+  Step 1400, loss=1.1765
+  Step 1600, loss=0.6137
+  Step 1800, loss=0.7056
+Epoch 1 avg loss: 0.9693
+Epoch 1 val accuracy: 0.5640
+
+Training time: 54.6s (0.9min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/pythia-70m_lr3e-4/results.json
+Done!
+  pythia-70m lr=1e-3
+Model: pythia-70m, Split: split1, LR: 0.001, Device: cuda:0, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model pythia-70m...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 1374.96it/s]
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+
+=== Epoch 1/1 ===
+  Step 200, loss=3.1208
+  Step 400, loss=1.1468
+  Step 600, loss=0.8797
+  Step 800, loss=1.7055
+  Step 1000, loss=1.0632
+  Step 1200, loss=0.9257
+  Step 1400, loss=1.2708
+  Step 1600, loss=1.0222
+  Step 1800, loss=0.7463
+Epoch 1 avg loss: 1.2683
+Epoch 1 val accuracy: 0.4378
+
+Training time: 54.5s (0.9min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/pythia-70m_lr1e-3/results.json
+Done!
+  pythia-70m lr=3e-5 val_acc=0.6411614875191034
+  pythia-70m lr=5e-5 val_acc=0.6283239938869077
+  pythia-70m lr=1e-4 val_acc=0.6184411614875192
+  pythia-70m lr=3e-4 val_acc=0.5640346408558329
+  pythia-70m lr=1e-3 val_acc=0.43779928680590935
+>>> Best pythia-70m LR: 3e-5 (val_acc=0.6411614875191034)
+--- Phase 2: Confidence (best_lr=3e-5) ---
+  pythia-70m split1
+Model: pythia-70m, Split: split1, LR: 3e-05, Device: cuda:0, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model pythia-70m...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 1563.04it/s]
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.7919
+  Step 400, loss=0.7579
+  Step 600, loss=0.8752
+  Measuring confidence at step 625...
+  Step 800, loss=0.8676
+  Step 1000, loss=0.5532
+  Step 1200, loss=0.4271
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.7776
+  Step 1600, loss=0.5568
+  Step 1800, loss=0.5036
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.8099
+Epoch 1 val accuracy: 0.6412
+
+Training time: 86.5s (1.4min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split1/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split1/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split1/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split1/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/pythia-70m_split1/results.json
+Done!
+  pythia-70m split2
+Model: pythia-70m, Split: split2, LR: 3e-05, Device: cuda:0, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split2: 30000 examples
+Loading model pythia-70m...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 1468.86it/s]
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.1810
+  Step 400, loss=0.8741
+  Step 600, loss=0.6699
+  Measuring confidence at step 625...
+  Step 800, loss=0.5893
+  Step 1000, loss=0.7026
+  Step 1200, loss=1.0331
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.7347
+  Step 1600, loss=0.4550
+  Step 1800, loss=0.7351
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.7965
+Epoch 1 val accuracy: 0.6498
+
+Training time: 86.0s (1.4min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split2/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split2/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split2/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split2/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/pythia-70m_split2/results.json
+Done!
+  pythia-70m split3
+Model: pythia-70m, Split: split3, LR: 3e-05, Device: cuda:0, Mode: confidence
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split3: 30000 examples
+Loading model pythia-70m...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 1571.34it/s]
+Pythia label tokens: {'first': {'entailment': 46518, 'neutral': 9238, 'contradiction': 20620}, 'full': {'entailment': [46518, 420], 'neutral': [9238], 'contradiction': [20620]}}
+Confidence checkpoints at steps: [625, 1250, 1875]
+
+=== Epoch 1/1 ===
+  Step 200, loss=0.8017
+  Step 400, loss=0.7176
+  Step 600, loss=0.7400
+  Measuring confidence at step 625...
+  Step 800, loss=0.6538
+  Step 1000, loss=0.9170
+  Step 1200, loss=0.9062
+  Measuring confidence at step 1250...
+  Step 1400, loss=0.7227
+  Step 1600, loss=0.6408
+  Step 1800, loss=0.5959
+  Measuring confidence at step 1875...
+Epoch 1 avg loss: 0.8097
+Epoch 1 val accuracy: 0.6320
+
+Training time: 85.6s (1.4min)
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split3/ckpt_step625_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split3/ckpt_step1250_conf.json
+Saved checkpoint confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split3/ckpt_step1875_conf.json
+Saved average confidence: /workspace/erase/outputs/plan0/confidence/pythia-70m_split3/avg_conf.json
+Results saved to /workspace/erase/outputs/plan0/confidence/pythia-70m_split3/results.json
+Done!
+pythia-70m 90K: mean=0.5457, std=0.2440, >0.95=1.6%, <0.40=31.2%
+[pythia-70m] DONE (Thu Mar 19 16:50:49 UTC 2026)
+
+
+============================================
+[bert-small] Starting on GPU 0 (Thu Mar 19 16:50:49 UTC 2026)
+============================================
+--- Phase 1: LR Search ---
+  bert-small lr=3e-5
+Model: bert-small, Split: split1, LR: 3e-05, Device: cuda:0, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-small...
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 37815.31it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-small
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+  Step 200, loss=1.2204
+  Step 400, loss=0.9893
+  Step 600, loss=1.0165
+  Step 800, loss=0.8074
+  Step 1000, loss=1.0598
+  Step 1200, loss=0.8332
+  Step 1400, loss=0.7607
+  Step 1600, loss=0.6598
+  Step 1800, loss=0.9112
+Epoch 1 avg loss: 0.8970
+Epoch 1 val accuracy: 0.6400
+
+Training time: 33.0s (0.6min)
+Results saved to /workspace/erase/outputs/plan0/lr_search/bert-small_lr3e-5/results.json
+Done!
+  bert-small lr=5e-5
+Model: bert-small, Split: split1, LR: 5e-05, Device: cuda:0, Mode: lr_search
+Loading MNLI dataset...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Split split1: 30000 examples
+Loading model bert-small...
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 36307.68it/s]
+[1mBertForSequenceClassification LOAD REPORT[0m from: prajjwal1/bert-small
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+
+=== Epoch 1/1 ===
+Terminated

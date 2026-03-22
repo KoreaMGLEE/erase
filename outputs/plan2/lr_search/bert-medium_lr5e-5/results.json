@@ -1,0 +1,72 @@
+{
+  "model": "bert-medium",
+  "lr": 5e-05,
+  "seed": 1,
+  "epochs": 10,
+  "best_epoch": 8,
+  "best_challenge_acc": 0.35451505016722407,
+  "best_overall_acc": 0.43843498273878023,
+  "training_time_sec": 185.4199206829071,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "avg_loss": 1.4258002322431989,
+      "overall_acc": 0.3486766398158803,
+      "challenge_acc": 0.2909698996655518
+    },
+    {
+      "epoch": 2,
+      "avg_loss": 1.1993082894533167,
+      "overall_acc": 0.4039125431530495,
+      "challenge_acc": 0.3076923076923077
+    },
+    {
+      "epoch": 3,
+      "avg_loss": 0.8267901841709964,
+      "overall_acc": 0.4154200230149597,
+      "challenge_acc": 0.3411371237458194
+    },
+    {
+      "epoch": 4,
+      "avg_loss": 0.5100350849489323,
+      "overall_acc": 0.42117376294591485,
+      "challenge_acc": 0.3511705685618729
+    },
+    {
+      "epoch": 5,
+      "avg_loss": 0.32066236947022014,
+      "overall_acc": 0.4050632911392405,
+      "challenge_acc": 0.34782608695652173
+    },
+    {
+      "epoch": 6,
+      "avg_loss": 0.21012380204074663,
+      "overall_acc": 0.42002301495972383,
+      "challenge_acc": 0.34448160535117056
+    },
+    {
+      "epoch": 7,
+      "avg_loss": 0.14554390653905994,
+      "overall_acc": 0.42117376294591485,
+      "challenge_acc": 0.3377926421404682
+    },
+    {
+      "epoch": 8,
+      "avg_loss": 0.10545794264432314,
+      "overall_acc": 0.43843498273878023,
+      "challenge_acc": 0.35451505016722407
+    },
+    {
+      "epoch": 9,
+      "avg_loss": 0.0719053667311812,
+      "overall_acc": 0.41657077100115075,
+      "challenge_acc": 0.3311036789297659
+    },
+    {
+      "epoch": 10,
+      "avg_loss": 0.06171095233674273,
+      "overall_acc": 0.42002301495972383,
+      "challenge_acc": 0.3377926421404682
+    }
+  ]
+}
