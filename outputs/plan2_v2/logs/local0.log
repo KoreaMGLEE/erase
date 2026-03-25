@@ -1,0 +1,304 @@
+
+============================================
+[ARC] [pythia-6.9b] Starting (GPU 0) Tue Mar 24 14:07:31 UTC 2026
+============================================
+--- LR Search ---
+  pythia-6.9b lr=5e-5
+Model: pythia-6.9b, LR: 5e-05, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [02:06<02:06, 127.00s/it]Fetching 2 files: 100%|██████████| 2/2 [02:06<00:00, 63.50s/it] 
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.11s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.39it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.29it/s]
+LoRA: 16.8M / 6874.1M (0.2%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4232, overall_acc=0.2693
+  Epoch 2: loss=1.3386, overall_acc=0.5144
+  Epoch 3: loss=1.1696, overall_acc=0.5892
+  Epoch 4: loss=0.9118, overall_acc=0.5972
+  Epoch 5: loss=0.6083, overall_acc=0.6041
+Best: overall_acc=0.6041 (epoch 5), time=891.8s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-6.9b_lr5e-5
+  pythia-6.9b lr=1e-4
+Model: pythia-6.9b, LR: 0.0001, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.61s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.12s/it]
+LoRA: 16.8M / 6874.1M (0.2%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4651, overall_acc=0.2589
+  Epoch 2: loss=1.4227, overall_acc=0.2670
+  Epoch 3: loss=1.4158, overall_acc=0.2543
+  Epoch 4: loss=1.4039, overall_acc=0.2313
+  Epoch 5: loss=1.3985, overall_acc=0.2670
+Best: overall_acc=0.2670 (epoch 2), time=899.9s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-6.9b_lr1e-4
+  pythia-6.9b lr=3e-4
+Model: pythia-6.9b, LR: 0.0003, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.14s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.37it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.26it/s]
+LoRA: 16.8M / 6874.1M (0.2%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.5146, overall_acc=0.2601
+  Epoch 2: loss=1.4505, overall_acc=0.2532
+  Epoch 3: loss=1.4382, overall_acc=0.2313
+  Epoch 4: loss=1.4131, overall_acc=0.2566
+  Epoch 5: loss=1.3912, overall_acc=0.2451
+Best: overall_acc=0.2601 (epoch 1), time=894.5s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-6.9b_lr3e-4
+  pythia-6.9b lr=1e-3
+Model: pythia-6.9b, LR: 0.001, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.12s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.39it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.28it/s]
+LoRA: 16.8M / 6874.1M (0.2%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=nan, overall_acc=0.2555
+  Epoch 2: loss=nan, overall_acc=0.2555
+  Epoch 3: loss=nan, overall_acc=0.2555
+  Epoch 4: loss=nan, overall_acc=0.2555
+  Epoch 5: loss=nan, overall_acc=0.2555
+Best: overall_acc=0.2555 (epoch 1), time=896.0s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-6.9b_lr1e-3
+  pythia-6.9b lr=5e-5 acc=0.6041426927502876
+  pythia-6.9b lr=1e-4 acc=0.2669735327963176
+  pythia-6.9b lr=3e-4 acc=0.2600690448791715
+  pythia-6.9b lr=1e-3 acc=0.2554660529344074
+>>> Best pythia-6.9b: 5e-5 (0.6041426927502876)
+--- Confidence (seeds 1,2,3) ---
+  pythia-6.9b seed=1
+Model: pythia-6.9b, LR: 5e-05, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.12s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.39it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.28it/s]
+LoRA: 16.8M / 6874.1M (0.2%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4238, overall_acc=0.2589
+  Epoch 2: loss=1.4120, overall_acc=0.2635
+  Epoch 3: loss=1.3438, overall_acc=0.5063
+  Epoch 4: loss=1.1777, overall_acc=0.5811
+  Epoch 5: loss=1.0993, overall_acc=0.6018
+Best: overall_acc=0.6018 (epoch 5), time=914.9s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-6.9b_seed1
+  pythia-6.9b seed=2
+Model: pythia-6.9b, LR: 5e-05, Epochs: 5, Seed: 2
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.09s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.41it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.31it/s]
+LoRA: 16.8M / 6874.1M (0.2%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4249, overall_acc=0.2566
+  Epoch 2: loss=1.3278, overall_acc=0.5524
+  Epoch 3: loss=1.2134, overall_acc=0.5857
+  Epoch 4: loss=1.0170, overall_acc=0.6087
+  Epoch 5: loss=0.7849, overall_acc=0.5915
+Best: overall_acc=0.6087 (epoch 4), time=899.6s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-6.9b_seed2
+  pythia-6.9b seed=3
+Model: pythia-6.9b, LR: 5e-05, Epochs: 5, Seed: 3
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.18s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.32it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.22it/s]
+LoRA: 16.8M / 6874.1M (0.2%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4441, overall_acc=0.2486
+  Epoch 2: loss=1.4387, overall_acc=0.2313
+  Epoch 3: loss=1.4049, overall_acc=0.2532
+  Epoch 4: loss=1.4027, overall_acc=0.2440
+  Epoch 5: loss=1.3931, overall_acc=0.2578
+Best: overall_acc=0.2578 (epoch 5), time=880.1s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-6.9b_seed3
+[ARC] [pythia-6.9b] DONE Tue Mar 24 15:56:57 UTC 2026
+
+============================================
+[ARC] [t5-v1_1-base] Starting (GPU 0) Tue Mar 24 15:56:57 UTC 2026
+============================================
+--- LR Search ---
+  t5-v1_1-base lr=5e-5
+Model: t5-v1_1-base, LR: 5e-05, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=2.4455, overall_acc=0.2509
+  Epoch 2: loss=0.6221, overall_acc=0.2658
+  Epoch 3: loss=0.5872, overall_acc=0.2658
+  Epoch 4: loss=0.5497, overall_acc=0.2612
+  Epoch 5: loss=0.5400, overall_acc=0.2474
+Best: overall_acc=0.2658 (epoch 2), time=337.9s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/t5-v1_1-base_lr5e-5
+  t5-v1_1-base lr=1e-4
+Model: t5-v1_1-base, LR: 0.0001, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.9210, overall_acc=0.2463
+  Epoch 2: loss=0.6438, overall_acc=0.2681
+  Epoch 3: loss=0.5661, overall_acc=0.2658
+  Epoch 4: loss=0.5230, overall_acc=0.2808
+  Epoch 5: loss=0.5173, overall_acc=0.2532
+Best: overall_acc=0.2808 (epoch 4), time=332.2s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/t5-v1_1-base_lr1e-4
+  t5-v1_1-base lr=2e-4
+Model: t5-v1_1-base, LR: 0.0002, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.7795, overall_acc=0.2244
+  Epoch 2: loss=0.5987, overall_acc=0.2635
+  Epoch 3: loss=0.5168, overall_acc=0.2624
+  Epoch 4: loss=0.4996, overall_acc=0.2578
+  Epoch 5: loss=0.5025, overall_acc=0.2532
+Best: overall_acc=0.2635 (epoch 2), time=327.5s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/t5-v1_1-base_lr2e-4
+  t5-v1_1-base lr=3e-4
+Model: t5-v1_1-base, LR: 0.0003, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.3810, overall_acc=0.2578
+  Epoch 2: loss=0.5554, overall_acc=0.2739
+  Epoch 3: loss=0.5327, overall_acc=0.2463
+  Epoch 4: loss=0.5047, overall_acc=0.2589
+  Epoch 5: loss=0.4963, overall_acc=0.2532
+Best: overall_acc=0.2739 (epoch 2), time=318.4s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/t5-v1_1-base_lr3e-4
+  t5-v1_1-base lr=5e-5 acc=0.26582278481012656
+  t5-v1_1-base lr=1e-4 acc=0.2807825086306099
+  t5-v1_1-base lr=2e-4 acc=0.26352128883774456
+  t5-v1_1-base lr=3e-4 acc=0.27387802071346373
+>>> Best t5-v1_1-base: 1e-4 (0.2807825086306099)
+--- Confidence (seeds 1,2,3) ---
+  t5-v1_1-base seed=1
+Model: t5-v1_1-base, LR: 0.0001, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.9210, overall_acc=0.2463
+  Epoch 2: loss=0.6438, overall_acc=0.2681
+  Epoch 3: loss=0.5661, overall_acc=0.2658
+  Epoch 4: loss=0.5230, overall_acc=0.2808
+  Epoch 5: loss=0.5173, overall_acc=0.2532
+Best: overall_acc=0.2808 (epoch 4), time=331.8s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/t5-v1_1-base_seed1
+  t5-v1_1-base seed=2
+Model: t5-v1_1-base, LR: 0.0001, Epochs: 5, Seed: 2
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.9426, overall_acc=0.2601
+  Epoch 2: loss=0.6040, overall_acc=0.2578
+  Epoch 3: loss=0.5691, overall_acc=0.2670
+  Epoch 4: loss=0.5673, overall_acc=0.2543
+  Epoch 5: loss=0.5295, overall_acc=0.2601
+Best: overall_acc=0.2670 (epoch 3), time=332.3s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/t5-v1_1-base_seed2
+  t5-v1_1-base seed=3
+Model: t5-v1_1-base, LR: 0.0001, Epochs: 5, Seed: 3
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.7868, overall_acc=0.2589
+  Epoch 2: loss=0.5548, overall_acc=0.2313
+  Epoch 3: loss=0.5156, overall_acc=0.2325
+  Epoch 4: loss=0.5225, overall_acc=0.2532
+  Epoch 5: loss=0.5136, overall_acc=0.2532
+Best: overall_acc=0.2589 (epoch 1), time=322.5s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/t5-v1_1-base_seed3
+[ARC] [t5-v1_1-base] DONE Tue Mar 24 16:37:19 UTC 2026
+
+============================================
+[ARC] [pythia-31m] Starting (GPU 0) Tue Mar 24 16:37:19 UTC 2026
+============================================
+--- LR Search ---
+  pythia-31m lr=3e-5
+Model: pythia-31m, LR: 3e-05, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.4589, overall_acc=0.2635
+  Epoch 2: loss=1.4053, overall_acc=0.2578
+  Epoch 3: loss=1.3705, overall_acc=0.2681
+  Epoch 4: loss=1.2019, overall_acc=0.2658
+  Epoch 5: loss=0.7832, overall_acc=0.2463
+Best: overall_acc=0.2681 (epoch 3), time=53.6s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-31m_lr3e-5
+  pythia-31m lr=5e-5
+Model: pythia-31m, LR: 5e-05, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.4613, overall_acc=0.2555
+  Epoch 2: loss=1.4085, overall_acc=0.2601
+  Epoch 3: loss=1.3684, overall_acc=0.2842
+  Epoch 4: loss=1.1687, overall_acc=0.2681
+  Epoch 5: loss=0.6768, overall_acc=0.2612
+Best: overall_acc=0.2842 (epoch 3), time=56.5s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-31m_lr5e-5
+  pythia-31m lr=1e-4
+Model: pythia-31m, LR: 0.0001, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.4709, overall_acc=0.2555
+  Epoch 2: loss=1.4168, overall_acc=0.2589
+  Epoch 3: loss=1.3785, overall_acc=0.2566
+  Epoch 4: loss=1.1937, overall_acc=0.2969
+  Epoch 5: loss=0.7424, overall_acc=0.2831
+Best: overall_acc=0.2969 (epoch 4), time=56.4s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-31m_lr1e-4
+  pythia-31m lr=3e-4
+Model: pythia-31m, LR: 0.0003, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.4873, overall_acc=0.2566
+  Epoch 2: loss=1.4238, overall_acc=0.2589
+  Epoch 3: loss=1.4025, overall_acc=0.2589
+  Epoch 4: loss=1.3194, overall_acc=0.2589
+  Epoch 5: loss=1.0204, overall_acc=0.2520
+Best: overall_acc=0.2589 (epoch 2), time=55.2s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-31m_lr3e-4
+  pythia-31m lr=1e-3
+Model: pythia-31m, LR: 0.001, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.5214, overall_acc=0.2589
+  Epoch 2: loss=1.4344, overall_acc=0.2589
+  Epoch 3: loss=1.4224, overall_acc=0.2394
+  Epoch 4: loss=1.3925, overall_acc=0.2382
+  Epoch 5: loss=1.3313, overall_acc=0.2601
+Best: overall_acc=0.2601 (epoch 5), time=56.6s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-31m_lr1e-3
+  pythia-31m lr=3e-5 acc=0.2681242807825086
+  pythia-31m lr=5e-5 acc=0.28423475258918296
+  pythia-31m lr=1e-4 acc=0.29689298043728424
+  pythia-31m lr=3e-4 acc=0.25891829689298046
+  pythia-31m lr=1e-3 acc=0.2600690448791715
+>>> Best pythia-31m: 1e-4 (0.29689298043728424)
+--- Confidence (seeds 1,2,3) ---
+  pythia-31m seed=1
+Model: pythia-31m, LR: 0.0001, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.4709, overall_acc=0.2555
+  Epoch 2: loss=1.4168, overall_acc=0.2589
+  Epoch 3: loss=1.3785, overall_acc=0.2566
+  Epoch 4: loss=1.1937, overall_acc=0.2969
+  Epoch 5: loss=0.7424, overall_acc=0.2831
+Best: overall_acc=0.2969 (epoch 4), time=49.4s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-31m_seed1
+  pythia-31m seed=2
+Model: pythia-31m, LR: 0.0001, Epochs: 5, Seed: 2
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.4739, overall_acc=0.2532
+  Epoch 2: loss=1.4222, overall_acc=0.2601
+  Epoch 3: loss=1.3974, overall_acc=0.2716
+  Epoch 4: loss=1.3483, overall_acc=0.2647
+  Epoch 5: loss=1.1748, overall_acc=0.2865
+Best: overall_acc=0.2865 (epoch 5), time=55.3s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-31m_seed2
+  pythia-31m seed=3
+Model: pythia-31m, LR: 0.0001, Epochs: 5, Seed: 3
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Epoch 1: loss=1.4746, overall_acc=0.2555
+  Epoch 2: loss=1.4153, overall_acc=0.2348
+  Epoch 3: loss=1.4053, overall_acc=0.2428
+  Epoch 4: loss=1.3244, overall_acc=0.2474
+  Epoch 5: loss=1.0036, overall_acc=0.2428
+Best: overall_acc=0.2555 (epoch 1), time=53.5s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-31m_seed3
+[ARC] [pythia-31m] DONE Tue Mar 24 16:46:23 UTC 2026
+============================================
+local0 ALL DONE Tue Mar 24 16:46:23 UTC 2026
+============================================

@@ -1,0 +1,37 @@
+{
+  "model": "pythia-14m",
+  "family": "decoder",
+  "lr": 0.001,
+  "seed": 2,
+  "epochs": 5,
+  "best_overall_acc": 0.25891829689298046,
+  "best_epoch": 2,
+  "training_time_sec": 53.50069189071655,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "loss": 1.4876610441795457,
+      "overall_acc": 0.25316455696202533
+    },
+    {
+      "epoch": 2,
+      "loss": 1.4064608682388378,
+      "overall_acc": 0.25891829689298046
+    },
+    {
+      "epoch": 3,
+      "loss": 1.3976280912403811,
+      "overall_acc": 0.25891829689298046
+    },
+    {
+      "epoch": 4,
+      "loss": 1.394678944660024,
+      "overall_acc": 0.25891829689298046
+    },
+    {
+      "epoch": 5,
+      "loss": 1.3890244342139546,
+      "overall_acc": 0.2428078250863061
+    }
+  ]
+}

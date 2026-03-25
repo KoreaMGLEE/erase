@@ -1,0 +1,759 @@
+
+============================================
+[MATH] [qwen2.5-1.5b] Starting on GPU 1 (Sun Mar 22 23:27:08 UTC 2026)
+============================================
+  qwen2.5-1.5b lr=5e-5
+Model: qwen2.5-1.5b, LR: 5e-05, Epochs: 3, Device: cuda:0, vLLM: True
+Loading MATH dataset...
+Train: 7500, Test: 5000, Eval: 500
+Loading model qwen2.5-1.5b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+LoRA: 4.4M / 1548.1M (0.3%) [grad_ckpt=ON]
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Step 200, loss=4.7546
+  Step 400, loss=4.3171
+  Step 600, loss=2.7407
+  Step 800, loss=7.4471
+  Step 1000, loss=3.0390
+  Step 1200, loss=7.1006
+  Step 1400, loss=0.7320
+  Step 1600, loss=2.8665
+  Step 1800, loss=8.6732
+  Evaluating (500 samples)...
+Epoch 1/3: loss=4.7313, acc=0.3000 (150/500) eval_time=1146s
+  Level 1: 0.7021
+  Level 2: 0.4348
+  Level 3: 0.3578
+  Level 4: 0.2171
+  Level 5: 0.0813
+  Step 200, loss=4.2582
+  Step 400, loss=7.4378
+  Step 600, loss=6.2508
+  Step 800, loss=6.7336
+  Step 1000, loss=3.1318
+  Step 1200, loss=7.3718
+  Step 1400, loss=0.5929
+  Step 1600, loss=5.4066
+  Step 1800, loss=5.8291
+  Evaluating (500 samples)...
+Epoch 2/3: loss=4.6115, acc=0.2880 (144/500) eval_time=1157s
+  Level 1: 0.6809
+  Level 2: 0.4130
+  Level 3: 0.3303
+  Level 4: 0.2248
+  Level 5: 0.0732
+  Step 200, loss=5.9749
+  Step 400, loss=2.5269
+  Step 600, loss=2.5085
+  Step 800, loss=3.2486
+  Step 1000, loss=3.7291
+  Step 1200, loss=4.9909
+  Step 1400, loss=3.3914
+  Step 1600, loss=4.5044
+  Step 1800, loss=2.9976
+  Evaluating (500 samples)...
+Epoch 3/3: loss=4.7289, acc=0.2720 (136/500) eval_time=1157s
+  Level 1: 0.6170
+  Level 2: 0.3804
+  Level 3: 0.3394
+  Level 4: 0.2093
+  Level 5: 0.0650
+Best HF accuracy: 0.3000 (epoch 1)
+
+  Final vLLM eval (500 samples)...
+  Saving merged LoRA weights...
+  Loading vLLM engine...
+INFO 03-23 01:07:12 [utils.py:233] non-default args: {'max_model_len': 1024, 'disable_log_stats': True, 'model': '/tmp/tmpqw37s3pd'}
+INFO 03-23 01:07:12 [model.py:533] Resolved architecture: Qwen2ForCausalLM
+INFO 03-23 01:07:12 [model.py:1917] Downcasting torch.float32 to torch.bfloat16.
+INFO 03-23 01:07:12 [model.py:1582] Using max model len 1024
+INFO 03-23 01:07:12 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 03-23 01:07:12 [vllm.py:754] Asynchronous scheduling is enabled.
+The tokenizer you are loading from '/tmp/tmpqw37s3pd' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+WARNING 03-23 01:07:13 [system_utils.py:152] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+(EngineCore pid=1965418) INFO 03-23 01:07:24 [core.py:103] Initializing a V1 LLM engine (v0.18.0) with config: model='/tmp/tmpqw37s3pd', speculative_config=None, tokenizer='/tmp/tmpqw37s3pd', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=1024, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/tmp/tmpqw37s3pd, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore pid=1965418) INFO 03-23 01:07:26 [parallel_state.py:1395] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.17.0.3:56053 backend=nccl
+(EngineCore pid=1965418) INFO 03-23 01:07:26 [parallel_state.py:1717] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099] EngineCore failed to start.
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099] Traceback (most recent call last):
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1073, in run_engine_core
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 839, in __init__
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     super().__init__(
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 112, in __init__
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     self._init_executor()
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     self.driver_worker.init_device()
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 312, in init_device
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     self.worker.init_device()  # type: ignore
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 283, in init_device
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099]     raise ValueError(
+(EngineCore pid=1965418) ERROR 03-23 01:07:26 [core.py:1099] ValueError: Free memory on device cuda:0 (22.08/31.37 GiB) on startup is less than desired GPU memory utilization (0.9, 28.23 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+(EngineCore pid=1965418) Process EngineCore:
+(EngineCore pid=1965418) Traceback (most recent call last):
+(EngineCore pid=1965418)   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+(EngineCore pid=1965418)     self.run()
+(EngineCore pid=1965418)   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+(EngineCore pid=1965418)     self._target(*self._args, **self._kwargs)
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1103, in run_engine_core
+(EngineCore pid=1965418)     raise e
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1073, in run_engine_core
+(EngineCore pid=1965418)     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=1965418)                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=1965418)     return func(*args, **kwargs)
+(EngineCore pid=1965418)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 839, in __init__
+(EngineCore pid=1965418)     super().__init__(
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 112, in __init__
+(EngineCore pid=1965418)     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=1965418)                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=1965418)     return func(*args, **kwargs)
+(EngineCore pid=1965418)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore pid=1965418)     self._init_executor()
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore pid=1965418)     self.driver_worker.init_device()
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 312, in init_device
+(EngineCore pid=1965418)     self.worker.init_device()  # type: ignore
+(EngineCore pid=1965418)     ^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=1965418)     return func(*args, **kwargs)
+(EngineCore pid=1965418)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 283, in init_device
+(EngineCore pid=1965418)     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore pid=1965418)                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=1965418)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore pid=1965418)     raise ValueError(
+(EngineCore pid=1965418) ValueError: Free memory on device cuda:0 (22.08/31.37 GiB) on startup is less than desired GPU memory utilization (0.9, 28.23 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+[rank0]:[W323 01:07:27.708659168 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+  vLLM eval failed: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+Saved to /workspace/erase/outputs/plan4/lr_search/qwen2.5-1.5b_lr5e-5/results.json
+  qwen2.5-1.5b lr=1e-4
+Model: qwen2.5-1.5b, LR: 0.0001, Epochs: 3, Device: cuda:0, vLLM: True
+Loading MATH dataset...
+Train: 7500, Test: 5000, Eval: 500
+Loading model qwen2.5-1.5b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+LoRA: 4.4M / 1548.1M (0.3%) [grad_ckpt=ON]
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Step 200, loss=4.7503
+  Step 400, loss=4.3154
+  Step 600, loss=2.7384
+  Step 800, loss=7.4467
+  Step 1000, loss=3.0380
+  Step 1200, loss=7.0994
+  Step 1400, loss=0.7305
+  Step 1600, loss=2.8652
+  Step 1800, loss=8.6728
+  Evaluating (500 samples)...
+Epoch 1/3: loss=4.7292, acc=0.2900 (145/500) eval_time=1166s
+  Level 1: 0.7021
+  Level 2: 0.4130
+  Level 3: 0.3303
+  Level 4: 0.2093
+  Level 5: 0.0894
+  Step 200, loss=4.2551
+  Step 400, loss=7.4363
+  Step 600, loss=6.2497
+  Step 800, loss=6.7318
+  Step 1000, loss=3.1226
+  Step 1200, loss=7.3692
+  Step 1400, loss=0.5823
+  Step 1600, loss=5.4027
+  Step 1800, loss=5.8271
+  Evaluating (500 samples)...
+Epoch 2/3: loss=4.6079, acc=0.3000 (150/500) eval_time=1180s
+  Level 1: 0.6809
+  Level 2: 0.3913
+  Level 3: 0.3761
+  Level 4: 0.2326
+  Level 5: 0.0894
+  Step 200, loss=5.9715
+  Step 400, loss=2.5142
+  Step 600, loss=2.4956
+  Step 800, loss=3.2360
+  Step 1000, loss=3.7199
+  Step 1200, loss=4.9831
+  Step 1400, loss=3.3854
+  Step 1600, loss=4.4993
+  Step 1800, loss=2.9938
+  Evaluating (500 samples)...
+Epoch 3/3: loss=4.7227, acc=0.2880 (144/500) eval_time=1172s
+  Level 1: 0.6596
+  Level 2: 0.4022
+  Level 3: 0.3486
+  Level 4: 0.2481
+  Level 5: 0.0488
+Best HF accuracy: 0.3000 (epoch 2)
+
+  Final vLLM eval (500 samples)...
+  Saving merged LoRA weights...
+  Loading vLLM engine...
+INFO 03-23 02:48:37 [utils.py:233] non-default args: {'max_model_len': 1024, 'disable_log_stats': True, 'model': '/tmp/tmpnf4v6jgt'}
+INFO 03-23 02:48:37 [model.py:533] Resolved architecture: Qwen2ForCausalLM
+INFO 03-23 02:48:37 [model.py:1917] Downcasting torch.float32 to torch.bfloat16.
+INFO 03-23 02:48:37 [model.py:1582] Using max model len 1024
+INFO 03-23 02:48:37 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 03-23 02:48:37 [vllm.py:754] Asynchronous scheduling is enabled.
+The tokenizer you are loading from '/tmp/tmpnf4v6jgt' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+WARNING 03-23 02:48:39 [system_utils.py:152] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+(EngineCore pid=2009088) INFO 03-23 02:48:50 [core.py:103] Initializing a V1 LLM engine (v0.18.0) with config: model='/tmp/tmpnf4v6jgt', speculative_config=None, tokenizer='/tmp/tmpnf4v6jgt', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=1024, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/tmp/tmpnf4v6jgt, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore pid=2009088) INFO 03-23 02:48:51 [parallel_state.py:1395] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.17.0.3:39697 backend=nccl
+(EngineCore pid=2009088) INFO 03-23 02:48:52 [parallel_state.py:1717] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099] EngineCore failed to start.
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099] Traceback (most recent call last):
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1073, in run_engine_core
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 839, in __init__
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     super().__init__(
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 112, in __init__
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     self._init_executor()
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     self.driver_worker.init_device()
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 312, in init_device
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     self.worker.init_device()  # type: ignore
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 283, in init_device
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099]     raise ValueError(
+(EngineCore pid=2009088) ERROR 03-23 02:48:52 [core.py:1099] ValueError: Free memory on device cuda:0 (22.08/31.37 GiB) on startup is less than desired GPU memory utilization (0.9, 28.23 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+(EngineCore pid=2009088) Process EngineCore:
+(EngineCore pid=2009088) Traceback (most recent call last):
+(EngineCore pid=2009088)   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+(EngineCore pid=2009088)     self.run()
+(EngineCore pid=2009088)   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+(EngineCore pid=2009088)     self._target(*self._args, **self._kwargs)
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1103, in run_engine_core
+(EngineCore pid=2009088)     raise e
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1073, in run_engine_core
+(EngineCore pid=2009088)     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=2009088)                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2009088)     return func(*args, **kwargs)
+(EngineCore pid=2009088)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 839, in __init__
+(EngineCore pid=2009088)     super().__init__(
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 112, in __init__
+(EngineCore pid=2009088)     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=2009088)                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2009088)     return func(*args, **kwargs)
+(EngineCore pid=2009088)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore pid=2009088)     self._init_executor()
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore pid=2009088)     self.driver_worker.init_device()
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 312, in init_device
+(EngineCore pid=2009088)     self.worker.init_device()  # type: ignore
+(EngineCore pid=2009088)     ^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2009088)     return func(*args, **kwargs)
+(EngineCore pid=2009088)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 283, in init_device
+(EngineCore pid=2009088)     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore pid=2009088)                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2009088)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore pid=2009088)     raise ValueError(
+(EngineCore pid=2009088) ValueError: Free memory on device cuda:0 (22.08/31.37 GiB) on startup is less than desired GPU memory utilization (0.9, 28.23 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+[rank0]:[W323 02:48:53.431265022 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+  vLLM eval failed: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+Saved to /workspace/erase/outputs/plan4/lr_search/qwen2.5-1.5b_lr1e-4/results.json
+  qwen2.5-1.5b lr=3e-4
+Model: qwen2.5-1.5b, LR: 0.0003, Epochs: 3, Device: cuda:0, vLLM: True
+Loading MATH dataset...
+Train: 7500, Test: 5000, Eval: 500
+Loading model qwen2.5-1.5b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+LoRA: 4.4M / 1548.1M (0.3%) [grad_ckpt=ON]
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Step 200, loss=4.7474
+  Step 400, loss=4.3155
+  Step 600, loss=2.7383
+  Step 800, loss=7.4470
+  Step 1000, loss=3.0451
+  Step 1200, loss=7.0997
+  Step 1400, loss=0.7242
+  Step 1600, loss=2.8662
+  Step 1800, loss=8.6730
+  Evaluating (500 samples)...
+Epoch 1/3: loss=4.7274, acc=0.2840 (142/500) eval_time=1153s
+  Level 1: 0.6809
+  Level 2: 0.3587
+  Level 3: 0.3394
+  Level 4: 0.2248
+  Level 5: 0.0894
+  Step 200, loss=4.2475
+  Step 400, loss=7.4338
+  Step 600, loss=6.2475
+  Step 800, loss=6.7275
+  Step 1000, loss=3.0963
+  Step 1200, loss=7.3645
+  Step 1400, loss=0.5564
+  Step 1600, loss=5.3976
+  Step 1800, loss=5.8225
+  Evaluating (500 samples)...
+Epoch 2/3: loss=4.5994, acc=0.2680 (134/500) eval_time=1159s
+  Level 1: 0.5745
+  Level 2: 0.3152
+  Level 3: 0.3761
+  Level 4: 0.2171
+  Level 5: 0.0732
+  Step 200, loss=5.9616
+  Step 400, loss=2.4806
+  Step 600, loss=2.4597
+  Step 800, loss=3.2009
+  Step 1000, loss=3.6900
+  Step 1200, loss=4.9617
+  Step 1400, loss=3.3704
+  Step 1600, loss=4.4869
+  Step 1800, loss=2.9824
+  Evaluating (500 samples)...
+Epoch 3/3: loss=4.7051, acc=0.2940 (147/500) eval_time=1157s
+  Level 1: 0.7234
+  Level 2: 0.4457
+  Level 3: 0.3853
+  Level 4: 0.1705
+  Level 5: 0.0650
+Best HF accuracy: 0.2940 (epoch 3)
+
+  Final vLLM eval (500 samples)...
+  Saving merged LoRA weights...
+  Loading vLLM engine...
+INFO 03-23 04:29:13 [utils.py:233] non-default args: {'max_model_len': 1024, 'disable_log_stats': True, 'model': '/tmp/tmpyxp24lb_'}
+INFO 03-23 04:29:13 [model.py:533] Resolved architecture: Qwen2ForCausalLM
+INFO 03-23 04:29:13 [model.py:1917] Downcasting torch.float32 to torch.bfloat16.
+INFO 03-23 04:29:13 [model.py:1582] Using max model len 1024
+INFO 03-23 04:29:13 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 03-23 04:29:13 [vllm.py:754] Asynchronous scheduling is enabled.
+The tokenizer you are loading from '/tmp/tmpyxp24lb_' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+WARNING 03-23 04:29:14 [system_utils.py:152] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+(EngineCore pid=2063711) INFO 03-23 04:29:26 [core.py:103] Initializing a V1 LLM engine (v0.18.0) with config: model='/tmp/tmpyxp24lb_', speculative_config=None, tokenizer='/tmp/tmpyxp24lb_', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=1024, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/tmp/tmpyxp24lb_, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore pid=2063711) INFO 03-23 04:29:27 [parallel_state.py:1395] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.17.0.3:37817 backend=nccl
+(EngineCore pid=2063711) INFO 03-23 04:29:27 [parallel_state.py:1717] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099] EngineCore failed to start.
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099] Traceback (most recent call last):
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1073, in run_engine_core
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 839, in __init__
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     super().__init__(
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 112, in __init__
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     self._init_executor()
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     self.driver_worker.init_device()
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 312, in init_device
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     self.worker.init_device()  # type: ignore
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 283, in init_device
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099]     raise ValueError(
+(EngineCore pid=2063711) ERROR 03-23 04:29:28 [core.py:1099] ValueError: Free memory on device cuda:0 (22.08/31.37 GiB) on startup is less than desired GPU memory utilization (0.9, 28.23 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+(EngineCore pid=2063711) Process EngineCore:
+(EngineCore pid=2063711) Traceback (most recent call last):
+(EngineCore pid=2063711)   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+(EngineCore pid=2063711)     self.run()
+(EngineCore pid=2063711)   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+(EngineCore pid=2063711)     self._target(*self._args, **self._kwargs)
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1103, in run_engine_core
+(EngineCore pid=2063711)     raise e
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1073, in run_engine_core
+(EngineCore pid=2063711)     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=2063711)                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2063711)     return func(*args, **kwargs)
+(EngineCore pid=2063711)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 839, in __init__
+(EngineCore pid=2063711)     super().__init__(
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 112, in __init__
+(EngineCore pid=2063711)     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=2063711)                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2063711)     return func(*args, **kwargs)
+(EngineCore pid=2063711)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore pid=2063711)     self._init_executor()
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore pid=2063711)     self.driver_worker.init_device()
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 312, in init_device
+(EngineCore pid=2063711)     self.worker.init_device()  # type: ignore
+(EngineCore pid=2063711)     ^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2063711)     return func(*args, **kwargs)
+(EngineCore pid=2063711)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 283, in init_device
+(EngineCore pid=2063711)     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore pid=2063711)                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2063711)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore pid=2063711)     raise ValueError(
+(EngineCore pid=2063711) ValueError: Free memory on device cuda:0 (22.08/31.37 GiB) on startup is less than desired GPU memory utilization (0.9, 28.23 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+[rank0]:[W323 04:29:28.987435616 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+  vLLM eval failed: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+Saved to /workspace/erase/outputs/plan4/lr_search/qwen2.5-1.5b_lr3e-4/results.json
+  qwen2.5-1.5b lr=1e-3
+Model: qwen2.5-1.5b, LR: 0.001, Epochs: 3, Device: cuda:0, vLLM: True
+Loading MATH dataset...
+Train: 7500, Test: 5000, Eval: 500
+Loading model qwen2.5-1.5b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+LoRA: 4.4M / 1548.1M (0.3%) [grad_ckpt=ON]
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Step 200, loss=4.7472
+  Step 400, loss=4.3435
+  Step 600, loss=2.7762
+  Step 800, loss=7.4519
+  Step 1000, loss=3.1112
+  Step 1200, loss=7.1070
+  Step 1400, loss=0.7553
+  Step 1600, loss=2.8855
+  Step 1800, loss=8.6785
+  Evaluating (500 samples)...
+Epoch 1/3: loss=4.7420, acc=0.2640 (132/500) eval_time=1148s
+  Level 1: 0.6383
+  Level 2: 0.3587
+  Level 3: 0.3119
+  Level 4: 0.1628
+  Level 5: 0.1138
+  Step 200, loss=4.2782
+  Step 400, loss=7.4346
+  Step 600, loss=6.2484
+  Step 800, loss=6.7312
+  Step 1000, loss=3.0918
+  Step 1200, loss=7.3838
+  Step 1400, loss=0.5863
+  Step 1600, loss=5.4084
+  Step 1800, loss=5.8305
+  Evaluating (500 samples)...
+Epoch 2/3: loss=4.6056, acc=0.2760 (138/500) eval_time=1165s
+  Level 1: 0.7021
+  Level 2: 0.3587
+  Level 3: 0.2752
+  Level 4: 0.2326
+  Level 5: 0.0976
+  Step 200, loss=5.9524
+  Step 400, loss=2.4687
+  Step 600, loss=2.4361
+  Step 800, loss=3.1785
+  Step 1000, loss=3.6564
+  Step 1200, loss=4.9552
+  Step 1400, loss=3.3575
+  Step 1600, loss=4.4775
+  Step 1800, loss=2.9573
+  Evaluating (500 samples)...
+Epoch 3/3: loss=4.6936, acc=0.2540 (127/500) eval_time=1161s
+  Level 1: 0.6596
+  Level 2: 0.3804
+  Level 3: 0.3119
+  Level 4: 0.1550
+  Level 5: 0.0569
+Best HF accuracy: 0.2760 (epoch 2)
+
+  Final vLLM eval (500 samples)...
+  Saving merged LoRA weights...
+  Loading vLLM engine...
+INFO 03-23 06:09:54 [utils.py:233] non-default args: {'max_model_len': 1024, 'disable_log_stats': True, 'model': '/tmp/tmp_urxz9lx'}
+INFO 03-23 06:09:54 [model.py:533] Resolved architecture: Qwen2ForCausalLM
+INFO 03-23 06:09:54 [model.py:1917] Downcasting torch.float32 to torch.bfloat16.
+INFO 03-23 06:09:54 [model.py:1582] Using max model len 1024
+INFO 03-23 06:09:54 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 03-23 06:09:54 [vllm.py:754] Asynchronous scheduling is enabled.
+The tokenizer you are loading from '/tmp/tmp_urxz9lx' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+WARNING 03-23 06:09:55 [system_utils.py:152] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+(EngineCore pid=2118107) INFO 03-23 06:10:07 [core.py:103] Initializing a V1 LLM engine (v0.18.0) with config: model='/tmp/tmp_urxz9lx', speculative_config=None, tokenizer='/tmp/tmp_urxz9lx', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=1024, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/tmp/tmp_urxz9lx, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore pid=2118107) INFO 03-23 06:10:08 [parallel_state.py:1395] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.17.0.3:55537 backend=nccl
+(EngineCore pid=2118107) INFO 03-23 06:10:08 [parallel_state.py:1717] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099] EngineCore failed to start.
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099] Traceback (most recent call last):
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1073, in run_engine_core
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 839, in __init__
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     super().__init__(
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 112, in __init__
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     self._init_executor()
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     self.driver_worker.init_device()
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 312, in init_device
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     self.worker.init_device()  # type: ignore
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 283, in init_device
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099]     raise ValueError(
+(EngineCore pid=2118107) ERROR 03-23 06:10:09 [core.py:1099] ValueError: Free memory on device cuda:0 (22.08/31.37 GiB) on startup is less than desired GPU memory utilization (0.9, 28.23 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+(EngineCore pid=2118107) Process EngineCore:
+(EngineCore pid=2118107) Traceback (most recent call last):
+(EngineCore pid=2118107)   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+(EngineCore pid=2118107)     self.run()
+(EngineCore pid=2118107)   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+(EngineCore pid=2118107)     self._target(*self._args, **self._kwargs)
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1103, in run_engine_core
+(EngineCore pid=2118107)     raise e
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1073, in run_engine_core
+(EngineCore pid=2118107)     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=2118107)                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2118107)     return func(*args, **kwargs)
+(EngineCore pid=2118107)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 839, in __init__
+(EngineCore pid=2118107)     super().__init__(
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 112, in __init__
+(EngineCore pid=2118107)     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=2118107)                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2118107)     return func(*args, **kwargs)
+(EngineCore pid=2118107)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore pid=2118107)     self._init_executor()
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore pid=2118107)     self.driver_worker.init_device()
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 312, in init_device
+(EngineCore pid=2118107)     self.worker.init_device()  # type: ignore
+(EngineCore pid=2118107)     ^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2118107)     return func(*args, **kwargs)
+(EngineCore pid=2118107)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 283, in init_device
+(EngineCore pid=2118107)     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore pid=2118107)                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2118107)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore pid=2118107)     raise ValueError(
+(EngineCore pid=2118107) ValueError: Free memory on device cuda:0 (22.08/31.37 GiB) on startup is less than desired GPU memory utilization (0.9, 28.23 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+[rank0]:[W323 06:10:09.934185332 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+  vLLM eval failed: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+Saved to /workspace/erase/outputs/plan4/lr_search/qwen2.5-1.5b_lr1e-3/results.json
+  qwen2.5-1.5b lr=3e-3
+Model: qwen2.5-1.5b, LR: 0.003, Epochs: 3, Device: cuda:0, vLLM: True
+Loading MATH dataset...
+Train: 7500, Test: 5000, Eval: 500
+Loading model qwen2.5-1.5b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+LoRA: 4.4M / 1548.1M (0.3%) [grad_ckpt=ON]
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Step 200, loss=4.7643
+  Step 400, loss=4.5698
+  Step 600, loss=3.0910
+  Step 800, loss=7.5472
+  Step 1000, loss=3.4455
+  Step 1200, loss=7.1986
+  Step 1400, loss=1.1756
+  Step 1600, loss=3.1511
+  Step 1800, loss=8.7544
+  Evaluating (500 samples)...
+Epoch 1/3: loss=4.9788, acc=0.0280 (14/500) eval_time=1158s
+  Level 1: 0.0851
+  Level 2: 0.0435
+  Level 3: 0.0183
+  Level 4: 0.0155
+  Level 5: 0.0163
+  Step 200, loss=4.5087
+  Step 400, loss=7.5070
+  Step 600, loss=6.3411
+  Step 800, loss=6.8084
+  Step 1000, loss=3.2800
+  Step 1200, loss=7.4851
+  Step 1400, loss=0.8433
+  Step 1600, loss=5.5000
+  Step 1800, loss=5.9294
+  Evaluating (500 samples)...
+Epoch 2/3: loss=4.7864, acc=0.1900 (95/500) eval_time=1154s
+  Level 1: 0.4681
+  Level 2: 0.3152
+  Level 3: 0.1743
+  Level 4: 0.1395
+  Level 5: 0.0569
+  Step 200, loss=6.0326
+  Step 400, loss=2.5819
+  Step 600, loss=2.6146
+  Step 800, loss=3.2848
+  Step 1000, loss=3.7175
+  Step 1200, loss=5.0413
+  Step 1400, loss=3.3996
+  Step 1600, loss=4.5548
+  Step 1800, loss=3.0172
+  Evaluating (500 samples)...
+Epoch 3/3: loss=4.7766, acc=0.2160 (108/500) eval_time=1163s
+  Level 1: 0.5106
+  Level 2: 0.2935
+  Level 3: 0.2661
+  Level 4: 0.1628
+  Level 5: 0.0569
+Best HF accuracy: 0.2160 (epoch 3)
+
+  Final vLLM eval (500 samples)...
+  Saving merged LoRA weights...
+  Loading vLLM engine...
+INFO 03-23 07:50:44 [utils.py:233] non-default args: {'max_model_len': 1024, 'disable_log_stats': True, 'model': '/tmp/tmpf18m31vr'}
+INFO 03-23 07:50:44 [model.py:533] Resolved architecture: Qwen2ForCausalLM
+INFO 03-23 07:50:44 [model.py:1917] Downcasting torch.float32 to torch.bfloat16.
+INFO 03-23 07:50:44 [model.py:1582] Using max model len 1024
+INFO 03-23 07:50:44 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 03-23 07:50:44 [vllm.py:754] Asynchronous scheduling is enabled.
+The tokenizer you are loading from '/tmp/tmpf18m31vr' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+WARNING 03-23 07:50:45 [system_utils.py:152] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+(EngineCore pid=2170727) INFO 03-23 07:50:57 [core.py:103] Initializing a V1 LLM engine (v0.18.0) with config: model='/tmp/tmpf18m31vr', speculative_config=None, tokenizer='/tmp/tmpf18m31vr', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=1024, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/tmp/tmpf18m31vr, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore pid=2170727) INFO 03-23 07:50:58 [parallel_state.py:1395] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.17.0.3:51389 backend=nccl
+(EngineCore pid=2170727) INFO 03-23 07:50:58 [parallel_state.py:1717] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099] EngineCore failed to start.
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099] Traceback (most recent call last):
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1073, in run_engine_core
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 839, in __init__
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     super().__init__(
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 112, in __init__
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     self._init_executor()
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     self.driver_worker.init_device()
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 312, in init_device
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     self.worker.init_device()  # type: ignore
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     return func(*args, **kwargs)
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 283, in init_device
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099]     raise ValueError(
+(EngineCore pid=2170727) ERROR 03-23 07:50:59 [core.py:1099] ValueError: Free memory on device cuda:0 (22.08/31.37 GiB) on startup is less than desired GPU memory utilization (0.9, 28.23 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+(EngineCore pid=2170727) Process EngineCore:
+(EngineCore pid=2170727) Traceback (most recent call last):
+(EngineCore pid=2170727)   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+(EngineCore pid=2170727)     self.run()
+(EngineCore pid=2170727)   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+(EngineCore pid=2170727)     self._target(*self._args, **self._kwargs)
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1103, in run_engine_core
+(EngineCore pid=2170727)     raise e
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1073, in run_engine_core
+(EngineCore pid=2170727)     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore pid=2170727)                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2170727)     return func(*args, **kwargs)
+(EngineCore pid=2170727)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 839, in __init__
+(EngineCore pid=2170727)     super().__init__(
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 112, in __init__
+(EngineCore pid=2170727)     self.model_executor = executor_class(vllm_config)
+(EngineCore pid=2170727)                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2170727)     return func(*args, **kwargs)
+(EngineCore pid=2170727)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore pid=2170727)     self._init_executor()
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore pid=2170727)     self.driver_worker.init_device()
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 312, in init_device
+(EngineCore pid=2170727)     self.worker.init_device()  # type: ignore
+(EngineCore pid=2170727)     ^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore pid=2170727)     return func(*args, **kwargs)
+(EngineCore pid=2170727)            ^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 283, in init_device
+(EngineCore pid=2170727)     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore pid=2170727)                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(EngineCore pid=2170727)   File "/home/claude/.local/lib/python3.12/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore pid=2170727)     raise ValueError(
+(EngineCore pid=2170727) ValueError: Free memory on device cuda:0 (22.08/31.37 GiB) on startup is less than desired GPU memory utilization (0.9, 28.23 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+[rank0]:[W323 07:50:59.112814026 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+  vLLM eval failed: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+Saved to /workspace/erase/outputs/plan4/lr_search/qwen2.5-1.5b_lr3e-3/results.json
+  qwen2.5-1.5b lr=5e-5 acc=0.3
+  qwen2.5-1.5b lr=1e-4 acc=0.3
+  qwen2.5-1.5b lr=3e-4 acc=0.294
+  qwen2.5-1.5b lr=1e-3 acc=0.276
+  qwen2.5-1.5b lr=3e-3 acc=0.216
+>>> Best qwen2.5-1.5b LR: 5e-5 (acc=0.3)
+[MATH] [qwen2.5-1.5b] DONE (Mon Mar 23 07:51:03 UTC 2026)
+
+============================================
+[MATH] [pythia-2.8b] Starting on GPU 1 (Mon Mar 23 07:51:03 UTC 2026)
+============================================
+  pythia-2.8b lr=5e-5
+Model: pythia-2.8b, LR: 5e-05, Epochs: 3, Device: cuda:0, vLLM: True
+Loading MATH dataset...
+Train: 7500, Test: 5000, Eval: 500
+Loading model pythia-2.8b...
+`torch_dtype` is deprecated! Use `dtype` instead!
+LoRA: 10.5M / 2785.7M (0.4%) [grad_ckpt=ON]
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Step 200, loss=3.2208
+  Step 400, loss=3.4100
+  Step 600, loss=5.7304
+  Step 800, loss=7.6768
+  Step 1000, loss=3.9920
+  Step 1200, loss=1.4047
+  Step 1400, loss=4.5313
+  Step 1600, loss=7.7285
+  Step 1800, loss=5.2776
+  Evaluating (500 samples)...
+Terminated

@@ -1,0 +1,55 @@
+{
+  "model": "qwen2.5-1.5b-instruct",
+  "lr": 0.003,
+  "seed": 1,
+  "epochs": 3,
+  "best_epoch": 3,
+  "best_accuracy": 0.18,
+  "final_vllm_accuracy": 0.18,
+  "final_vllm_level_accuracy": {},
+  "training_time_sec": 6605.789876937866,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "avg_loss": 5.063370656951268,
+      "accuracy": 0.096,
+      "level_accuracy": {
+        "Level 1": 0.23404255319148937,
+        "Level 2": 0.15217391304347827,
+        "Level 3": 0.11926605504587157,
+        "Level 4": 0.046511627906976744,
+        "Level 5": 0.032520325203252036
+      },
+      "n_eval": 500,
+      "eval_time_sec": 1361.9095342159271
+    },
+    {
+      "epoch": 2,
+      "avg_loss": 4.854896949450175,
+      "accuracy": 0.148,
+      "level_accuracy": {
+        "Level 1": 0.46808510638297873,
+        "Level 2": 0.17391304347826086,
+        "Level 3": 0.13761467889908258,
+        "Level 4": 0.10077519379844961,
+        "Level 5": 0.06504065040650407
+      },
+      "n_eval": 500,
+      "eval_time_sec": 1326.8454880714417
+    },
+    {
+      "epoch": 3,
+      "avg_loss": 4.9179011657238005,
+      "accuracy": 0.18,
+      "level_accuracy": {
+        "Level 1": 0.46808510638297873,
+        "Level 2": 0.25,
+        "Level 3": 0.1743119266055046,
+        "Level 4": 0.13953488372093023,
+        "Level 5": 0.06504065040650407
+      },
+      "n_eval": 500,
+      "eval_time_sec": 1274.660897731781
+    }
+  ]
+}

@@ -1,0 +1,839 @@
+
+============================================
+[ARC] [t5-v1_1-large] Starting (GPU 1) Tue Mar 24 14:27:57 UTC 2026
+============================================
+--- LR Search ---
+  t5-v1_1-large lr=3e-5
+Model: t5-v1_1-large, LR: 3e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating train split:   0%|          | 0/2251 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 2251/2251 [00:00<00:00, 248156.92 examples/s]
+Generating test split:   0%|          | 0/2376 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 2376/2376 [00:00<00:00, 354460.83 examples/s]
+Generating validation split:   0%|          | 0/570 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 570/570 [00:00<00:00, 161953.21 examples/s]
+Generating train split:   0%|          | 0/1119 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 1119/1119 [00:00<00:00, 198756.08 examples/s]
+Generating test split:   0%|          | 0/1172 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1172/1172 [00:00<00:00, 201720.39 examples/s]
+Generating validation split:   0%|          | 0/299 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 299/299 [00:00<00:00, 89867.21 examples/s]
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/560 [00:00<?, ?it/s]Loading weights: 100%|██████████| 560/560 [00:00<00:00, 33335.37it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=1.2502, overall_acc=0.2589
+  Epoch 2: loss=0.5082, overall_acc=0.2532
+  Epoch 3: loss=0.5253, overall_acc=0.2578
+  Epoch 4: loss=0.5025, overall_acc=0.2555
+  Epoch 5: loss=0.5340, overall_acc=0.2417
+Best: overall_acc=0.2589 (epoch 1), time=437.8s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/t5-v1_1-large_lr3e-5
+  t5-v1_1-large lr=5e-5
+Model: t5-v1_1-large, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/560 [00:00<?, ?it/s]Loading weights: 100%|██████████| 560/560 [00:00<00:00, 28080.37it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=1.1567, overall_acc=0.2589
+  Epoch 2: loss=0.5030, overall_acc=0.2325
+  Epoch 3: loss=0.4959, overall_acc=0.2532
+  Epoch 4: loss=0.4927, overall_acc=0.2589
+  Epoch 5: loss=0.4809, overall_acc=0.4465
+Best: overall_acc=0.4465 (epoch 5), time=440.9s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/t5-v1_1-large_lr5e-5
+  t5-v1_1-large lr=1e-4
+Model: t5-v1_1-large, LR: 0.0001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/560 [00:00<?, ?it/s]Loading weights: 100%|██████████| 560/560 [00:00<00:00, 61719.84it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=1.0965, overall_acc=0.2624
+  Epoch 2: loss=0.5176, overall_acc=0.2255
+  Epoch 3: loss=0.4962, overall_acc=0.2532
+  Epoch 4: loss=0.4944, overall_acc=0.2589
+  Epoch 5: loss=0.4876, overall_acc=0.2532
+Best: overall_acc=0.2624 (epoch 1), time=440.5s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/t5-v1_1-large_lr1e-4
+  t5-v1_1-large lr=3e-5 acc=0.25891829689298046
+  t5-v1_1-large lr=5e-5 acc=0.44649021864211735
+  t5-v1_1-large lr=1e-4 acc=0.26237054085155354
+>>> Best t5-v1_1-large: 5e-5 (0.44649021864211735)
+--- Confidence (seeds 1,2,3) ---
+  t5-v1_1-large seed=1
+Model: t5-v1_1-large, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/560 [00:00<?, ?it/s]Loading weights: 100%|██████████| 560/560 [00:00<00:00, 56483.51it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=1.1567, overall_acc=0.2589
+  Epoch 2: loss=0.5030, overall_acc=0.2325
+  Epoch 3: loss=0.4959, overall_acc=0.2532
+  Epoch 4: loss=0.4927, overall_acc=0.2589
+  Epoch 5: loss=0.4809, overall_acc=0.4465
+Best: overall_acc=0.4465 (epoch 5), time=438.6s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/t5-v1_1-large_seed1
+  t5-v1_1-large seed=2
+Model: t5-v1_1-large, LR: 5e-05, Epochs: 5, Seed: 2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/560 [00:00<?, ?it/s]Loading weights: 100%|██████████| 560/560 [00:00<00:00, 59541.93it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=1.1539, overall_acc=0.2601
+  Epoch 2: loss=0.5354, overall_acc=0.2589
+  Epoch 3: loss=0.7462, overall_acc=0.2451
+  Epoch 4: loss=0.5236, overall_acc=0.2094
+  Epoch 5: loss=0.5040, overall_acc=0.2313
+Best: overall_acc=0.2601 (epoch 1), time=439.1s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/t5-v1_1-large_seed2
+  t5-v1_1-large seed=3
+Model: t5-v1_1-large, LR: 5e-05, Epochs: 5, Seed: 3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/560 [00:00<?, ?it/s]Loading weights: 100%|██████████| 560/560 [00:00<00:00, 48200.50it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=1.1430, overall_acc=0.2566
+  Epoch 2: loss=0.5904, overall_acc=0.2612
+  Epoch 3: loss=0.5376, overall_acc=0.2532
+  Epoch 4: loss=0.5339, overall_acc=0.2313
+  Epoch 5: loss=0.4895, overall_acc=0.2532
+Best: overall_acc=0.2612 (epoch 2), time=454.1s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/t5-v1_1-large_seed3
+[ARC] [t5-v1_1-large] DONE Tue Mar 24 15:13:21 UTC 2026
+
+============================================
+[ARC] [pythia-1.4b] Starting (GPU 1) Tue Mar 24 15:13:21 UTC 2026
+============================================
+--- LR Search ---
+  pythia-1.4b lr=5e-5
+Model: pythia-1.4b, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   2%|▏         | 6/292 [00:00<00:08, 33.02it/s]Loading weights:  49%|████▉     | 144/292 [00:00<00:00, 618.01it/s]Loading weights:  77%|███████▋  | 225/292 [00:00<00:00, 627.57it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 575.30it/s]
+LoRA: 6.3M / 1420.9M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4131, overall_acc=0.2865
+  Epoch 2: loss=1.3174, overall_acc=0.4649
+  Epoch 3: loss=1.0373, overall_acc=0.5155
+  Epoch 4: loss=0.8126, overall_acc=0.5201
+  Epoch 5: loss=0.6384, overall_acc=0.5236
+Best: overall_acc=0.5236 (epoch 5), time=465.0s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-1.4b_lr5e-5
+  pythia-1.4b lr=1e-4
+Model: pythia-1.4b, LR: 0.0001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  22%|██▏       | 63/292 [00:00<00:00, 606.31it/s]Loading weights:  45%|████▌     | 132/292 [00:00<00:00, 513.38it/s]Loading weights:  63%|██████▎   | 185/292 [00:00<00:00, 510.42it/s]Loading weights:  81%|████████  | 237/292 [00:00<00:00, 500.74it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 522.89it/s]
+LoRA: 6.3M / 1420.9M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4220, overall_acc=0.2647
+  Epoch 2: loss=1.3994, overall_acc=0.2428
+  Epoch 3: loss=1.3762, overall_acc=0.2520
+  Epoch 4: loss=1.2236, overall_acc=0.4638
+  Epoch 5: loss=0.8737, overall_acc=0.4730
+Best: overall_acc=0.4730 (epoch 5), time=456.8s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-1.4b_lr1e-4
+  pythia-1.4b lr=3e-4
+Model: pythia-1.4b, LR: 0.0003, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   3%|▎         | 8/292 [00:00<00:04, 61.75it/s]Loading weights:  56%|█████▌    | 164/292 [00:00<00:00, 835.00it/s]Loading weights:  88%|████████▊ | 256/292 [00:00<00:00, 493.75it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 483.12it/s]
+LoRA: 6.3M / 1420.9M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4354, overall_acc=0.2589
+  Epoch 2: loss=1.4059, overall_acc=0.2509
+  Epoch 3: loss=1.4019, overall_acc=0.2417
+  Epoch 4: loss=1.3801, overall_acc=0.2681
+  Epoch 5: loss=1.3581, overall_acc=0.2762
+Best: overall_acc=0.2762 (epoch 5), time=458.0s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-1.4b_lr3e-4
+  pythia-1.4b lr=1e-3
+Model: pythia-1.4b, LR: 0.001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   3%|▎         | 8/292 [00:00<00:04, 59.39it/s]Loading weights:  56%|█████▌    | 164/292 [00:00<00:00, 831.17it/s]Loading weights:  89%|████████▊ | 259/292 [00:00<00:00, 794.62it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 652.52it/s]
+LoRA: 6.3M / 1420.9M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.5091, overall_acc=0.2589
+  Epoch 2: loss=1.4622, overall_acc=0.2532
+  Epoch 3: loss=1.6804, overall_acc=0.2532
+  Epoch 4: loss=nan, overall_acc=0.2555
+  Epoch 5: loss=nan, overall_acc=0.2555
+Best: overall_acc=0.2589 (epoch 1), time=460.6s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-1.4b_lr1e-3
+  pythia-1.4b lr=5e-5 acc=0.523590333716916
+  pythia-1.4b lr=1e-4 acc=0.47295742232451093
+  pythia-1.4b lr=3e-4 acc=0.2761795166858458
+  pythia-1.4b lr=1e-3 acc=0.25891829689298046
+>>> Best pythia-1.4b: 5e-5 (0.523590333716916)
+--- Confidence (seeds 1,2,3) ---
+  pythia-1.4b seed=1
+Model: pythia-1.4b, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  35%|███▌      | 103/292 [00:00<00:00, 1026.67it/s]Loading weights:  71%|███████   | 206/292 [00:00<00:00, 725.49it/s] Loading weights:  97%|█████████▋| 284/292 [00:00<00:00, 584.98it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 648.05it/s]
+LoRA: 6.3M / 1420.9M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4131, overall_acc=0.2865
+  Epoch 2: loss=1.3174, overall_acc=0.4649
+  Epoch 3: loss=1.0373, overall_acc=0.5155
+  Epoch 4: loss=0.8126, overall_acc=0.5201
+  Epoch 5: loss=0.6384, overall_acc=0.5236
+Best: overall_acc=0.5236 (epoch 5), time=469.0s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-1.4b_seed1
+  pythia-1.4b seed=2
+Model: pythia-1.4b, LR: 5e-05, Epochs: 5, Seed: 2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   2%|▏         | 6/292 [00:00<00:06, 43.56it/s]Loading weights:  64%|██████▎   | 186/292 [00:00<00:00, 936.28it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 683.65it/s]
+LoRA: 6.3M / 1420.9M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4114, overall_acc=0.2578
+  Epoch 2: loss=1.3534, overall_acc=0.4499
+  Epoch 3: loss=1.0903, overall_acc=0.4925
+  Epoch 4: loss=0.8355, overall_acc=0.4925
+  Epoch 5: loss=0.6576, overall_acc=0.5052
+Best: overall_acc=0.5052 (epoch 5), time=452.4s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-1.4b_seed2
+  pythia-1.4b seed=3
+Model: pythia-1.4b, LR: 5e-05, Epochs: 5, Seed: 3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   3%|▎         | 8/292 [00:00<00:04, 67.93it/s]Loading weights:  81%|████████  | 236/292 [00:00<00:00, 1258.98it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 991.26it/s] 
+LoRA: 6.3M / 1420.9M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4085, overall_acc=0.2762
+  Epoch 2: loss=1.3023, overall_acc=0.4937
+  Epoch 3: loss=1.0143, overall_acc=0.5167
+  Epoch 4: loss=0.7664, overall_acc=0.5316
+  Epoch 5: loss=0.6121, overall_acc=0.5247
+Best: overall_acc=0.5316 (epoch 4), time=455.4s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-1.4b_seed3
+[ARC] [pythia-1.4b] DONE Tue Mar 24 16:08:51 UTC 2026
+
+============================================
+[ARC] [pythia-410m] Starting (GPU 1) Tue Mar 24 16:08:51 UTC 2026
+============================================
+--- LR Search ---
+  pythia-410m lr=1e-5
+Model: pythia-410m, LR: 1e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 3699.73it/s]
+  Epoch 1: loss=1.4406, overall_acc=0.2509
+  Epoch 2: loss=1.4140, overall_acc=0.2589
+  Epoch 3: loss=1.3714, overall_acc=0.2681
+  Epoch 4: loss=0.8651, overall_acc=0.2704
+  Epoch 5: loss=0.0800, overall_acc=0.2796
+Best: overall_acc=0.2796 (epoch 5), time=179.2s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-410m_lr1e-5
+  pythia-410m lr=2e-5
+Model: pythia-410m, LR: 2e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 3377.06it/s]
+  Epoch 1: loss=1.4535, overall_acc=0.2555
+  Epoch 2: loss=1.5090, overall_acc=0.2532
+  Epoch 3: loss=1.4662, overall_acc=0.2612
+  Epoch 4: loss=1.4213, overall_acc=0.2555
+  Epoch 5: loss=1.3982, overall_acc=0.2394
+Best: overall_acc=0.2612 (epoch 3), time=181.0s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-410m_lr2e-5
+  pythia-410m lr=3e-5
+Model: pythia-410m, LR: 3e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 2944.01it/s]
+  Epoch 1: loss=1.4904, overall_acc=0.2520
+  Epoch 2: loss=1.4402, overall_acc=0.2589
+  Epoch 3: loss=1.4143, overall_acc=0.2532
+  Epoch 4: loss=1.3987, overall_acc=0.2532
+  Epoch 5: loss=1.3848, overall_acc=0.2405
+Best: overall_acc=0.2589 (epoch 2), time=181.5s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-410m_lr3e-5
+  pythia-410m lr=5e-5
+Model: pythia-410m, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 3177.17it/s]
+  Epoch 1: loss=1.4944, overall_acc=0.2313
+  Epoch 2: loss=1.4420, overall_acc=0.2589
+  Epoch 3: loss=1.4188, overall_acc=0.2532
+  Epoch 4: loss=1.4165, overall_acc=0.2555
+  Epoch 5: loss=1.3966, overall_acc=0.2601
+Best: overall_acc=0.2601 (epoch 5), time=183.4s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-410m_lr5e-5
+  pythia-410m lr=1e-4
+Model: pythia-410m, LR: 0.0001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 3488.47it/s]
+  Epoch 1: loss=1.6089, overall_acc=0.2313
+  Epoch 2: loss=1.4569, overall_acc=0.2635
+  Epoch 3: loss=1.3522, overall_acc=0.2658
+  Epoch 4: loss=0.9197, overall_acc=0.2773
+  Epoch 5: loss=0.4261, overall_acc=0.2543
+Best: overall_acc=0.2773 (epoch 4), time=173.2s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-410m_lr1e-4
+  pythia-410m lr=1e-5 acc=0.27963176064441886
+  pythia-410m lr=2e-5 acc=0.2612197928653625
+  pythia-410m lr=3e-5 acc=0.25891829689298046
+  pythia-410m lr=5e-5 acc=0.2600690448791715
+  pythia-410m lr=1e-4 acc=0.2773302646720368
+>>> Best pythia-410m: 1e-5 (0.27963176064441886)
+--- Confidence (seeds 1,2,3) ---
+  pythia-410m seed=1
+Model: pythia-410m, LR: 1e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 3081.39it/s]
+  Epoch 1: loss=1.4406, overall_acc=0.2509
+  Epoch 2: loss=1.4140, overall_acc=0.2589
+  Epoch 3: loss=1.3714, overall_acc=0.2681
+  Epoch 4: loss=0.8651, overall_acc=0.2704
+  Epoch 5: loss=0.0800, overall_acc=0.2796
+Best: overall_acc=0.2796 (epoch 5), time=179.6s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-410m_seed1
+  pythia-410m seed=2
+Model: pythia-410m, LR: 1e-05, Epochs: 5, Seed: 2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 3464.68it/s]
+  Epoch 1: loss=1.4529, overall_acc=0.2532
+  Epoch 2: loss=1.4152, overall_acc=0.2532
+  Epoch 3: loss=1.3763, overall_acc=0.2750
+  Epoch 4: loss=1.0862, overall_acc=0.2359
+  Epoch 5: loss=0.2057, overall_acc=0.2704
+Best: overall_acc=0.2750 (epoch 3), time=182.3s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-410m_seed2
+  pythia-410m seed=3
+Model: pythia-410m, LR: 1e-05, Epochs: 5, Seed: 3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 3480.78it/s]
+  Epoch 1: loss=1.4533, overall_acc=0.2509
+  Epoch 2: loss=1.4122, overall_acc=0.2313
+  Epoch 3: loss=1.4014, overall_acc=0.2681
+  Epoch 4: loss=1.3329, overall_acc=0.2693
+  Epoch 5: loss=0.7039, overall_acc=0.2911
+Best: overall_acc=0.2911 (epoch 5), time=184.4s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-410m_seed3
+[ARC] [pythia-410m] DONE Tue Mar 24 16:34:32 UTC 2026
+
+============================================
+[ARC] [t5-v1_1-small] Starting (GPU 1) Tue Mar 24 16:34:32 UTC 2026
+============================================
+--- LR Search ---
+  t5-v1_1-small lr=3e-5
+Model: t5-v1_1-small, LR: 3e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/192 [00:00<?, ?it/s]Loading weights: 100%|██████████| 192/192 [00:00<00:00, 32230.30it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=5.2240, overall_acc=0.2704
+  Epoch 2: loss=1.3646, overall_acc=0.2601
+  Epoch 3: loss=0.8815, overall_acc=0.2543
+  Epoch 4: loss=0.7058, overall_acc=0.2589
+  Epoch 5: loss=0.6004, overall_acc=0.2601
+Best: overall_acc=0.2704 (epoch 1), time=229.7s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/t5-v1_1-small_lr3e-5
+  t5-v1_1-small lr=5e-5
+Model: t5-v1_1-small, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/192 [00:00<?, ?it/s]Loading weights: 100%|██████████| 192/192 [00:00<00:00, 60617.72it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=4.1781, overall_acc=0.2555
+  Epoch 2: loss=0.9676, overall_acc=0.2612
+  Epoch 3: loss=0.6588, overall_acc=0.2509
+  Epoch 4: loss=0.5726, overall_acc=0.2578
+  Epoch 5: loss=0.5295, overall_acc=0.2566
+Best: overall_acc=0.2612 (epoch 2), time=203.9s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/t5-v1_1-small_lr5e-5
+  t5-v1_1-small lr=1e-4
+Model: t5-v1_1-small, LR: 0.0001, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/192 [00:00<?, ?it/s]Loading weights: 100%|██████████| 192/192 [00:00<00:00, 33673.69it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=3.1149, overall_acc=0.2578
+  Epoch 2: loss=0.6288, overall_acc=0.2589
+  Epoch 3: loss=0.5385, overall_acc=0.2543
+  Epoch 4: loss=0.5176, overall_acc=0.2624
+  Epoch 5: loss=0.4987, overall_acc=0.2612
+Best: overall_acc=0.2624 (epoch 4), time=228.2s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/t5-v1_1-small_lr1e-4
+  t5-v1_1-small lr=3e-4
+Model: t5-v1_1-small, LR: 0.0003, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/192 [00:00<?, ?it/s]Loading weights: 100%|██████████| 192/192 [00:00<00:00, 30574.68it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=2.0622, overall_acc=0.2589
+  Epoch 2: loss=0.5272, overall_acc=0.2451
+  Epoch 3: loss=0.4978, overall_acc=0.2532
+  Epoch 4: loss=0.4901, overall_acc=0.2589
+  Epoch 5: loss=0.4864, overall_acc=0.2532
+Best: overall_acc=0.2589 (epoch 1), time=212.7s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/t5-v1_1-small_lr3e-4
+  t5-v1_1-small lr=3e-5 acc=0.27042577675489066
+  t5-v1_1-small lr=5e-5 acc=0.2612197928653625
+  t5-v1_1-small lr=1e-4 acc=0.26237054085155354
+  t5-v1_1-small lr=3e-4 acc=0.25891829689298046
+>>> Best t5-v1_1-small: 3e-5 (0.27042577675489066)
+--- Confidence (seeds 1,2,3) ---
+  t5-v1_1-small seed=1
+Model: t5-v1_1-small, LR: 3e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/192 [00:00<?, ?it/s]Loading weights: 100%|██████████| 192/192 [00:00<00:00, 32072.42it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=5.2240, overall_acc=0.2704
+  Epoch 2: loss=1.3646, overall_acc=0.2601
+  Epoch 3: loss=0.8815, overall_acc=0.2543
+  Epoch 4: loss=0.7058, overall_acc=0.2589
+  Epoch 5: loss=0.6004, overall_acc=0.2601
+Best: overall_acc=0.2704 (epoch 1), time=226.2s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/t5-v1_1-small_seed1
+  t5-v1_1-small seed=2
+Model: t5-v1_1-small, LR: 3e-05, Epochs: 5, Seed: 2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/192 [00:00<?, ?it/s]Loading weights: 100%|██████████| 192/192 [00:00<00:00, 32095.43it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=5.3839, overall_acc=0.2290
+  Epoch 2: loss=1.4357, overall_acc=0.2555
+  Epoch 3: loss=0.9326, overall_acc=0.2670
+  Epoch 4: loss=0.7124, overall_acc=0.2543
+  Epoch 5: loss=0.6507, overall_acc=0.2612
+Best: overall_acc=0.2670 (epoch 3), time=219.6s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/t5-v1_1-small_seed2
+  t5-v1_1-small seed=3
+Model: t5-v1_1-small, LR: 3e-05, Epochs: 5, Seed: 3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/192 [00:00<?, ?it/s]Loading weights: 100%|██████████| 192/192 [00:00<00:00, 32091.59it/s]
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  Epoch 1: loss=5.1940, overall_acc=0.2428
+  Epoch 2: loss=1.4029, overall_acc=0.2635
+  Epoch 3: loss=0.8796, overall_acc=0.2394
+  Epoch 4: loss=0.6906, overall_acc=0.2313
+  Epoch 5: loss=0.6195, overall_acc=0.2589
+Best: overall_acc=0.2635 (epoch 2), time=229.7s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/t5-v1_1-small_seed3
+[ARC] [t5-v1_1-small] DONE Tue Mar 24 17:01:40 UTC 2026
+
+============================================
+[ARC] [bert-mini] Starting (GPU 1) Tue Mar 24 17:01:40 UTC 2026
+============================================
+--- LR Search ---
+  bert-mini lr=3e-5
+Model: bert-mini, LR: 3e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 24429.50it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4651, overall_acc=0.3072
+  Epoch 2: loss=1.3645, overall_acc=0.3372
+  Epoch 3: loss=1.2944, overall_acc=0.3406
+  Epoch 4: loss=1.2396, overall_acc=0.3556
+  Epoch 5: loss=1.1773, overall_acc=0.3705
+Best: overall_acc=0.3705 (epoch 5), time=65.2s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-mini_lr3e-5
+  bert-mini lr=5e-5
+Model: bert-mini, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 57678.79it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4525, overall_acc=0.3429
+  Epoch 2: loss=1.3341, overall_acc=0.3464
+  Epoch 3: loss=1.2196, overall_acc=0.3751
+  Epoch 4: loss=1.1115, overall_acc=0.3867
+  Epoch 5: loss=1.0227, overall_acc=0.3832
+Best: overall_acc=0.3867 (epoch 4), time=66.0s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-mini_lr5e-5
+  bert-mini lr=1e-4
+Model: bert-mini, LR: 0.0001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 25088.09it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4489, overall_acc=0.3176
+  Epoch 2: loss=1.3306, overall_acc=0.3406
+  Epoch 3: loss=1.1402, overall_acc=0.3625
+  Epoch 4: loss=0.9285, overall_acc=0.3475
+  Epoch 5: loss=0.7576, overall_acc=0.3717
+Best: overall_acc=0.3717 (epoch 5), time=66.8s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-mini_lr1e-4
+  bert-mini lr=3e-4
+Model: bert-mini, LR: 0.0003, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 15835.14it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4889, overall_acc=0.2589
+  Epoch 2: loss=1.4412, overall_acc=0.2923
+  Epoch 3: loss=1.1966, overall_acc=0.3003
+  Epoch 4: loss=0.8828, overall_acc=0.2980
+  Epoch 5: loss=0.6371, overall_acc=0.3142
+Best: overall_acc=0.3142 (epoch 5), time=54.2s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-mini_lr3e-4
+  bert-mini lr=1e-3
+Model: bert-mini, LR: 0.001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 58391.29it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4783, overall_acc=0.2198
+  Epoch 2: loss=1.4426, overall_acc=0.2520
+  Epoch 3: loss=1.4487, overall_acc=0.2474
+  Epoch 4: loss=1.5569, overall_acc=0.2255
+  Epoch 5: loss=1.5711, overall_acc=0.2301
+Best: overall_acc=0.2520 (epoch 2), time=60.9s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-mini_lr1e-3
+  bert-mini lr=3e-5 acc=0.3705408515535098
+  bert-mini lr=5e-5 acc=0.3866513233601841
+  bert-mini lr=1e-4 acc=0.3716915995397008
+  bert-mini lr=3e-4 acc=0.3141542002301496
+  bert-mini lr=1e-3 acc=0.2520138089758343
+>>> Best bert-mini: 5e-5 (0.3866513233601841)
+--- Confidence (seeds 1,2,3) ---
+  bert-mini seed=1
+Model: bert-mini, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 23749.55it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4525, overall_acc=0.3429
+  Epoch 2: loss=1.3341, overall_acc=0.3464
+  Epoch 3: loss=1.2196, overall_acc=0.3751
+  Epoch 4: loss=1.1115, overall_acc=0.3867
+  Epoch 5: loss=1.0227, overall_acc=0.3832
+Best: overall_acc=0.3867 (epoch 4), time=64.0s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-mini_seed1
+  bert-mini seed=2
+Model: bert-mini, LR: 5e-05, Epochs: 5, Seed: 2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 24729.74it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4409, overall_acc=0.3406
+  Epoch 2: loss=1.3227, overall_acc=0.3694
+  Epoch 3: loss=1.2009, overall_acc=0.3820
+  Epoch 4: loss=1.1096, overall_acc=0.3843
+  Epoch 5: loss=1.0095, overall_acc=0.3867
+Best: overall_acc=0.3867 (epoch 5), time=65.8s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-mini_seed2
+  bert-mini seed=3
+Model: bert-mini, LR: 5e-05, Epochs: 5, Seed: 3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 24797.70it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-mini
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4535, overall_acc=0.3119
+  Epoch 2: loss=1.3412, overall_acc=0.3326
+  Epoch 3: loss=1.2325, overall_acc=0.3303
+  Epoch 4: loss=1.1321, overall_acc=0.3510
+  Epoch 5: loss=1.0535, overall_acc=0.3510
+Best: overall_acc=0.3510 (epoch 4), time=64.6s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-mini_seed3
+[ARC] [bert-mini] DONE Tue Mar 24 17:11:38 UTC 2026
+
+============================================
+[ARC] [pythia-14m] Starting (GPU 1) Tue Mar 24 17:11:38 UTC 2026
+============================================
+--- LR Search ---
+  pythia-14m lr=3e-5
+Model: pythia-14m, LR: 3e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 4457.97it/s]
+  Epoch 1: loss=1.4539, overall_acc=0.2497
+  Epoch 2: loss=1.3934, overall_acc=0.2578
+  Epoch 3: loss=1.3113, overall_acc=0.2255
+  Epoch 4: loss=0.9939, overall_acc=0.2624
+  Epoch 5: loss=0.5848, overall_acc=0.2463
+Best: overall_acc=0.2624 (epoch 4), time=52.2s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-14m_lr3e-5
+  pythia-14m lr=5e-5
+Model: pythia-14m, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 2712.66it/s]
+  Epoch 1: loss=1.4534, overall_acc=0.2555
+  Epoch 2: loss=1.4026, overall_acc=0.2451
+  Epoch 3: loss=1.3585, overall_acc=0.2578
+  Epoch 4: loss=1.1491, overall_acc=0.2486
+  Epoch 5: loss=0.7098, overall_acc=0.2382
+Best: overall_acc=0.2578 (epoch 3), time=51.0s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-14m_lr5e-5
+  pythia-14m lr=1e-4
+Model: pythia-14m, LR: 0.0001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 2411.76it/s]
+  Epoch 1: loss=1.4537, overall_acc=0.2532
+  Epoch 2: loss=1.4106, overall_acc=0.2566
+  Epoch 3: loss=1.3761, overall_acc=0.2451
+  Epoch 4: loss=1.2284, overall_acc=0.2451
+  Epoch 5: loss=0.8361, overall_acc=0.2555
+Best: overall_acc=0.2566 (epoch 2), time=53.9s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-14m_lr1e-4
+  pythia-14m lr=3e-4
+Model: pythia-14m, LR: 0.0003, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 2181.57it/s]
+  Epoch 1: loss=1.4564, overall_acc=0.2555
+  Epoch 2: loss=1.4093, overall_acc=0.2589
+  Epoch 3: loss=1.3976, overall_acc=0.2371
+  Epoch 4: loss=1.3673, overall_acc=0.2520
+  Epoch 5: loss=1.2287, overall_acc=0.2313
+Best: overall_acc=0.2589 (epoch 2), time=52.1s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-14m_lr3e-4
+  pythia-14m lr=1e-3
+Model: pythia-14m, LR: 0.001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 2694.63it/s]
+  Epoch 1: loss=1.4627, overall_acc=0.2658
+  Epoch 2: loss=1.4157, overall_acc=0.2589
+  Epoch 3: loss=1.4020, overall_acc=0.2532
+  Epoch 4: loss=1.3944, overall_acc=0.2497
+  Epoch 5: loss=1.3696, overall_acc=0.2704
+Best: overall_acc=0.2704 (epoch 5), time=52.7s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-14m_lr1e-3
+  pythia-14m lr=3e-5 acc=0.26237054085155354
+  pythia-14m lr=5e-5 acc=0.25776754890678943
+  pythia-14m lr=1e-4 acc=0.2566168009205984
+  pythia-14m lr=3e-4 acc=0.25891829689298046
+  pythia-14m lr=1e-3 acc=0.27042577675489066
+>>> Best pythia-14m: 1e-3 (0.27042577675489066)
+--- Confidence (seeds 1,2,3) ---
+  pythia-14m seed=1
+Model: pythia-14m, LR: 0.001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 2256.85it/s]
+  Epoch 1: loss=1.4627, overall_acc=0.2658
+  Epoch 2: loss=1.4157, overall_acc=0.2589
+  Epoch 3: loss=1.4020, overall_acc=0.2532
+  Epoch 4: loss=1.3944, overall_acc=0.2497
+  Epoch 5: loss=1.3696, overall_acc=0.2704
+Best: overall_acc=0.2704 (epoch 5), time=51.4s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-14m_seed1
+  pythia-14m seed=2
+Model: pythia-14m, LR: 0.001, Epochs: 5, Seed: 2
+Train: 3370, Val overall: 869, Val challenge: 299
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 2687.09it/s]
+  Epoch 1: loss=1.4877, overall_acc=0.2532
+  Epoch 2: loss=1.4065, overall_acc=0.2589
+  Epoch 3: loss=1.3976, overall_acc=0.2589
+  Epoch 4: loss=1.3947, overall_acc=0.2589
+  Epoch 5: loss=1.3890, overall_acc=0.2428
+Best: overall_acc=0.2589 (epoch 2), time=53.5s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-14m_seed2
+  pythia-14m seed=3
+Model: pythia-14m, LR: 0.001, Epochs: 5, Seed: 3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 3057.01it/s]
+  Epoch 1: loss=1.4675, overall_acc=0.2555
+  Epoch 2: loss=1.4011, overall_acc=0.2589
+  Epoch 3: loss=1.3987, overall_acc=0.2532
+  Epoch 4: loss=1.3948, overall_acc=0.2359
+  Epoch 5: loss=1.3905, overall_acc=0.2589
+Best: overall_acc=0.2589 (epoch 2), time=53.2s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-14m_seed3
+[ARC] [pythia-14m] DONE Tue Mar 24 17:20:04 UTC 2026
+============================================
+remote1 ALL DONE Tue Mar 24 17:20:04 UTC 2026
+============================================

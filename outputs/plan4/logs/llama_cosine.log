@@ -1,0 +1,36 @@
+Model: llama3.2-3b-instruct, LR: 0.0003, Epochs: 5, Device: cuda:0
+Loading MATH dataset...
+Train: 7500, Test: 5000, Eval: 500
+Loading model llama3.2-3b-instruct...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.18it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  2.06it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.85it/s]
+LoRA: 9.2M / 3221.9M (0.3%) [grad_ckpt=ON]
+Using cosine scheduler (warmup=140, total=2340)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Step 200, loss=3.3429
+  Step 400, loss=1.8207
+  Step 600, loss=3.7674
+  Step 800, loss=4.2654
+  Step 1000, loss=5.1766
+  Step 1200, loss=3.5825
+  Step 1400, loss=5.9548
+  Step 1600, loss=3.5639
+  Step 1800, loss=1.6890
+  Evaluating (500 samples)...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Epoch 1/5: loss=3.1222, acc=0.2980 (149/500) eval_time=1446s
+  Level 1: 0.6596
+  Level 2: 0.3804
+  Level 3: 0.3945
+  Level 4: 0.2403
+  Level 5: 0.0732
+  Step 200, loss=2.5247
+  Step 400, loss=3.4242
+  Step 600, loss=4.3006
+  Step 800, loss=2.3740
+  Step 1000, loss=4.8853
+  Step 1200, loss=2.5777
+  Step 1400, loss=4.4639
+  Step 1600, loss=2.1315
+  Step 1800, loss=1.1214
+  Evaluating (500 samples)...

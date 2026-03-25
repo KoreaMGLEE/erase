@@ -1,0 +1,16 @@
+{
+  "model": "t5-v1_1-large",
+  "split": "split1",
+  "lr": 5e-05,
+  "seed": 1,
+  "mode": "confidence",
+  "val_acc": 0.8691798267957208,
+  "avg_loss": 0.4016219706495603,
+  "training_time_sec": 874.3324463367462,
+  "confidence_stats": {
+    "mean": 0.8344016671180725,
+    "std": 0.2635330855846405,
+    "gt_095_ratio": 0.5783666666666667,
+    "lt_04_ratio": 0.1036
+  }
+}

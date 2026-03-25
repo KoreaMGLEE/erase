@@ -1,0 +1,995 @@
+
+============================================
+[ARC] [pythia-2.8b] Starting (GPU 0) Tue Mar 24 14:30:25 UTC 2026
+============================================
+--- LR Search ---
+  pythia-2.8b lr=5e-5
+Model: pythia-2.8b, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:   2%|▏         | 8/388 [00:00<00:04, 77.70it/s]Loading weights:  59%|█████▉    | 228/388 [00:00<00:00, 1301.81it/s]Loading weights:  93%|█████████▎| 360/388 [00:00<00:00, 1249.77it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 1180.38it/s]
+LoRA: 10.5M / 2785.7M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4169, overall_acc=0.2658
+  Epoch 2: loss=1.2743, overall_acc=0.5489
+  Epoch 3: loss=0.9312, overall_acc=0.5903
+  Epoch 4: loss=0.6954, overall_acc=0.5869
+  Epoch 5: loss=0.5143, overall_acc=0.5915
+Best: overall_acc=0.5915 (epoch 5), time=558.1s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-2.8b_lr5e-5
+  pythia-2.8b lr=1e-4
+Model: pythia-2.8b, LR: 0.0001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:  29%|██▊       | 111/388 [00:00<00:00, 1036.92it/s]Loading weights:  59%|█████▉    | 228/388 [00:00<00:00, 1094.68it/s]Loading weights:  87%|████████▋ | 338/388 [00:00<00:00, 1093.07it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 1166.35it/s]
+LoRA: 10.5M / 2785.7M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4253, overall_acc=0.2670
+  Epoch 2: loss=1.4635, overall_acc=0.2313
+  Epoch 3: loss=1.4082, overall_acc=0.2532
+  Epoch 4: loss=1.4010, overall_acc=0.2555
+  Epoch 5: loss=1.3907, overall_acc=0.2532
+Best: overall_acc=0.2670 (epoch 1), time=566.8s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-2.8b_lr1e-4
+  pythia-2.8b lr=3e-4
+Model: pythia-2.8b, LR: 0.0003, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:  35%|███▍      | 134/388 [00:00<00:00, 1331.71it/s]Loading weights:  69%|██████▉   | 268/388 [00:00<00:00, 629.71it/s] Loading weights:  90%|█████████ | 350/388 [00:00<00:00, 532.27it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 627.18it/s]
+LoRA: 10.5M / 2785.7M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.5289, overall_acc=0.2555
+  Epoch 2: loss=1.4269, overall_acc=0.2313
+  Epoch 3: loss=1.4097, overall_acc=0.2532
+  Epoch 4: loss=1.4028, overall_acc=0.2578
+  Epoch 5: loss=1.3925, overall_acc=0.2532
+Best: overall_acc=0.2578 (epoch 4), time=565.7s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-2.8b_lr3e-4
+  pythia-2.8b lr=1e-3
+Model: pythia-2.8b, LR: 0.001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:  34%|███▍      | 132/388 [00:00<00:00, 913.10it/s]Loading weights:  58%|█████▊    | 224/388 [00:00<00:00, 598.97it/s]Loading weights:  74%|███████▍  | 288/388 [00:00<00:00, 589.99it/s]Loading weights:  90%|████████▉ | 349/388 [00:00<00:00, 481.39it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 583.50it/s]
+LoRA: 10.5M / 2785.7M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.6017, overall_acc=0.2532
+  Epoch 2: loss=1.4286, overall_acc=0.2313
+  Epoch 3: loss=1.4116, overall_acc=0.2532
+  Epoch 4: loss=1.4059, overall_acc=0.2555
+  Epoch 5: loss=1.3937, overall_acc=0.2532
+Best: overall_acc=0.2555 (epoch 4), time=557.7s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-2.8b_lr1e-3
+  pythia-2.8b lr=5e-5 acc=0.5914844649021864
+  pythia-2.8b lr=1e-4 acc=0.2669735327963176
+  pythia-2.8b lr=3e-4 acc=0.25776754890678943
+  pythia-2.8b lr=1e-3 acc=0.2554660529344074
+>>> Best pythia-2.8b: 5e-5 (0.5914844649021864)
+--- Confidence (seeds 1,2,3) ---
+  pythia-2.8b seed=1
+Model: pythia-2.8b, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:  25%|██▍       | 96/388 [00:00<00:00, 678.65it/s]Loading weights:  42%|████▏     | 164/388 [00:00<00:00, 636.97it/s]Loading weights:  59%|█████▉    | 228/388 [00:00<00:00, 607.94it/s]Loading weights:  74%|███████▍  | 289/388 [00:00<00:00, 479.68it/s]Loading weights:  89%|████████▊ | 344/388 [00:00<00:00, 492.03it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 569.91it/s]
+LoRA: 10.5M / 2785.7M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4169, overall_acc=0.2658
+  Epoch 2: loss=1.2743, overall_acc=0.5489
+  Epoch 3: loss=0.9312, overall_acc=0.5903
+  Epoch 4: loss=0.6954, overall_acc=0.5869
+  Epoch 5: loss=0.5143, overall_acc=0.5915
+Best: overall_acc=0.5915 (epoch 5), time=567.9s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-2.8b_seed1
+  pythia-2.8b seed=2
+Model: pythia-2.8b, LR: 5e-05, Epochs: 5, Seed: 2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:  26%|██▋       | 102/388 [00:00<00:00, 991.69it/s]Loading weights:  52%|█████▏    | 202/388 [00:00<00:00, 905.62it/s]Loading weights:  76%|███████▌  | 293/388 [00:00<00:00, 662.54it/s]Loading weights:  94%|█████████▍| 365/388 [00:00<00:00, 670.50it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 736.55it/s]
+LoRA: 10.5M / 2785.7M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4129, overall_acc=0.2785
+  Epoch 2: loss=1.3800, overall_acc=0.3372
+  Epoch 3: loss=1.1158, overall_acc=0.5708
+  Epoch 4: loss=0.8031, overall_acc=0.5731
+  Epoch 5: loss=0.6078, overall_acc=0.5765
+Best: overall_acc=0.5765 (epoch 5), time=563.6s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-2.8b_seed2
+  pythia-2.8b seed=3
+Model: pythia-2.8b, LR: 5e-05, Epochs: 5, Seed: 3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights:   0%|          | 1/388 [00:00<01:10,  5.51it/s]Loading weights:  22%|██▏       | 86/388 [00:00<00:00, 363.08it/s]Loading weights:  35%|███▍      | 134/388 [00:00<00:00, 405.45it/s]Loading weights:  48%|████▊     | 187/388 [00:00<00:00, 448.86it/s]Loading weights:  73%|███████▎  | 284/388 [00:00<00:00, 618.34it/s]Loading weights:  92%|█████████▏| 356/388 [00:00<00:00, 649.49it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 547.94it/s]
+LoRA: 10.5M / 2785.7M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4118, overall_acc=0.2543
+  Epoch 2: loss=1.3884, overall_acc=0.2681
+  Epoch 3: loss=1.2940, overall_acc=0.4994
+  Epoch 4: loss=0.9879, overall_acc=0.5282
+  Epoch 5: loss=0.7586, overall_acc=0.5293
+Best: overall_acc=0.5293 (epoch 5), time=560.1s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-2.8b_seed3
+[ARC] [pythia-2.8b] DONE Tue Mar 24 15:39:09 UTC 2026
+
+============================================
+[ARC] [pythia-1b] Starting (GPU 0) Tue Mar 24 15:39:09 UTC 2026
+============================================
+--- LR Search ---
+  pythia-1b lr=5e-5
+Model: pythia-1b, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights:  55%|█████▌    | 108/196 [00:00<00:00, 788.26it/s]Loading weights:  96%|█████████▌| 188/196 [00:00<00:00, 777.74it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 802.75it/s]
+LoRA: 4.2M / 1016.0M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4133, overall_acc=0.2486
+  Epoch 2: loss=1.3811, overall_acc=0.2773
+  Epoch 3: loss=1.3244, overall_acc=0.3659
+  Epoch 4: loss=1.1675, overall_acc=0.4051
+  Epoch 5: loss=1.0444, overall_acc=0.4361
+Best: overall_acc=0.4361 (epoch 5), time=224.8s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-1b_lr5e-5
+  pythia-1b lr=1e-4
+Model: pythia-1b, LR: 0.0001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights:  56%|█████▌    | 110/196 [00:00<00:00, 754.42it/s]Loading weights:  96%|█████████▌| 188/196 [00:00<00:00, 761.00it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 780.92it/s]
+LoRA: 4.2M / 1016.0M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4193, overall_acc=0.2670
+  Epoch 2: loss=1.3831, overall_acc=0.3153
+  Epoch 3: loss=1.2524, overall_acc=0.4223
+  Epoch 4: loss=0.9763, overall_acc=0.4499
+  Epoch 5: loss=0.7410, overall_acc=0.4730
+Best: overall_acc=0.4730 (epoch 5), time=222.2s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-1b_lr1e-4
+  pythia-1b lr=3e-4
+Model: pythia-1b, LR: 0.0003, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights:  35%|███▍      | 68/196 [00:00<00:00, 674.50it/s]Loading weights:  80%|███████▉  | 156/196 [00:00<00:00, 602.87it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 704.23it/s]
+LoRA: 4.2M / 1016.0M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4524, overall_acc=0.2566
+  Epoch 2: loss=1.4041, overall_acc=0.2601
+  Epoch 3: loss=1.3956, overall_acc=0.2601
+  Epoch 4: loss=1.3636, overall_acc=0.2670
+  Epoch 5: loss=1.1779, overall_acc=0.2911
+Best: overall_acc=0.2911 (epoch 5), time=225.9s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-1b_lr3e-4
+  pythia-1b lr=1e-3
+Model: pythia-1b, LR: 0.001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights:  49%|████▉     | 96/196 [00:00<00:00, 740.11it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 1096.78it/s]
+LoRA: 4.2M / 1016.0M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4764, overall_acc=0.2589
+  Epoch 2: loss=1.4224, overall_acc=0.2394
+  Epoch 3: loss=1.4043, overall_acc=0.2589
+  Epoch 4: loss=1.3964, overall_acc=0.2463
+  Epoch 5: loss=1.3905, overall_acc=0.2290
+Best: overall_acc=0.2589 (epoch 1), time=223.7s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/pythia-1b_lr1e-3
+  pythia-1b lr=5e-5 acc=0.4361334867663982
+  pythia-1b lr=1e-4 acc=0.47295742232451093
+  pythia-1b lr=3e-4 acc=0.2911392405063291
+  pythia-1b lr=1e-3 acc=0.25891829689298046
+>>> Best pythia-1b: 1e-4 (0.47295742232451093)
+--- Confidence (seeds 1,2,3) ---
+  pythia-1b seed=1
+Model: pythia-1b, LR: 0.0001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights:   3%|▎         | 6/196 [00:00<00:03, 53.60it/s]Loading weights:  92%|█████████▏| 180/196 [00:00<00:00, 995.79it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 894.88it/s]
+LoRA: 4.2M / 1016.0M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4193, overall_acc=0.2670
+  Epoch 2: loss=1.3831, overall_acc=0.3153
+  Epoch 3: loss=1.2524, overall_acc=0.4223
+  Epoch 4: loss=0.9763, overall_acc=0.4499
+  Epoch 5: loss=0.7410, overall_acc=0.4730
+Best: overall_acc=0.4730 (epoch 5), time=223.5s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-1b_seed1
+  pythia-1b seed=2
+Model: pythia-1b, LR: 0.0001, Epochs: 5, Seed: 2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights:   3%|▎         | 6/196 [00:00<00:03, 57.44it/s]Loading weights:  93%|█████████▎| 182/196 [00:00<00:00, 1036.34it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 916.74it/s] 
+LoRA: 4.2M / 1016.0M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4122, overall_acc=0.2555
+  Epoch 2: loss=1.3785, overall_acc=0.3245
+  Epoch 3: loss=1.2102, overall_acc=0.4810
+  Epoch 4: loss=0.9320, overall_acc=0.4868
+  Epoch 5: loss=0.6970, overall_acc=0.4776
+Best: overall_acc=0.4868 (epoch 4), time=222.1s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-1b_seed2
+  pythia-1b seed=3
+Model: pythia-1b, LR: 0.0001, Epochs: 5, Seed: 3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 33/196 [00:00<00:00, 329.04it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 1024.40it/s]
+LoRA: 4.2M / 1016.0M (0.4%)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  Epoch 1: loss=1.4175, overall_acc=0.2486
+  Epoch 2: loss=1.3859, overall_acc=0.3245
+  Epoch 3: loss=1.2310, overall_acc=0.4131
+  Epoch 4: loss=0.9663, overall_acc=0.4568
+  Epoch 5: loss=0.7333, overall_acc=0.4568
+Best: overall_acc=0.4568 (epoch 4), time=225.3s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/pythia-1b_seed3
+[ARC] [pythia-1b] DONE Tue Mar 24 16:06:54 UTC 2026
+
+============================================
+[ARC] [bert-base] Starting (GPU 0) Tue Mar 24 16:06:54 UTC 2026
+============================================
+--- LR Search ---
+  bert-base lr=1e-5
+Model: bert-base, LR: 1e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5721.40it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4343, overall_acc=0.4143
+  Epoch 2: loss=1.1897, overall_acc=0.4407
+  Epoch 3: loss=0.9696, overall_acc=0.4557
+  Epoch 4: loss=0.8041, overall_acc=0.4626
+  Epoch 5: loss=0.6986, overall_acc=0.4568
+Best: overall_acc=0.4626 (epoch 4), time=163.1s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-base_lr1e-5
+  bert-base lr=2e-5
+Model: bert-base, LR: 2e-05, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5547.95it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4010, overall_acc=0.4350
+  Epoch 2: loss=1.0924, overall_acc=0.4718
+  Epoch 3: loss=0.7464, overall_acc=0.4626
+  Epoch 4: loss=0.5063, overall_acc=0.4661
+  Epoch 5: loss=0.3657, overall_acc=0.4718
+Best: overall_acc=0.4718 (epoch 2), time=163.5s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-base_lr2e-5
+  bert-base lr=3e-5
+Model: bert-base, LR: 3e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5932.24it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.3990, overall_acc=0.4534
+  Epoch 2: loss=1.0438, overall_acc=0.4787
+  Epoch 3: loss=0.5887, overall_acc=0.4522
+  Epoch 4: loss=0.3356, overall_acc=0.4603
+  Epoch 5: loss=0.2023, overall_acc=0.4488
+Best: overall_acc=0.4787 (epoch 2), time=164.7s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-base_lr3e-5
+  bert-base lr=5e-5
+Model: bert-base, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5664.86it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4124, overall_acc=0.3360
+  Epoch 2: loss=1.2051, overall_acc=0.4591
+  Epoch 3: loss=0.7294, overall_acc=0.4833
+  Epoch 4: loss=0.3132, overall_acc=0.4810
+  Epoch 5: loss=0.1661, overall_acc=0.4856
+Best: overall_acc=0.4856 (epoch 5), time=164.4s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-base_lr5e-5
+  bert-base lr=1e-4
+Model: bert-base, LR: 0.0001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5576.71it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.5137, overall_acc=0.2394
+  Epoch 2: loss=1.6011, overall_acc=0.2336
+  Epoch 3: loss=1.6168, overall_acc=0.2221
+  Epoch 4: loss=1.6161, overall_acc=0.1887
+  Epoch 5: loss=1.6153, overall_acc=0.1818
+Best: overall_acc=0.2394 (epoch 1), time=163.7s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-base_lr1e-4
+  bert-base lr=1e-5 acc=0.4626006904487917
+  bert-base lr=2e-5 acc=0.4718066743383199
+  bert-base lr=3e-5 acc=0.47871116225546606
+  bert-base lr=5e-5 acc=0.4856156501726122
+  bert-base lr=1e-4 acc=0.23935558112773303
+>>> Best bert-base: 5e-5 (0.4856156501726122)
+--- Confidence (seeds 1,2,3) ---
+  bert-base seed=1
+Model: bert-base, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6059.02it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4124, overall_acc=0.3360
+  Epoch 2: loss=1.2051, overall_acc=0.4591
+  Epoch 3: loss=0.7294, overall_acc=0.4833
+  Epoch 4: loss=0.3132, overall_acc=0.4810
+  Epoch 5: loss=0.1661, overall_acc=0.4856
+Best: overall_acc=0.4856 (epoch 5), time=163.2s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-base_seed1
+  bert-base seed=2
+Model: bert-base, LR: 5e-05, Epochs: 5, Seed: 2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7047.52it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.3971, overall_acc=0.3855
+  Epoch 2: loss=1.1128, overall_acc=0.4661
+  Epoch 3: loss=0.5433, overall_acc=0.4741
+  Epoch 4: loss=0.2291, overall_acc=0.4695
+  Epoch 5: loss=0.1169, overall_acc=0.4661
+Best: overall_acc=0.4741 (epoch 3), time=164.0s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-base_seed2
+  bert-base seed=3
+Model: bert-base, LR: 5e-05, Epochs: 5, Seed: 3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5720.38it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4257, overall_acc=0.3924
+  Epoch 2: loss=1.1343, overall_acc=0.4396
+  Epoch 3: loss=0.5968, overall_acc=0.4407
+  Epoch 4: loss=0.2549, overall_acc=0.4384
+  Epoch 5: loss=0.1225, overall_acc=0.4522
+Best: overall_acc=0.4522 (epoch 5), time=164.1s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-base_seed3
+[ARC] [bert-base] DONE Tue Mar 24 16:30:20 UTC 2026
+
+============================================
+[ARC] [bert-medium] Starting (GPU 0) Tue Mar 24 16:30:20 UTC 2026
+============================================
+--- LR Search ---
+  bert-medium lr=3e-5
+Model: bert-medium, LR: 3e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 26544.98it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4189, overall_acc=0.3648
+  Epoch 2: loss=1.2257, overall_acc=0.4085
+  Epoch 3: loss=0.9427, overall_acc=0.4039
+  Epoch 4: loss=0.7174, overall_acc=0.4097
+  Epoch 5: loss=0.5784, overall_acc=0.4154
+Best: overall_acc=0.4154 (epoch 5), time=93.6s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-medium_lr3e-5
+  bert-medium lr=5e-5
+Model: bert-medium, LR: 5e-05, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 25987.01it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4095, overall_acc=0.3613
+  Epoch 2: loss=1.2078, overall_acc=0.4039
+  Epoch 3: loss=0.8396, overall_acc=0.4028
+  Epoch 4: loss=0.5438, overall_acc=0.4246
+  Epoch 5: loss=0.3583, overall_acc=0.4327
+Best: overall_acc=0.4327 (epoch 5), time=89.7s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-medium_lr5e-5
+  bert-medium lr=1e-4
+Model: bert-medium, LR: 0.0001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 19977.81it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4736, overall_acc=0.2796
+  Epoch 2: loss=1.5129, overall_acc=0.2877
+  Epoch 3: loss=1.3768, overall_acc=0.3049
+  Epoch 4: loss=1.2234, overall_acc=0.3498
+  Epoch 5: loss=0.9740, overall_acc=0.3429
+Best: overall_acc=0.3498 (epoch 4), time=88.8s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-medium_lr1e-4
+  bert-medium lr=3e-4
+Model: bert-medium, LR: 0.0003, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 24143.22it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.5702, overall_acc=0.2417
+  Epoch 2: loss=1.6170, overall_acc=0.2589
+  Epoch 3: loss=1.6170, overall_acc=0.2348
+  Epoch 4: loss=1.6143, overall_acc=0.2382
+  Epoch 5: loss=1.6177, overall_acc=0.2371
+Best: overall_acc=0.2589 (epoch 2), time=88.0s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-medium_lr3e-4
+  bert-medium lr=1e-3
+Model: bert-medium, LR: 0.001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 26176.83it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.6040, overall_acc=0.1496
+  Epoch 2: loss=1.6189, overall_acc=0.2739
+  Epoch 3: loss=1.6189, overall_acc=0.2624
+  Epoch 4: loss=1.6178, overall_acc=0.0829
+  Epoch 5: loss=1.6219, overall_acc=0.2140
+Best: overall_acc=0.2739 (epoch 2), time=90.3s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-medium_lr1e-3
+  bert-medium lr=3e-5 acc=0.4154200230149597
+  bert-medium lr=5e-5 acc=0.4326812428078251
+  bert-medium lr=1e-4 acc=0.34982738780207134
+  bert-medium lr=3e-4 acc=0.25891829689298046
+  bert-medium lr=1e-3 acc=0.27387802071346373
+>>> Best bert-medium: 5e-5 (0.4326812428078251)
+--- Confidence (seeds 1,2,3) ---
+  bert-medium seed=1
+Model: bert-medium, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 26848.32it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.decoder.bias               | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4095, overall_acc=0.3613
+  Epoch 2: loss=1.2078, overall_acc=0.4039
+  Epoch 3: loss=0.8396, overall_acc=0.4028
+  Epoch 4: loss=0.5438, overall_acc=0.4246
+  Epoch 5: loss=0.3583, overall_acc=0.4327
+Best: overall_acc=0.4327 (epoch 5), time=89.0s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-medium_seed1
+  bert-medium seed=2
+Model: bert-medium, LR: 5e-05, Epochs: 5, Seed: 2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 25919.21it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4070, overall_acc=0.3947
+  Epoch 2: loss=1.1694, overall_acc=0.4154
+  Epoch 3: loss=0.7949, overall_acc=0.4419
+  Epoch 4: loss=0.4845, overall_acc=0.4396
+  Epoch 5: loss=0.3446, overall_acc=0.4453
+Best: overall_acc=0.4453 (epoch 5), time=90.8s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-medium_seed2
+  bert-medium seed=3
+Model: bert-medium, LR: 5e-05, Epochs: 5, Seed: 3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/135 [00:00<?, ?it/s]Loading weights: 100%|██████████| 135/135 [00:00<00:00, 19990.50it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-medium
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4262, overall_acc=0.3429
+  Epoch 2: loss=1.2052, overall_acc=0.4097
+  Epoch 3: loss=0.8286, overall_acc=0.4384
+  Epoch 4: loss=0.5269, overall_acc=0.4465
+  Epoch 5: loss=0.3536, overall_acc=0.4350
+Best: overall_acc=0.4465 (epoch 4), time=86.6s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-medium_seed3
+[ARC] [bert-medium] DONE Tue Mar 24 16:43:47 UTC 2026
+
+============================================
+[ARC] [bert-small] Starting (GPU 0) Tue Mar 24 16:43:47 UTC 2026
+============================================
+--- LR Search ---
+  bert-small lr=3e-5
+Model: bert-small, LR: 3e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 25707.49it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-small
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4374, overall_acc=0.3740
+  Epoch 2: loss=1.2643, overall_acc=0.3648
+  Epoch 3: loss=1.0944, overall_acc=0.3717
+  Epoch 4: loss=0.9416, overall_acc=0.3786
+  Epoch 5: loss=0.8241, overall_acc=0.3867
+Best: overall_acc=0.3867 (epoch 5), time=66.0s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-small_lr3e-5
+  bert-small lr=5e-5
+Model: bert-small, LR: 5e-05, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 23707.95it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-small
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4269, overall_acc=0.3383
+  Epoch 2: loss=1.2414, overall_acc=0.3936
+  Epoch 3: loss=0.9672, overall_acc=0.4028
+  Epoch 4: loss=0.7330, overall_acc=0.4143
+  Epoch 5: loss=0.5653, overall_acc=0.4097
+Best: overall_acc=0.4143 (epoch 4), time=66.3s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-small_lr5e-5
+  bert-small lr=1e-4
+Model: bert-small, LR: 0.0001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 55517.45it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-small
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4343, overall_acc=0.3280
+  Epoch 2: loss=1.2435, overall_acc=0.3659
+  Epoch 3: loss=0.8316, overall_acc=0.3705
+  Epoch 4: loss=0.4932, overall_acc=0.3843
+  Epoch 5: loss=0.3083, overall_acc=0.3890
+Best: overall_acc=0.3890 (epoch 5), time=65.9s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-small_lr1e-4
+  bert-small lr=3e-4
+Model: bert-small, LR: 0.0003, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 25372.38it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-small
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4509, overall_acc=0.2854
+  Epoch 2: loss=1.3861, overall_acc=0.2831
+  Epoch 3: loss=1.0544, overall_acc=0.3360
+  Epoch 4: loss=0.6090, overall_acc=0.3441
+  Epoch 5: loss=0.2841, overall_acc=0.3544
+Best: overall_acc=0.3544 (epoch 5), time=69.4s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-small_lr3e-4
+  bert-small lr=1e-3
+Model: bert-small, LR: 0.001, Epochs: 5, Seed: 1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 25196.34it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-small
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.5928, overall_acc=0.2543
+  Epoch 2: loss=1.6194, overall_acc=0.2221
+  Epoch 3: loss=1.6191, overall_acc=0.1093
+  Epoch 4: loss=1.6198, overall_acc=0.2106
+  Epoch 5: loss=1.6195, overall_acc=0.2152
+Best: overall_acc=0.2543 (epoch 1), time=64.7s
+Saved to /workspace/erase/outputs/plan2_v2/lr_search/bert-small_lr1e-3
+  bert-small lr=3e-5 acc=0.3866513233601841
+  bert-small lr=5e-5 acc=0.4142692750287687
+  bert-small lr=1e-4 acc=0.38895281933256615
+  bert-small lr=3e-4 acc=0.35443037974683544
+  bert-small lr=1e-3 acc=0.25431530494821636
+>>> Best bert-small: 5e-5 (0.4142692750287687)
+--- Confidence (seeds 1,2,3) ---
+  bert-small seed=1
+Model: bert-small, LR: 5e-05, Epochs: 5, Seed: 1
+Train: 3370, Val overall: 869, Val challenge: 299
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 30971.98it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-small
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4269, overall_acc=0.3383
+  Epoch 2: loss=1.2414, overall_acc=0.3936
+  Epoch 3: loss=0.9672, overall_acc=0.4028
+  Epoch 4: loss=0.7330, overall_acc=0.4143
+  Epoch 5: loss=0.5653, overall_acc=0.4097
+Best: overall_acc=0.4143 (epoch 4), time=65.4s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-small_seed1
+  bert-small seed=2
+Model: bert-small, LR: 5e-05, Epochs: 5, Seed: 2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 20934.66it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-small
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4138, overall_acc=0.3360
+  Epoch 2: loss=1.2364, overall_acc=0.3751
+  Epoch 3: loss=0.9456, overall_acc=0.3867
+  Epoch 4: loss=0.7098, overall_acc=0.4051
+  Epoch 5: loss=0.5677, overall_acc=0.3993
+Best: overall_acc=0.4051 (epoch 4), time=67.8s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-small_seed2
+  bert-small seed=3
+Model: bert-small, LR: 5e-05, Epochs: 5, Seed: 3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Train: 3370, Val overall: 869, Val challenge: 299
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 24578.70it/s]
+[1mBertForMultipleChoice LOAD REPORT[0m from: prajjwal1/bert-small
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+bert.embeddings.position_ids               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING[3m	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.[0m
+  Epoch 1: loss=1.4130, overall_acc=0.3533
+  Epoch 2: loss=1.2284, overall_acc=0.3705
+  Epoch 3: loss=0.9510, overall_acc=0.3993
+  Epoch 4: loss=0.6810, overall_acc=0.4120
+  Epoch 5: loss=0.5305, overall_acc=0.3959
+Best: overall_acc=0.4120 (epoch 4), time=62.0s
+Saved to /workspace/erase/outputs/plan2_v2/confidence/bert-small_seed3
+[ARC] [bert-small] DONE Tue Mar 24 16:54:02 UTC 2026
+============================================
+remote0 ALL DONE Tue Mar 24 16:54:02 UTC 2026
+============================================

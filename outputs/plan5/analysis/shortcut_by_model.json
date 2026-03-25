@@ -1,0 +1,159 @@
+{
+  "global_negation_ratio": 0.3762,
+  "global_overlap_ratio": 0.36286666666666667,
+  "models": {
+    "bert-mini": {
+      "params": 11000000.0,
+      "family": "BERT",
+      "negation_ratio": 0.824180245423456,
+      "overlap_ratio": 0.5374645222327341,
+      "n_easy": 27000,
+      "n_easy_contradiction": 9942,
+      "n_easy_entailment": 10570
+    },
+    "bert-small": {
+      "params": 29000000.0,
+      "family": "BERT",
+      "negation_ratio": 0.8107419486343254,
+      "overlap_ratio": 0.5305048511757935,
+      "n_easy": 27000,
+      "n_easy_contradiction": 9812,
+      "n_easy_entailment": 12162
+    },
+    "bert-medium": {
+      "params": 42000000.0,
+      "family": "BERT",
+      "negation_ratio": 0.8123767798466593,
+      "overlap_ratio": 0.5345676291235031,
+      "n_easy": 27000,
+      "n_easy_contradiction": 9130,
+      "n_easy_entailment": 13611
+    },
+    "bert-base": {
+      "params": 110000000.0,
+      "family": "BERT",
+      "negation_ratio": 0.7102119124444057,
+      "overlap_ratio": 0.5775358733300346,
+      "n_easy": 27000,
+      "n_easy_contradiction": 11467,
+      "n_easy_entailment": 10105
+    },
+    "bert-large": {
+      "params": 335000000.0,
+      "family": "BERT",
+      "negation_ratio": 0.6020486837757463,
+      "overlap_ratio": 0.5183402329835372,
+      "n_easy": 27000,
+      "n_easy_contradiction": 9079,
+      "n_easy_entailment": 10387
+    },
+    "t5-v1_1-small": {
+      "params": 77000000.0,
+      "family": "T5 v1.1",
+      "negation_ratio": 0.5764589515331355,
+      "overlap_ratio": 0.4594337378063288,
+      "n_easy": 27000,
+      "n_easy_contradiction": 5055,
+      "n_easy_entailment": 12609
+    },
+    "t5-v1_1-base": {
+      "params": 248000000.0,
+      "family": "T5 v1.1",
+      "negation_ratio": 0.3891549777625727,
+      "overlap_ratio": 0.7,
+      "n_easy": 27000,
+      "n_easy_contradiction": 11692,
+      "n_easy_entailment": 110
+    },
+    "t5-v1_1-large": {
+      "params": 783000000.0,
+      "family": "T5 v1.1",
+      "negation_ratio": 0.4773423147581139,
+      "overlap_ratio": 0.4264471587891662,
+      "n_easy": 27000,
+      "n_easy_contradiction": 13064,
+      "n_easy_entailment": 9415
+    },
+    "pythia-14m": {
+      "params": 14000000.0,
+      "family": "Pythia",
+      "negation_ratio": 0.9065533980582524,
+      "overlap_ratio": 0.5886499186697994,
+      "n_easy": 27000,
+      "n_easy_contradiction": 8240,
+      "n_easy_entailment": 11066
+    },
+    "pythia-31m": {
+      "params": 31000000.0,
+      "family": "Pythia",
+      "negation_ratio": 0.8246064889174429,
+      "overlap_ratio": 0.535108024691358,
+      "n_easy": 27000,
+      "n_easy_contradiction": 9339,
+      "n_easy_entailment": 10368
+    },
+    "pythia-70m": {
+      "params": 70000000.0,
+      "family": "Pythia",
+      "negation_ratio": 0.8302825097873241,
+      "overlap_ratio": 0.5981006263891695,
+      "n_easy": 27000,
+      "n_easy_contradiction": 9451,
+      "n_easy_entailment": 9898
+    },
+    "pythia-160m": {
+      "params": 160000000.0,
+      "family": "Pythia",
+      "negation_ratio": 0.7841385989454428,
+      "overlap_ratio": 0.5750308587550697,
+      "n_easy": 27000,
+      "n_easy_contradiction": 9293,
+      "n_easy_entailment": 11342
+    },
+    "pythia-410m": {
+      "params": 410000000.0,
+      "family": "Pythia",
+      "negation_ratio": 0.5983311518324608,
+      "overlap_ratio": 0.6087709799675148,
+      "n_easy": 27000,
+      "n_easy_contradiction": 12224,
+      "n_easy_entailment": 9235
+    },
+    "pythia-1b": {
+      "params": 1000000000.0,
+      "family": "Pythia",
+      "negation_ratio": 0.6573286643321661,
+      "overlap_ratio": 0.5658218936994016,
+      "n_easy": 27000,
+      "n_easy_contradiction": 9995,
+      "n_easy_entailment": 11364
+    },
+    "pythia-1.4b": {
+      "params": 1400000000.0,
+      "family": "Pythia",
+      "negation_ratio": 0.5664756177769426,
+      "overlap_ratio": 0.5825737265415549,
+      "n_easy": 27000,
+      "n_easy_contradiction": 10643,
+      "n_easy_entailment": 11190
+    },
+    "pythia-2.8b": {
+      "params": 2800000000.0,
+      "family": "Pythia",
+      "negation_ratio": 0.6113058326592972,
+      "overlap_ratio": 0.5646047289228565,
+      "n_easy": 27000,
+      "n_easy_contradiction": 11127,
+      "n_easy_entailment": 8374
+    },
+    "pythia-6.9b": {
+      "params": 6900000000.0,
+      "family": "Pythia",
+      "negation_ratio": 0.5223362394876938,
+      "overlap_ratio": 0.5420286584677875,
+      "n_easy": 27000,
+      "n_easy_contradiction": 12961,
+      "n_easy_entailment": 8863
+    }
+  }
+}

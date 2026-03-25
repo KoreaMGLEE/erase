@@ -1,0 +1,37 @@
+{
+  "model": "bert-small",
+  "family": "encoder",
+  "lr": 0.001,
+  "seed": 1,
+  "epochs": 5,
+  "best_overall_acc": 0.25431530494821636,
+  "best_epoch": 1,
+  "training_time_sec": 64.66262292861938,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "loss": 1.592818438159346,
+      "overall_acc": 0.25431530494821636
+    },
+    {
+      "epoch": 2,
+      "loss": 1.6193744588237238,
+      "overall_acc": 0.22209436133486765
+    },
+    {
+      "epoch": 3,
+      "loss": 1.6190726680778214,
+      "overall_acc": 0.1093210586881473
+    },
+    {
+      "epoch": 4,
+      "loss": 1.6198241874504993,
+      "overall_acc": 0.21058688147295743
+    },
+    {
+      "epoch": 5,
+      "loss": 1.6195323467254639,
+      "overall_acc": 0.21518987341772153
+    }
+  ]
+}

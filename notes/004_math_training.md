@@ -162,19 +162,105 @@ MATH는 생성 기반이므로 confidence 정의가 ARC/MNLI와 다름:
 
 ## 주의사항
 
-1. **Generation 평가 비용**: 5,000문제 × 512 tokens 생성은 시간이 많이 걸림. eval 빈도를 줄이거나 test subset 사용 고려.
+1. **Generation 평가 비용**: 5,000문제 × 512 tokens 생성은 시간이 많이 걸림. eval 500개 subset 사용.
 2. **정답 정규화**: LaTeX 수식 비교가 까다로움. `\frac{1}{2}` vs `0.5` vs `1/2` 등. sympy 활용 권장.
-3. **Qwen2.5 토크나이저**: Pythia와 다른 토크나이저. chat template이 있을 수 있으니 base model 사용.
-4. **메모리**: pythia-6.9b는 bf16 + gradient checkpointing + bs=4 필요. Qwen2.5-1.5B는 fp32 가능.
-5. **Max length**: MATH solution이 매우 길 수 있음 (특히 Level 5). 1024 토큰으로 truncation.
-6. **LoRA target modules**: Pythia는 `query_key_value`, Qwen2.5는 `q_proj`, `v_proj` (확인 필요).
+3. **메모리**: pythia-6.9b는 bf16 + gradient checkpointing + bs=2 필요.
+4. **Max length**: MATH solution이 매우 길 수 있음 (특히 Level 5). 1024 토큰으로 truncation.
+5. **LoRA target modules**: Pythia는 `query_key_value`, LLaMA/Qwen은 `q_proj`, `v_proj`.
+6. **Instruct 모델**: chat template 적용 필수. system prompt로 `\boxed{}` 형식 유도.
 
 ---
 
-## 실행 순서
+## 실험 결과
 
-1. **환경 준비**: Qwen2.5 모델 다운로드, sympy 설치 (정답 비교용)
-2. **학습 스크립트 작성**: generation + \boxed{} 추출 로직 포함
-3. **Phase 1**: LR search (4 models × 5 LRs, 2 GPU 병렬)
-4. **Phase 2**: Confidence 측정 (4 models × 3 seeds)
-5. **분석**: Level별 accuracy, 모델 간 비교, Pythia vs Qwen2.5
+### Base Model LR Search (SFT)
+
+| 모델 | Params | LR | Ep1 Acc | Ep2 Acc | Ep3 Acc | Best |
+|------|--------|-----|---------|---------|---------|------|
+| **pythia-1b** | 1B | 5e-5 | 0.4% | 0.8% | 0.4% | **0.8%** |
+| **pythia-6.9b** | 6.9B | 5e-5 | 2.6% | 1.8% | 3.0% | **3.0%** |
+| **llama3.2-3b** | 3B | 5e-5 | 6.8% | 8.0% | 9.4% | **9.4%** |
+| **qwen2.5-1.5b** | 1.5B | 5e-5 | **30.0%** | 28.8% | 27.2% | **30.0%** |
+| qwen2.5-1.5b | 1.5B | 1e-4 | 29.0% | **30.0%** | 28.8% | **30.0%** |
+
+### 주요 관찰
+
+1. **Pythia는 MATH에서 학습 불가**: 1B~6.9B 모두 loss가 수렴하지 않고 acc < 3%. LaTeX/수학 토큰을 pretrain에서 학습한 적 없음.
+2. **Qwen2.5-1.5B**: 모든 LR에서 ~30%로 동일. **fine-tuning 효과 없음 — pretrain 성능 그대로.** Epoch 진행 시 오히려 성능 하락.
+3. **LLaMA3.2-3B**: 9.4%로 Pythia보다 나으나 Qwen에 크게 못 미침.
+4. **SFT의 한계**: reference 풀이를 토큰 단위로 따라하는 방식이 수학 문제에서 효과적이지 않음. 풀이 경로가 다양하므로 loss가 높게 유지.
+
+### 방향 전환: Instruct 모델 + GRPO
+
+Base model SFT로는 한계. 다음 단계:
+1. **Instruct 모델** (LLaMA3.2-3B-Instruct, Qwen2.5-1.5B-Instruct)로 SFT 재시도 — chat template 적용, instruction following 활용
+2. **GRPO**: 정답만 맞추면 reward → 풀이 경로 자유도 허용. Instruct 모델이 기본 policy로 적합.
+
+---
+
+## Instruct Model LR Search
+
+### 모델
+
+| 모델 | Params | HuggingFace ID |
+|------|--------|---------------|
+| LLaMA3.2-3B-Instruct | 3B | meta-llama/Llama-3.2-3B-Instruct |
+| Qwen2.5-1.5B-Instruct | 1.5B | Qwen/Qwen2.5-1.5B-Instruct |
+
+### 학습 형식
+
+Chat template 적용:
+```
+<system> You are a math problem solver. Solve step by step and put final answer in \boxed{}.
+<user> {problem}
+<assistant> {solution}
+```
+Loss는 assistant response (풀이) 부분에만 계산.
+
+### LLaMA3.2-3B-Instruct LR Search
+
+| LR | Ep1 Acc | Ep2 Acc | Ep3 Acc | Best | 경향 |
+|------|---------|---------|---------|------|------|
+| 5e-5 | 30.2% | 29.0% | 29.6% | 30.2% | 정체 |
+| 1e-4 | 29.8% | 28.4% | 27.6% | 29.8% | 하락 |
+| **3e-4** | 29.6% | 31.0% | **31.8%** | **31.8%** | **상승 ↑** |
+| 1e-3 | 22.6% | 27.8% | 25.8% | 27.8% | 불안정 |
+| 3e-3 | 3.2% | 12.6% | 21.6% | 21.6% | 회복 중 |
+
+**Best: LR=3e-4, acc=31.8%** — epoch마다 성능 상승하는 유일한 LR. SFT 효과 있음.
+
+### Qwen2.5-1.5B-Instruct LR Search
+
+| LR | Ep1 Acc | Ep2 Acc | Ep3 Acc | Best |
+|------|---------|---------|---------|------|
+| **5e-5** | 22.4% | 22.8% | **23.6%** | **23.6%** |
+| 1e-4 | 22.4% | 21.2% | 22.4% | 22.4% |
+| 3e-4 | 21.8% | 21.2% | 23.6% | 23.6% |
+| 1e-3 | 20.6% | 19.8% | 22.4% | 22.4% |
+| 3e-3 | 9.6% | 14.8% | 18.0% | 18.0% |
+
+**Best: LR=5e-5, acc=23.6%** — SFT 효과 거의 없음. Base 모델(30.0%)보다 오히려 낮음.
+
+### Instruct 모델 비교 종합
+
+| 모델 | Type | Best Acc | SFT 효과 | GRPO 적합성 |
+|------|------|---------|---------|------------|
+| Qwen2.5-1.5B | base | 30.0% | ❌ | 낮음 (이미 포화) |
+| Qwen2.5-1.5B-Instruct | instruct | 23.6% | ❌ | 낮음 |
+| LLaMA3.2-3B | base | 9.4% | 약간 | 낮음 (성능 부족) |
+| **LLaMA3.2-3B-Instruct** | **instruct** | **31.8%** | **✅ 상승 중** | **높음** |
+
+### 주요 관찰
+
+1. **LLaMA3.2-3B-Instruct가 최고**: SFT가 실제로 작동하고, epoch마다 성능 상승 (LR=3e-4).
+2. **Qwen2.5-1.5B-Instruct는 base보다 나쁨**: chat template이 오히려 방해. Base 모델의 pretrain 성능(30%)을 instruct가 못 따라감.
+3. **Instruct 모델 ≠ 항상 좋음**: 모델에 따라 SFT 효과가 달라짐. LLaMA instruct는 SFT에 잘 반응, Qwen instruct는 안 됨.
+4. **GRPO 후보**: LLaMA3.2-3B-Instruct가 base policy로 가장 적합 — SFT로 31.8%, GRPO로 추가 향상 기대.
+
+---
+
+## 다음 단계
+
+1. **LLaMA3.2-3B-Instruct + GRPO**: 정답만 맞추면 reward, 풀이 경로 자유. `trl` 라이브러리 사용.
+2. **More epochs**: LR=3e-4에서 epoch 5~10으로 늘려서 성능 상한 확인.
+3. **Level별 분석**: Level 1(57%) vs Level 5(10~14%) 성능 격차를 GRPO가 줄일 수 있는지.

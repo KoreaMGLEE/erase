@@ -28,6 +28,8 @@ MODEL_REGISTRY = {
     "bert-medium": {"hf_id": "prajjwal1/bert-medium", "type": "encoder", "pad_side": "right"},
     "bert-base": {"hf_id": "bert-base-uncased", "type": "encoder", "pad_side": "right"},
     "bert-large": {"hf_id": "bert-large-uncased", "type": "encoder", "pad_side": "right"},
+    "pythia-14m": {"hf_id": "EleutherAI/pythia-14m", "type": "decoder", "pad_side": "left"},
+    "pythia-31m": {"hf_id": "EleutherAI/pythia-31m", "type": "decoder", "pad_side": "left"},
     "pythia-70m": {"hf_id": "EleutherAI/pythia-70m", "type": "decoder", "pad_side": "left"},
     "pythia-160m": {"hf_id": "EleutherAI/pythia-160m", "type": "decoder", "pad_side": "left"},
     "pythia-410m": {"hf_id": "EleutherAI/pythia-410m", "type": "decoder", "pad_side": "left"},
@@ -35,6 +37,7 @@ MODEL_REGISTRY = {
     "pythia-1.4b": {"hf_id": "EleutherAI/pythia-1.4b", "type": "decoder", "pad_side": "left", "lora": True},
     "pythia-2.8b": {"hf_id": "EleutherAI/pythia-2.8b", "type": "decoder", "pad_side": "left", "lora": True},
     "pythia-6.9b": {"hf_id": "EleutherAI/pythia-6.9b", "type": "decoder", "pad_side": "left", "lora": True},
+    "pythia-12b": {"hf_id": "EleutherAI/pythia-12b", "type": "decoder", "pad_side": "left", "lora": True},
 }
 
 LABEL_NAMES = ["entailment", "neutral", "contradiction"]

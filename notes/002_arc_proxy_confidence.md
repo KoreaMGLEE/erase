@@ -136,39 +136,55 @@ ARC train이 3,370개로 작으므로 MNLI처럼 3 split은 불가 → **전체 
 
 ---
 
-## 최종 실험 결과
+## 최종 실험 결과 (Plan 2 v2: 전체 모델 확장)
 
-### Phase 1: LR Search
+### Phase 1: LR Search (5 epochs, ARC 전체 train 3,370)
 
-| 모델 | Params | Tuning | Best LR | Best Overall | Best Challenge |
-|------|--------|--------|---------|-------------|----------------|
-| bert-mini | 11M | full | 5e-5 | 0.398 | 0.291 |
-| bert-small | 29M | full | 5e-5 | 0.427 | 0.337 |
-| bert-medium | 42M | full | 5e-5 | 0.438 | 0.362 |
-| bert-base | 110M | full | 3e-5 | 0.492 | 0.401 |
-| bert-large | 335M | full | 1e-5 | 0.543 | 0.448 |
-| pythia-1b | 1B | LoRA | 1e-4 | 0.473 | 0.343 |
-| pythia-1.4b | 1.4B | LoRA | 1e-4 | 0.520 | 0.371 |
-| pythia-2.8b | 2.8B | LoRA | 1e-4 | 0.593 | 0.391 |
-| pythia-6.9b | 6.9B | LoRA | 5e-5 | 0.603 | 0.465 |
+| 모델 | Params | Family | Tuning | Best LR | Best Acc | Epoch |
+|------|--------|--------|--------|---------|---------|-------|
+| bert-mini | 11M | BERT | full | 5e-5 | 0.387 | 4 |
+| bert-small | 29M | BERT | full | 5e-5 | 0.414 | 4 |
+| bert-medium | 42M | BERT | full | 5e-5 | 0.433 | 5 |
+| bert-base | 110M | BERT | full | 5e-5 | 0.486 | 5 |
+| bert-large | 335M | BERT | full | 3e-5 | 0.517 | 4 |
+| t5-v1_1-small | 77M | T5 v1.1 | full | 3e-5 | 0.270 | 1 |
+| t5-v1_1-base | 248M | T5 v1.1 | full | 1e-4 | 0.281 | 4 |
+| t5-v1_1-large | 783M | T5 v1.1 | full | 5e-5 | 0.447 | 5 |
+| **t5-v1_1-xl** | **3B** | **T5 v1.1** | **LoRA** | **1e-4** | **0.784** | **5** |
+| pythia-14m | 14M | Pythia | full | 1e-3 | 0.270 | 5 |
+| pythia-31m | 31M | Pythia | full | 1e-4 | 0.297 | 4 |
+| pythia-70m | 70M | Pythia | full | 3e-4 | 0.280 | 4 |
+| pythia-160m | 160M | Pythia | full | 2e-5 | 0.277 | 5 |
+| pythia-410m | 410M | Pythia | full | 1e-5 | 0.280 | 5 |
+| pythia-1b | 1B | Pythia | LoRA | 1e-4 | 0.473 | 5 |
+| pythia-1.4b | 1.4B | Pythia | LoRA | 5e-5 | 0.524 | 5 |
+| pythia-2.8b | 2.8B | Pythia | LoRA | 5e-5 | 0.592 | 5 |
+| pythia-6.9b | 6.9B | Pythia | LoRA | 5e-5 | 0.604 | 5 |
 
 ### Phase 2: Confidence (3 seeds 평균)
 
-| 모델 | Overall (3seed) | Challenge (3seed) | 안정성 |
-|------|----------------|-------------------|--------|
-| bert-mini | 0.390 ± 0.007 | 0.291 ± 0.010 | ✅ 안정 |
-| bert-small | 0.422 ± 0.004 | 0.337 ± 0.004 | ✅ 안정 |
-| bert-medium | 0.442 ± 0.012 | 0.362 ± 0.014 | ✅ 안정 |
-| bert-base | 0.471 ± 0.023 | 0.352 ± 0.010 | ✅ 안정 |
-| bert-large | 0.516 ± 0.001 | 0.406 ± 0.010 | ✅ 매우 안정 |
-| pythia-1b | 0.479 ± 0.005 | 0.343 ± 0.020 | ✅ 안정 |
-| pythia-1.4b | 0.450 ± 0.123 | 0.338 ± 0.057 | ❌ 불안정 |
-| pythia-2.8b | 0.493 ± 0.154 | 0.391 ± 0.105 | ❌ 불안정 |
-| pythia-6.9b | 0.500 ± 0.153 | 0.401 ± 0.076 | ❌ 불안정 |
+| 모델 | Overall (3seed) | 안정성 |
+|------|----------------|--------|
+| bert-mini | 0.375 ± 0.017 | ✅ |
+| bert-small | 0.410 ± 0.004 | ✅ 매우 안정 |
+| bert-medium | 0.442 ± 0.006 | ✅ 매우 안정 |
+| bert-base | 0.471 ± 0.014 | ✅ |
+| bert-large | 0.332 ± 0.132 | ❌ seed2,3 실패 (탐색 중) |
+| t5-v1_1-small | 0.267 ± 0.003 | ✅ (random 수준) |
+| t5-v1_1-base | 0.269 ± 0.009 | ✅ (random 수준) |
+| t5-v1_1-large | 0.323 ± 0.088 | ❌ seed2,3 실패 (탐색 중) |
+| **t5-v1_1-xl** | **0.766 ± 0.014** | **✅ 안정** |
+| pythia-14m~410m | 0.26~0.28 | ✅ (random 수준) |
+| pythia-1b | 0.472 ± 0.012 | ✅ |
+| pythia-1.4b | 0.520 ± 0.011 | ✅ |
+| pythia-2.8b | 0.566 ± 0.027 | ✅ |
+| pythia-6.9b | 0.490 ± 0.164 | ❌ seed3 실패 (seed4 탐색 중) |
 
 ### 주요 관찰
 
-1. **BERT가 안정적**: seed 분산이 0.001~0.023으로 매우 작음. 모델 크기 비례 성능 향상.
-2. **Pythia LoRA 불안정**: seed 분산 0.05~0.15. LoRA + 작은 데이터(3.3K)에서 seed 민감도가 높음.
-3. **bert-large가 최고 성능 + 최고 안정성**: overall 0.516 ± 0.001.
-4. **Confidence 포화**: best epoch 시점 train confidence >0.95가 84~99%. 데이터가 작아서 모델이 train set 암기.
+1. **t5-v1_1-xl이 ARC 최강**: 0.784 (LR search), 0.766 ± 0.014 (3 seeds). 안정적이고 성능 최고.
+2. **BERT 안정적**: bert-small~base는 std < 0.015. bert-large는 seed 불안정 → 추가 LR/seed 탐색 중.
+3. **T5 small/base는 ARC에서 random**: 0.27 수준. 모델이 작아서 ARC를 못 배움.
+4. **Pythia full fine-tune (14m~410m) random**: ARC에서 학습 안 됨. LoRA(1b+)부터 유의미.
+5. **불안정 모델**: bert-large, t5-large, pythia-6.9b에서 seed 실패 → 추가 seed/LR 탐색 진행 중.
+6. **Confidence 측정**: best epoch 이하 checkpoint 평균 사용 (overfitting 방지).

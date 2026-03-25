@@ -1,0 +1,10 @@
+{
+  "model": "t5-v1_1-base",
+  "split": "split1",
+  "lr": 3e-05,
+  "seed": 1,
+  "mode": "lr_search",
+  "val_acc": 0.6037697401935812,
+  "avg_loss": 1.086268216220538,
+  "training_time_sec": 299.06773114204407
+}

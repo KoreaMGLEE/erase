@@ -1,0 +1,37 @@
+{
+  "model": "pythia-70m",
+  "family": "decoder",
+  "lr": 0.0003,
+  "seed": 3,
+  "epochs": 5,
+  "best_overall_acc": 0.2554660529344074,
+  "best_epoch": 1,
+  "training_time_sec": 57.80714988708496,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "loss": 1.882674206913365,
+      "overall_acc": 0.2554660529344074
+    },
+    {
+      "epoch": 2,
+      "loss": 1.7729423930294705,
+      "overall_acc": 0.23130034522439585
+    },
+    {
+      "epoch": 3,
+      "loss": 1.6301866501428506,
+      "overall_acc": 0.25316455696202533
+    },
+    {
+      "epoch": 4,
+      "loss": 1.4442267430619606,
+      "overall_acc": 0.2554660529344074
+    },
+    {
+      "epoch": 5,
+      "loss": 0.9233846623821281,
+      "overall_acc": 0.2520138089758343
+    }
+  ]
+}

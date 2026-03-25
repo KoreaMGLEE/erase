@@ -1,0 +1,37 @@
+{
+  "model": "bert-medium",
+  "family": "encoder",
+  "lr": 0.001,
+  "seed": 1,
+  "epochs": 5,
+  "best_overall_acc": 0.27387802071346373,
+  "best_epoch": 2,
+  "training_time_sec": 90.27587389945984,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "loss": 1.6039764352884338,
+      "overall_acc": 0.14959723820483314
+    },
+    {
+      "epoch": 2,
+      "loss": 1.618855166491739,
+      "overall_acc": 0.27387802071346373
+    },
+    {
+      "epoch": 3,
+      "loss": 1.61893088388217,
+      "overall_acc": 0.26237054085155354
+    },
+    {
+      "epoch": 4,
+      "loss": 1.61782022336083,
+      "overall_acc": 0.08285385500575373
+    },
+    {
+      "epoch": 5,
+      "loss": 1.6218525326647464,
+      "overall_acc": 0.2140391254315305
+    }
+  ]
+}
