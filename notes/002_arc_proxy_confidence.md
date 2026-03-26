@@ -1,5 +1,7 @@
 # Plan 002: ARC Proxy Confidence 측정
 
+> 📋 세부 실험 과정 및 디버깅 기록 (seed 불안정성, LR 탐색 과정 등)은 [001a_mnli_experiment_log.md](001a_mnli_experiment_log.md) 참조.
+
 ## 목적
 
 ARC (AI2 Reasoning Challenge) 데이터셋에 대해 다양한 모델의 proxy confidence를 측정.
@@ -100,6 +102,7 @@ LoRA 초기화가 "dead zone"에 빠지면 5 epoch 내 회복 못 함.
 | t5-v1_1-base | 248M | T5 | 1e-4 | 0.281 |
 | t5-v1_1-large | 783M | T5 | 5e-5 | 0.447 |
 | **t5-v1_1-xl** | **3B** | **T5** | **1e-4** | **0.784** |
+| **t5-v1_1-xxl** | **11B** | **T5** | **1e-4** | **0.852** |
 | pythia-14m | 14M | Pythia | 1e-3 | 0.270 |
 | pythia-31m | 31M | Pythia | 1e-4 | 0.297 |
 | pythia-70m | 70M | Pythia | 3e-4 | 0.280 |
@@ -109,6 +112,7 @@ LoRA 초기화가 "dead zone"에 빠지면 5 epoch 내 회복 못 함.
 | pythia-1.4b | 1.4B | Pythia | 5e-5 | 0.524 |
 | pythia-2.8b | 2.8B | Pythia | 5e-5 | 0.592 |
 | pythia-6.9b | 6.9B | Pythia | 5e-5 | 0.604 |
+| pythia-12b | 12B | Pythia | 5e-5 | 0.615 |
 
 ### Confidence (3 seeds 평균)
 
@@ -121,7 +125,7 @@ LoRA 초기화가 "dead zone"에 빠지면 5 epoch 내 회복 못 함.
 | bert-large | 0.510 ± 0.005 (lr=1e-5) | ✅ (lr=3e-5는 불안정) |
 | t5-v1_1-small | 0.267 ± 0.003 | ✅ (random) |
 | t5-v1_1-base | 0.269 ± 0.009 | ✅ (random) |
-| t5-v1_1-large | ~0.57 (lr=3e-5, 2/3 seed 성공) | ⚠️ 탐색 중 |
+| t5-v1_1-large | 0.561 ± 0.042 (lr=3e-5, 3/4 seed 성공) | ⚠️ seed-sensitive |
 | **t5-v1_1-xl** | **0.766 ± 0.014** | **✅** |
 | pythia-14m~410m | 0.26~0.28 | ✅ (random) |
 | pythia-1b | 0.472 ± 0.012 | ✅ |
@@ -139,13 +143,16 @@ LoRA 초기화가 "dead zone"에 빠지면 5 epoch 내 회복 못 함.
 | 2e-5 | 0.459 | 0.504 | 0.522 |
 | 3e-5 | 0.517 | 0.222 | 0.257 |
 
-**t5-v1_1-large**: lr=3e-5가 가장 안정적 (2/3 seed 성공). seed4 탐색 중.
+**t5-v1_1-large**: lr=3e-5가 최선 (4 seed 중 3개 성공). 성공 평균 0.561 ± 0.042.
 
-| LR | seed1 | seed2 | seed3 |
-|------|-------|-------|-------|
-| 3e-5 | 0.259 | 0.621 | 0.521 |
-| 5e-5 | 0.447 | 0.260 | 0.261 |
-| 1e-4 | 0.262 | 0.585 | 0.256 |
+| LR | seed1 | seed2 | seed3 | seed4 |
+|------|-------|-------|-------|-------|
+| 3e-5 | 0.259 | **0.621** | **0.521** | **0.541** |
+| 5e-5 | 0.447 | 0.260 | 0.261 | — |
+| 1e-4 | 0.262 | **0.585** | 0.256 | — |
+| 2e-4 | 0.267 | 0.259 | 0.256 | — |
+
+lr=2e-4는 전부 실패. lr=1e-4는 seed2만 성공. t5-v1_1-large는 ARC에서 매우 seed-sensitive.
 
 **pythia-6.9b**: 3/4 seed 성공 (seed3만 실패)
 
@@ -153,13 +160,71 @@ LoRA 초기화가 "dead zone"에 빠지면 5 epoch 내 회복 못 함.
 |-------|-------|-------|-------|
 | 0.602 | 0.609 | 0.258 | 0.608 |
 
+### Per-example Confidence (train set, best epoch 이하 평균)
+
+19개 전체 모델에 대해 측정 완료. 실패 seed 제외, 성공 seed 3개 사용.
+
+| 모델 | Params | Seeds | Val Acc (mean) | Train Conf (mean) |
+|------|--------|-------|----------------|-------------------|
+| bert-mini | 11M | 1,2,3 | 0.377 ± 0.016 | 0.379 ± 0.010 |
+| bert-small | 29M | 1,2,3 | 0.402 ± 0.006 | 0.577 ± 0.014 |
+| bert-medium | 42M | 1,2,3 | 0.438 ± 0.006 | 0.674 ± 0.008 |
+| bert-base | 110M | 1,2,3 | 0.486 ± 0.016 | 0.754 ± 0.013 |
+| bert-large | 335M | 1,2,3 | 0.513 ± 0.005 | 0.609 ± 0.054 |
+| t5-v1_1-small | 77M | 1,2,3 | 0.265 ± 0.004 | 0.249 ± 0.001 |
+| t5-v1_1-base | 248M | 1,2,3 | 0.265 ± 0.004 | 0.251 ± 0.002 |
+| t5-v1_1-large | 783M | 2,3,4 | 0.576 ± 0.023 | 0.372 ± 0.031 |
+| t5-v1_1-xl | 3B | 1,2,3 | 0.748 ± 0.005 | 0.598 ± 0.019 |
+| **t5-v1_1-xxl** | **11B** | **1,2,3** | **0.846 ± 0.005** | **0.870 ± 0.015** |
+| pythia-14m | 14M | 1,2,3 | 0.264 ± 0.004 | 0.251 ± 0.000 |
+| pythia-31m | 31M | 1,2,3 | 0.278 ± 0.007 | 0.313 ± 0.034 |
+| pythia-70m | 70M | 1,2,3 | 0.262 ± 0.008 | 0.298 ± 0.041 |
+| pythia-160m | 160M | 1,2,3 | 0.267 ± 0.007 | 0.293 ± 0.054 |
+| pythia-410m | 410M | 1,3,4 | 0.288 ± 0.008 | 0.480 ± 0.062 |
+| pythia-1b | 1B | 1,2,3 | 0.464 ± 0.018 | 0.428 ± 0.033 |
+| pythia-1.4b | 1.4B | 1,2,3 | 0.517 ± 0.013 | 0.463 ± 0.010 |
+| pythia-2.8b | 2.8B | 1,2,3 | 0.551 ± 0.013 | 0.450 ± 0.002 |
+| pythia-6.9b | 6.9B | 1,4,5 | 0.594 ± 0.004 | 0.524 ± 0.072 |
+| pythia-12b | 12B | 1,3,4 | 0.650 ± 0.007 | 0.621 ± 0.035 |
+
+**참고**:
+- t5-large seed1 실패 → seed 2,3,4 사용.
+- pythia-410m seed2 이상치 → seed 1,3,4 사용.
+- pythia-6.9b seed2,3 실패 → seed 1,4,5 사용.
+- pythia-12b seed2 실패 → seed 1,3,4 사용.
+- t5-xxl 3 seeds 전부 안정적 (0.838~0.853).
+
 ### 주요 관찰
 
-1. **t5-v1_1-xl이 ARC 최강**: 0.766 ± 0.014.
+1. **t5-v1_1-xxl이 ARC 최강**: 0.846 ± 0.005 (t5-xl 0.748 대비 큰 향상).
 2. **BERT 안정적**: std < 0.015. bert-large는 lr=1e-5에서 안정 (0.510 ± 0.005).
 3. **T5/Pythia small은 ARC에서 random**: 모델이 작으면 ARC를 못 배움.
 4. **Pythia LoRA(1b+)부터 유의미**: full fine-tune은 overfitting.
 5. **큰 모델 + 작은 데이터 = seed 불안정**: 5 epoch에서 warmup 짧고 decay 빨라 민감.
+6. **ARC Jaccard 전체적으로 낮음**: MNLI 대비 모델 간 "쉬운 예제" 합의가 약함. Random 모델(t5-small/base, pythia-70m/410m) 간 Jaccard ~0.15.
+
+---
+
+## 분석 결과
+
+### Figure 1: Pairwise Jaccard Heatmap (9×9)
+`fig1_jaccard_heatmap_9x9_arc.png` — seed별 평균 ± std.
+- ARC Jaccard 전체적으로 낮음 (0.13~0.41 vs MNLI 0.30~0.54)
+- BERT 내부 일관성 (0.40~0.41), 큰 모델끼리 cross-family 합의 (0.34~0.37)
+- Random 모델 간 Jaccard ~0.15
+
+### Figure 2: Model↔인간 난이도
+`easy-to-hard-generalization` annotation 활용 (2,151개 매칭).
+
+**(a) Continuous Spearman** (`fig2_arc_continuous.png`):
+- Difficulty: BERT ~0.09 안정, **T5-xl 최고 (0.121)**, Pythia 소형 음수→대형 양수 반전
+- Grade (G3~G8): 전반적으로 약함 (|ρ| < 0.07)
+- 모든 계열에서 모델 크기 ↑ → alignment ↑
+
+**(b) Jaccard Human vs Model** (`fig2_arc_jaccard_human.png`):
+- Easy (Low 465개 vs Top-465): BERT 최고 (~0.17), random baseline(0.121) 대비 35%↑
+- Hard (High 287개 vs Bottom-287): T5-xl 최고 (0.100), random(0.071) 대비 40%↑
+- **쉬운 예제 식별이 어려운 예제 식별보다 강함** — 학습 시 쉬운 예제 우선 학습과 일치
 
 ---
 

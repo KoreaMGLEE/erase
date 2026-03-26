@@ -1,0 +1,18 @@
+{
+  "n_total": 3370,
+  "n_union": 2234,
+  "n_intersect": 79,
+  "n_self_easy": 1011,
+  "n_dedup_keep": 190,
+  "n_dedup_remove": 2044,
+  "best_k": 100,
+  "silhouette": 0.18445245608244515,
+  "condition_sizes": {
+    "C1_full": 3370,
+    "C2_random": 1136,
+    "C3_self_easy": 2359,
+    "C4_intersect": 3291,
+    "C5_union": 1136,
+    "C6_dedup": 1326
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "model": "pythia-160m",
+  "family": "decoder",
+  "lr": 2e-05,
+  "seed": 3,
+  "epochs": 5,
+  "best_overall_acc": 0.26582278481012656,
+  "best_epoch": 5,
+  "training_time_sec": 121.38640260696411,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "loss": 1.4770016853843255,
+      "overall_acc": 0.25891829689298046
+    },
+    {
+      "epoch": 2,
+      "loss": 1.433002180962766,
+      "overall_acc": 0.2428078250863061
+    },
+    {
+      "epoch": 3,
+      "loss": 1.408711452337238,
+      "overall_acc": 0.24510932105868816
+    },
+    {
+      "epoch": 4,
+      "loss": 1.3114668253756248,
+      "overall_acc": 0.25776754890678943
+    },
+    {
+      "epoch": 5,
+      "loss": 0.8824716282399345,
+      "overall_acc": 0.26582278481012656
+    }
+  ],
+  "mean_confidence": 0.36927132810262525
+}

@@ -15,7 +15,7 @@ MODEL_REGISTRY = {
     "t5-v1_1-base": {"hf_id": "google/t5-v1_1-base", "params": "248M"},
     "t5-v1_1-large": {"hf_id": "google/t5-v1_1-large", "params": "783M"},
     "t5-v1_1-xl": {"hf_id": "google/t5-v1_1-xl", "params": "3B", "lora": True},
-    "t5-v1_1-xxl": {"hf_id": "google/t5-v1_1-xxl", "params": "11B", "lora": True},
+    "t5-v1_1-xxl": {"hf_id": "google/t5-v1_1-xxl", "params": "11B", "lora": True, "multi_gpu": True},
 }
 
 LABELS = ["yes", "maybe", "no"]  # verbalizer: entailment=yes, neutral=maybe, contradiction=no
@@ -52,7 +52,10 @@ def load_model(model_name, device, use_bf16=False):
     info = MODEL_REGISTRY[model_name]
     dtype = torch.bfloat16 if use_bf16 else torch.float32
     tokenizer = T5Tokenizer.from_pretrained(info["hf_id"], legacy=True)
-    model = T5ForConditionalGeneration.from_pretrained(info["hf_id"], torch_dtype=dtype).to(device)
+    if info.get("multi_gpu"):
+        model = T5ForConditionalGeneration.from_pretrained(info["hf_id"], torch_dtype=dtype, device_map="auto")
+    else:
+        model = T5ForConditionalGeneration.from_pretrained(info["hf_id"], torch_dtype=dtype).to(device)
 
     if info.get("lora"):
         lora_config = LoraConfig(task_type=TaskType.SEQ_2_SEQ_LM, r=32, lora_alpha=64,

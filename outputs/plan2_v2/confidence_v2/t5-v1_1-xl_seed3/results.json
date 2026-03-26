@@ -1,0 +1,38 @@
+{
+  "model": "t5-v1_1-xl",
+  "family": "enc-dec",
+  "lr": 0.0001,
+  "seed": 3,
+  "epochs": 5,
+  "best_overall_acc": 0.7537399309551208,
+  "best_epoch": 5,
+  "training_time_sec": 885.4895725250244,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "loss": 2.7711465121445498,
+      "overall_acc": 0.32105868814729577
+    },
+    {
+      "epoch": 2,
+      "loss": 0.553224970379147,
+      "overall_acc": 0.6352128883774454
+    },
+    {
+      "epoch": 3,
+      "loss": 0.42017700773844785,
+      "overall_acc": 0.6823935558112774
+    },
+    {
+      "epoch": 4,
+      "loss": 0.3479356810944905,
+      "overall_acc": 0.7215189873417721
+    },
+    {
+      "epoch": 5,
+      "loss": 0.31500793746297395,
+      "overall_acc": 0.7537399309551208
+    }
+  ],
+  "mean_confidence": 0.5829578886399991
+}

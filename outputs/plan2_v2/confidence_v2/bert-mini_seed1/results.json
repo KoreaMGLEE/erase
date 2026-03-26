@@ -1,0 +1,38 @@
+{
+  "model": "bert-mini",
+  "family": "encoder",
+  "lr": 5e-05,
+  "seed": 1,
+  "epochs": 5,
+  "best_overall_acc": 0.380897583429229,
+  "best_epoch": 4,
+  "training_time_sec": 87.87100148200989,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "loss": 1.4524869263454636,
+      "overall_acc": 0.3429228998849252
+    },
+    {
+      "epoch": 2,
+      "loss": 1.3333440079790722,
+      "overall_acc": 0.36363636363636365
+    },
+    {
+      "epoch": 3,
+      "loss": 1.2292543354475103,
+      "overall_acc": 0.3762945914844649
+    },
+    {
+      "epoch": 4,
+      "loss": 1.112986924523991,
+      "overall_acc": 0.380897583429229
+    },
+    {
+      "epoch": 5,
+      "loss": 1.0544976281328788,
+      "overall_acc": 0.3705408515535098
+    }
+  ],
+  "mean_confidence": 0.3672086791938533
+}

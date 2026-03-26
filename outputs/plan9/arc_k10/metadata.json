@@ -1,0 +1,19 @@
+{
+  "k_pct": 10,
+  "n_total": 3370,
+  "n_union": 934,
+  "n_intersect": 1,
+  "n_self_easy_bert": 337,
+  "n_self_easy_pythia": 337,
+  "n_dedup_keep": 92,
+  "n_dedup_remove": 842,
+  "condition_sizes": {
+    "C1_full": 3370,
+    "C3_self_easy_bert": 3033,
+    "C3_self_easy_pythia": 3033,
+    "C4_intersect": 3369,
+    "C5_union": 2436,
+    "C6_dedup": 2528,
+    "C2_random": 2436
+  }
+}

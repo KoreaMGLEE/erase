@@ -1,0 +1,38 @@
+{
+  "model": "bert-base",
+  "family": "encoder",
+  "lr": 5e-05,
+  "seed": 3,
+  "epochs": 5,
+  "best_overall_acc": 0.46375143843498273,
+  "best_epoch": 5,
+  "training_time_sec": 216.24012851715088,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "loss": 1.4257164322086986,
+      "overall_acc": 0.3924050632911392
+    },
+    {
+      "epoch": 2,
+      "loss": 1.1372404640884761,
+      "overall_acc": 0.42577675489067895
+    },
+    {
+      "epoch": 3,
+      "loss": 0.597388385967197,
+      "overall_acc": 0.43843498273878023
+    },
+    {
+      "epoch": 4,
+      "loss": 0.23902518991825072,
+      "overall_acc": 0.44533947065592633
+    },
+    {
+      "epoch": 5,
+      "loss": 0.12663831125732575,
+      "overall_acc": 0.46375143843498273
+    }
+  ],
+  "mean_confidence": 0.7630319424976391
+}

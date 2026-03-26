@@ -1,0 +1,19 @@
+{
+  "split": "split1",
+  "n_total": 30000,
+  "n_union": 14206,
+  "n_intersect": 4436,
+  "n_self_easy": 9000,
+  "n_dedup_keep": 1416,
+  "n_dedup_remove": 12790,
+  "best_k": 10,
+  "silhouette": 0.21222423258669174,
+  "condition_sizes": {
+    "C1_full": 30000,
+    "C2_random": 15794,
+    "C3_self_easy": 21000,
+    "C4_intersect": 25564,
+    "C5_union": 15794,
+    "C6_dedup": 17210
+  }
+}

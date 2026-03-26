@@ -1,0 +1,38 @@
+{
+  "model": "bert-large",
+  "family": "encoder",
+  "lr": 1e-05,
+  "seed": 1,
+  "epochs": 5,
+  "best_overall_acc": 0.5212888377445339,
+  "best_epoch": 3,
+  "training_time_sec": 585.4692847728729,
+  "epoch_results": [
+    {
+      "epoch": 1,
+      "loss": 1.402513092304293,
+      "overall_acc": 0.46950517836593786
+    },
+    {
+      "epoch": 2,
+      "loss": 1.0839005328750158,
+      "overall_acc": 0.49252013808975836
+    },
+    {
+      "epoch": 3,
+      "loss": 0.7226961910795261,
+      "overall_acc": 0.5212888377445339
+    },
+    {
+      "epoch": 4,
+      "loss": 0.4732141414242333,
+      "overall_acc": 0.5051783659378596
+    },
+    {
+      "epoch": 5,
+      "loss": 0.3442359955526747,
+      "overall_acc": 0.5097813578826237
+    }
+  ],
+  "mean_confidence": 0.5876126806091417
+}

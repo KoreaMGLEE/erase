@@ -13,8 +13,8 @@ os.makedirs(FIG_DIR, exist_ok=True)
 
 MODELS = [
     "bert-small", "bert-base", "bert-large",
-    "t5-v1_1-small", "t5-v1_1-base", "t5-v1_1-large", "t5-v1_1-xl",
-    "pythia-70m", "pythia-410m", "pythia-2.8b",
+    "t5-v1_1-small", "t5-v1_1-base", "t5-v1_1-large",
+    "pythia-70m", "pythia-410m", "pythia-1b",
 ]
 
 FAMILY_LABELS = ["Encoder\n(BERT)", "Enc-Dec\n(T5 v1.1)", "Decoder\n(Pythia)"]

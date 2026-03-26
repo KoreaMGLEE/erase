@@ -1,5 +1,7 @@
 # Plan 001: MNLI Proxy Confidence 측정
 
+> 📋 세부 실험 과정 및 디버깅 기록 (T5 v1.1 class collapse 진단, optimizer/scheduler 비교 등)은 [001a_mnli_experiment_log.md](001a_mnli_experiment_log.md) 참조.
+
 ## 목적
 
 MNLI train (392,702개)에서 90K개를 비복원 추출하여 3개의 겹치지 않는 하위 집합(각 30K)을 생성.
@@ -153,10 +155,12 @@ Best LR로 3개 split 각각 학습. 학습 중 1/3, 2/3, 3/3 지점에서 confi
 | pythia-1.4b | 1.4B | 3e-4 | 0.829 |
 | pythia-2.8b | 2.8B | 3e-4 | 0.848 |
 | pythia-6.9b | 6.9B | 1e-4 | 0.854 |
+| pythia-12b | 12B | 1e-4 | 0.860 |
 | t5-v1_1-small | 77M | 1e-4 | 0.634 |
 | t5-v1_1-base | 248M | 1e-4 | 0.788 |
 | t5-v1_1-large | 783M | 5e-5 | 0.869 |
 | t5-v1_1-xl | 3B | 1e-4 | 0.886 |
+| **t5-v1_1-xxl** | **11B** | **1e-4** | **0.904** |
 
 ### 90K Confidence
 
@@ -176,10 +180,12 @@ Best LR로 3개 split 각각 학습. 학습 중 1/3, 2/3, 3/3 지점에서 confi
 | pythia-1.4b | 0.774 | 0.242 | 27.0% | 10.5% |
 | pythia-2.8b | 0.815 | 0.257 | 49.2% | 10.3% |
 | pythia-6.9b | 0.851 | 0.264 | 64.9% | 9.8% |
+| pythia-12b | 0.812 | — | — | — |
 | t5-v1_1-small | 0.484 | 0.225 | 1.1% | — |
 | t5-v1_1-base | 0.523 | 0.239 | 3.8% | — |
 | t5-v1_1-large | 0.832 | 0.264 | 57.1% | — |
 | t5-v1_1-xl | 0.834 | 0.277 | 60.2% | — |
+| **t5-v1_1-xxl** | **0.878** | — | — | — |
 
 ### 주요 관찰
 
@@ -210,11 +216,23 @@ Best LR로 3개 split 각각 학습. 학습 중 1/3, 2/3, 3/3 지점에서 confi
 ## 분석 계획
 
 ### Figure 1: Pairwise Jaccard Heatmap (9×9 대표 모델)
-BERT-small/base/large × T5v1.1-small/base/large × Pythia-70m/410m/2.8b
+BERT-small/base/large × T5v1.1-small/base/large × Pythia-70m/410m/1b
 각 모델의 상위 30% "쉬운 예제" 집합 간 Jaccard 유사도.
+- MNLI: `fig1_jaccard_heatmap_9x9_v2.png` (split별 평균 ± std)
+- ARC: `fig1_jaccard_heatmap_9x9_arc.png` (seed별 평균 ± std)
 
-### Figure 2: Model↔인간 난이도 Spearman (ChaosNLI)
-Split 4에서 측정한 training confidence vs ChaosNLI 인간 난이도의 순위 상관.
+### Figure 2: Model↔인간 난이도 (ARC)
+`easy-to-hard-generalization` annotation (difficulty, grade, bloom) 활용.
+- **(a) Continuous Spearman**: model confidence (연속값) vs difficulty ordinal (Low=0/Med=1/High=2) + grade ordinal (G3~G8)
+  - `fig2_arc_continuous.png`
+- **(b) Jaccard Human vs Model**: Human Easy(Low, 465개) vs Model Top-465 / Human Hard(High, 287개) vs Model Bottom-287
+  - `fig2_arc_jaccard_human.png`
+- 2,151개 annotation 매칭 (ARC train 3,370 중). Grade는 G3~G8만 (Biology, Earth Science 제외).
+- 주요 결과:
+  - Difficulty Spearman: BERT ~0.09 안정, T5-xl 최고 (0.121), Pythia 소형 음수→대형 양수
+  - Grade Spearman: 전반적으로 약함 (|ρ| < 0.07), difficulty보다 낮음
+  - Easy Jaccard: BERT 최고 (~0.17), random baseline(0.121) 대비 35%↑
+  - Hard Jaccard: T5-xl 최고 (0.100), random(0.071) 대비 40%↑, Easy보다 margin 작음
 
 ### Figure 3: Model Size vs Shortcut 비율
 Negation (contradiction 내) + Lexical overlap (entailment 내). Class-specific 측정.

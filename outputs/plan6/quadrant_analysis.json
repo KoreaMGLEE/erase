@@ -1,0 +1,90 @@
+{
+  "Agreement-Easy": {
+    "count": 126,
+    "mean_conf": 0.9985539296737211,
+    "grade_dist": {
+      "Grade 03": 4,
+      "Grade 07": 20,
+      "Grade 08": 51,
+      "Grade 05": 30,
+      "Biology": 4,
+      "Grade 06": 12,
+      "Earth and Space Sciences": 3,
+      "Grade 04": 2
+    },
+    "bloom_dist": {
+      "Understanding": 34,
+      "Remembering": 67,
+      "Applying": 18,
+      "Evaluating": 1,
+      "Analyzing": 6
+    },
+    "mean_q_length": 15.563492063492063,
+    "mean_n_choices": 4.0
+  },
+  "Agreement-Hard": {
+    "count": 54,
+    "mean_conf": 0.36536633399288343,
+    "grade_dist": {
+      "Grade 08": 26,
+      "Grade 04": 7,
+      "Biology": 3,
+      "Grade 03": 3,
+      "Earth and Space Sciences": 5,
+      "Grade 07": 6,
+      "Grade 05": 4
+    },
+    "bloom_dist": {
+      "Applying": 20,
+      "Analyzing": 13,
+      "Understanding": 11,
+      "Evaluating": 6,
+      "Remembering": 4
+    },
+    "mean_q_length": 23.166666666666668,
+    "mean_n_choices": 4.0
+  },
+  "HumanEasy-ModelHard": {
+    "count": 40,
+    "mean_conf": 0.43612043208546114,
+    "grade_dist": {
+      "Grade 06": 2,
+      "Grade 08": 13,
+      "Biology": 4,
+      "Grade 05": 11,
+      "Grade 07": 8,
+      "Grade 04": 1,
+      "Grade 03": 1
+    },
+    "bloom_dist": {
+      "Understanding": 9,
+      "Applying": 15,
+      "Remembering": 9,
+      "Analyzing": 7
+    },
+    "mean_q_length": 18.125,
+    "mean_n_choices": 4.0
+  },
+  "HumanHard-ModelEasy": {
+    "count": 45,
+    "mean_conf": 0.9981356095679013,
+    "grade_dist": {
+      "Grade 05": 10,
+      "Grade 08": 16,
+      "Grade 07": 9,
+      "Grade 03": 3,
+      "Grade 04": 5,
+      "Earth and Space Sciences": 1,
+      "Biology": 1
+    },
+    "bloom_dist": {
+      "Remembering": 14,
+      "Applying": 8,
+      "Analyzing": 11,
+      "Understanding": 10,
+      "Evaluating": 2
+    },
+    "mean_q_length": 18.155555555555555,
+    "mean_n_choices": 4.0
+  }
+}

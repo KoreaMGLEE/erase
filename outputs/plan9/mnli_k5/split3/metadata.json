@@ -1,0 +1,18 @@
+{
+  "k_pct": 5,
+  "split": "split3",
+  "n_total": 30000,
+  "n_union": 2763,
+  "n_intersect": 530,
+  "n_self_easy_t5xl": 1500,
+  "n_dedup_keep": 274,
+  "n_dedup_remove": 2489,
+  "condition_sizes": {
+    "C1_full": 30000,
+    "C3_self_easy_t5xl": 28500,
+    "C4_intersect": 29470,
+    "C5_union": 27237,
+    "C6_dedup": 27511,
+    "C2_random": 27237
+  }
+}

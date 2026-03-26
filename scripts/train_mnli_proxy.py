@@ -37,7 +37,7 @@ MODEL_REGISTRY = {
     "pythia-1.4b": {"hf_id": "EleutherAI/pythia-1.4b", "type": "decoder", "pad_side": "left", "lora": True},
     "pythia-2.8b": {"hf_id": "EleutherAI/pythia-2.8b", "type": "decoder", "pad_side": "left", "lora": True},
     "pythia-6.9b": {"hf_id": "EleutherAI/pythia-6.9b", "type": "decoder", "pad_side": "left", "lora": True},
-    "pythia-12b": {"hf_id": "EleutherAI/pythia-12b", "type": "decoder", "pad_side": "left", "lora": True},
+    "pythia-12b": {"hf_id": "EleutherAI/pythia-12b", "type": "decoder", "pad_side": "left", "lora": True, "multi_gpu": True},
 }
 
 LABEL_NAMES = ["entailment", "neutral", "contradiction"]
@@ -106,11 +106,15 @@ def load_model_and_tokenizer(model_name, device, use_bf16=False):
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
         dtype = torch.bfloat16 if use_bf16 else torch.float32
-        model = AutoModelForCausalLM.from_pretrained(hf_id, torch_dtype=dtype)
+        if info.get("multi_gpu"):
+            model = AutoModelForCausalLM.from_pretrained(hf_id, torch_dtype=dtype, device_map="auto")
+        else:
+            model = AutoModelForCausalLM.from_pretrained(hf_id, torch_dtype=dtype)
     else:
         raise ValueError(f"Unknown type: {mtype}")
 
-    model = model.to(device)
+    if not info.get("multi_gpu"):
+        model = model.to(device)
 
     # Apply LoRA for large decoder models
     if info.get("lora"):

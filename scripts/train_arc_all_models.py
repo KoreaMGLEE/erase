@@ -39,6 +39,8 @@ MODEL_REGISTRY = {
     "pythia-1.4b": {"hf_id": "EleutherAI/pythia-1.4b", "family": "decoder", "lora": True},
     "pythia-2.8b": {"hf_id": "EleutherAI/pythia-2.8b", "family": "decoder", "lora": True},
     "pythia-6.9b": {"hf_id": "EleutherAI/pythia-6.9b", "family": "decoder", "lora": True},
+    "pythia-12b": {"hf_id": "EleutherAI/pythia-12b", "family": "decoder", "lora": True, "multi_gpu": True},
+    "t5-v1_1-xxl": {"hf_id": "google/t5-v1_1-xxl", "family": "enc-dec", "lora": True, "multi_gpu": True},
 }
 
 MAX_CHOICES = 5
@@ -146,18 +148,26 @@ def load_model(model_name, device, use_bf16=False):
     hf_id = info["hf_id"]
     dtype = torch.bfloat16 if use_bf16 else torch.float32
 
+    multi_gpu = info.get("multi_gpu", False)
+
     if family == "encoder":
         tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
         model = BertForMultipleChoice.from_pretrained(hf_id, torch_dtype=dtype).to(device)
     elif family == "enc-dec":
         tokenizer = T5Tokenizer.from_pretrained(hf_id, legacy=True)
-        model = T5ForConditionalGeneration.from_pretrained(hf_id, torch_dtype=dtype).to(device)
+        if multi_gpu:
+            model = T5ForConditionalGeneration.from_pretrained(hf_id, torch_dtype=dtype, device_map="auto")
+        else:
+            model = T5ForConditionalGeneration.from_pretrained(hf_id, torch_dtype=dtype).to(device)
     elif family == "decoder":
         tokenizer = AutoTokenizer.from_pretrained(hf_id)
         tokenizer.padding_side = "left"
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
-        model = AutoModelForCausalLM.from_pretrained(hf_id, torch_dtype=dtype).to(device)
+        if multi_gpu:
+            model = AutoModelForCausalLM.from_pretrained(hf_id, torch_dtype=dtype, device_map="auto")
+        else:
+            model = AutoModelForCausalLM.from_pretrained(hf_id, torch_dtype=dtype).to(device)
 
     # LoRA for large models
     if info.get("lora"):

@@ -31,6 +31,8 @@ MODELS = {
     "pythia-1.4b": {"params": 1.4e9, "family": "Pythia"},
     "pythia-2.8b": {"params": 2.8e9, "family": "Pythia"},
     "pythia-6.9b": {"params": 6.9e9, "family": "Pythia"},
+    "pythia-12b": {"params": 12e9, "family": "Pythia"},
+    "t5-v1_1-xxl": {"params": 11e9, "family": "T5 v1.1"},
 }
 
 NEGATION_WORDS = {"no", "not", "never", "nothing", "nobody", "neither",
