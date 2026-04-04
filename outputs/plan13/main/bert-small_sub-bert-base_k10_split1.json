@@ -1,0 +1,17 @@
+{
+  "dev": 0.4880285277636271,
+  "hans": 0.4313,
+  "best_epoch": 14,
+  "anli_r1": 0.276,
+  "anli_r2": 0.294,
+  "anli_r3": 0.30416666666666664,
+  "target": "bert-small",
+  "subject": "bert-base",
+  "k": 10,
+  "split": 1,
+  "n_train": 3000,
+  "epochs": 15,
+  "lr": 2e-05,
+  "time_sec": 109.98740744590759,
+  "condition_type": "subject_easy"
+}

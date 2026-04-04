@@ -1,0 +1,17 @@
+{
+  "dev": 0.5311258278145695,
+  "hans": 0.48706666666666665,
+  "best_epoch": 7,
+  "anli_r1": 0.298,
+  "anli_r2": 0.315,
+  "anli_r3": 0.31416666666666665,
+  "target": "bert-small",
+  "subject": "random",
+  "k": 5,
+  "split": 1,
+  "n_train": 1500,
+  "epochs": 20,
+  "lr": 2e-05,
+  "time_sec": 120.97788619995117,
+  "condition_type": "random"
+}

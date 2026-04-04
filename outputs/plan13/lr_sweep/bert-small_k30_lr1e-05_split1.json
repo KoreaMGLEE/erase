@@ -1,0 +1,12 @@
+{
+  "dev": 0.6214977075904228,
+  "hans": 0.4781,
+  "best_epoch": 8,
+  "target": "bert-small",
+  "k": 30,
+  "lr": 1e-05,
+  "split": 1,
+  "n_train": 9000,
+  "epochs": 8,
+  "time_sec": 160.3759925365448
+}

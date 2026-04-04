@@ -1,0 +1,12 @@
+{
+  "dev": 0.5889964340295466,
+  "hans": 0.4714,
+  "best_epoch": 12,
+  "target": "pythia-160m",
+  "k": 10,
+  "lr": 5e-05,
+  "split": 1,
+  "n_train": 3000,
+  "epochs": 15,
+  "time_sec": 583.039103269577
+}

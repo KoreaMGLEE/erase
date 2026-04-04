@@ -1,0 +1,17 @@
+{
+  "dev": 0.5676006113092206,
+  "hans": 0.49206666666666665,
+  "best_epoch": 8,
+  "anli_r1": 0.293,
+  "anli_r2": 0.286,
+  "anli_r3": 0.3,
+  "target": "bert-small",
+  "subject": "pythia-70m",
+  "k": 10,
+  "split": 1,
+  "n_train": 3000,
+  "epochs": 15,
+  "lr": 2e-05,
+  "time_sec": 109.26833772659302,
+  "condition_type": "subject_easy"
+}

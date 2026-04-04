@@ -1,0 +1,17 @@
+{
+  "dev": 0.5604686704024452,
+  "hans": 0.43166666666666664,
+  "best_epoch": 6,
+  "anli_r1": 0.278,
+  "anli_r2": 0.287,
+  "anli_r3": 0.3,
+  "target": "bert-base",
+  "subject": "pythia-6.9b",
+  "k": 5,
+  "split": 1,
+  "n_train": 1500,
+  "epochs": 20,
+  "lr": 3e-05,
+  "time_sec": 273.87815713882446,
+  "condition_type": "subject_easy"
+}
